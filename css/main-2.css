@@ -1,0 +1,2522 @@
+/*瀏覽次數*/
+.count-menu li{
+    position: absolute;
+    top: 1em;
+    right: 15%;
+    width: 100px;
+    z-index: 999999;
+    list-style: none;
+    color: rgba(41,64,148,0.76);
+    font-weight: 900;
+    white-space:nowrap;
+}
+
+/*特色優化教室輔醫*/
+.classroomtitle img{
+  width: 180px;
+  margin-bottom: -10px;
+  margin-right: -40px;
+  margin-left: -100px;
+}
+/*大事記聖母像*/
+.historytitle img{
+  width: 150px;
+  margin-bottom: -50px;
+  margin-left: -80px;
+  margin-right: -80px;
+}
+/*最新消息輔醫*/
+.morenews{
+  width: 700px;
+  height: 370px;
+  background-image: url("../picture/最新消息底框，透明度要調50.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  /*opacity: 50%;*/
+}
+/*最新消息中美堂*/
+.news img{
+  width: 150px;
+  margin-top: -150px;
+  margin-bottom: -10px;
+  margin-right: -40px;
+  margin-left: -110px;
+}
+/*網站地圖校碑*/
+.mapstitle img{
+  width: 120px;
+  margin-bottom: -50px;
+  margin-left: -80px;
+  margin-right: -30px;
+}
+
+
+
+
+header a {
+  display: block;
+  /*去除超連結底線*/
+  text-decoration: none;
+  /*更換字體顏色(html已換顏色 css不會套用)*/ 
+  /*color: #A6A600;*/
+}
+
+body {
+  /*主背景顏色*/
+  background-color: #ffffff; 
+  background-size: cover;
+}
+
+.main-header {
+  /*導覽列寬度
+  width: 100%;
+  /*導覽列顏色更換*/
+  background-color: #FFFFFF; 
+  z-index: 99999;
+}
+
+.container {
+  /*導覽列功能排版*/
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header h1 {
+  line-height: 60px;
+  margin: 0 15px;
+  /*更換字體顏色(html已換顏色 css不會套用)*/
+  color: #000000; 
+}
+
+.main-menu {
+  display: flex;
+}
+
+/*導覽列動畫 */
+/*漸層填滿*/
+.main-menu li {
+  position: relative;
+  transition: .5s;
+  /*除去黑點用*/
+  list-style-type: none; 
+}
+
+.main-menu li a {
+  /*導覽列功能間隔*/
+  padding: 0 10px;
+  /*導覽列高度調整*/
+  line-height: 60px;
+  /*color: #0b5394;*/
+}
+
+/*導覽列底線動畫*/
+.main-menu li::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  /*選擇時出現底線顏色*/
+  background-color: #ffffff; 
+  transition: .5s;
+}
+
+/*底線動畫調整*/
+.main-menu li:hover::after {
+  left: 0;
+  right: 0;
+}
+
+
+/*****************導覽列連結*****************/
+/*導覽列文字顏色*/
+ul.main-menu li.main-menu-thing a{
+  color: #294094;
+  opacity: 0.76;
+  font-weight: 700;
+}
+
+/*導覽列觸碰後文字變色*/
+ul.main-menu li.main-menu-thing a:hover {
+  color: #ffffff;
+}
+
+/*導覽列觸碰後底色*/
+ul.main-menu li.main-menu-thing:hover{
+  background-color: #486196;
+}
+
+ul.main-menu li.main-menu-thing:hover > a{
+  color: #ffffff;
+}
+
+/*學院超連結觸碰後按鈕顏色*/
+ul.main-menu  li.college a:hover {
+  color: #D68057;
+}
+
+/*學系超連結觸碰後按鈕顏色*/
+ul.main-menu ul.departments li a:hover{
+  color: #DEB254;
+}
+
+ul.main-menu ul { /*第二層*/
+  position: absolute;
+  border: #ccc 1px solid;
+  padding: 0;
+  background-color: whitesmoke;
+  z-index: 999;
+  /*不要透明*/
+  opacity: 1;
+  left: 0px; /*左右*/
+  top: 100%; /*上下*/
+  min-width: 185px; /*最小寬度*/
+}
+
+ul.main-menu ul li {
+  border-bottom: #ccc 1px solid;
+
+}
+
+ul.main-menu ul li img{/*校徽系徽置中*/
+  vertical-align: middle;
+}
+
+/*ul.main-menu ul li:last-child{
+  border-bottom: none;
+  }*/
+
+  ul.main-menu ul li ul { /*第三層*/
+    z-index: 999;
+    /*不要透明*/
+    opacity: 1;
+    top: -1px;
+    left: 100%;
+    min-width: 340px; /*最小寬度*/
+  }
+
+  ul.main-menu ul { /*隱藏次選單*/
+    display: none;
+  }
+
+  ul.main-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+    display: block;
+  }
+  /*其他資源裡的超連結按鈕顏色*/
+  ul.main-menu ul.other a{
+    color: #5877BB;
+  }
+  /*其他資源裡的超連結按鈕碰到後顏色*/
+  ul.main-menu ul.other a:hover{
+    color: #D68057;
+  }
+
+  /*漢堡選單*/
+  .mobile-menu{
+    text-align: right;/*靠右*/
+    display: none;/*先隱藏*/
+  }
+  /*照片牆和最新消息*/
+  .swiperandnews{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ /* .swiper .mySwiper{
+    float: left;
+    display: inline;
+    margin-left: 15%;
+    margin-right: 10%;
+    }*/
+    .newsdiv{
+      margin-top: 50px;
+      display: inline;
+      float: right;
+      margin-right: 2%;
+      width: 700px;
+      height: 450px;
+    }
+
+    /*最新消息*/
+    .news{
+      text-align: center; 
+      justify-content: center;
+      color: #486196; 
+      margin-top: 10px; 
+      margin-top: 40px;
+
+    }
+    #morenews{
+      align-items: center; 
+      text-align: left; 
+      margin: auto; 
+      font-weight:bold; 
+      color: #0B346E; 
+      margin-bottom: 0px; 
+      margin-top: 10px;
+      align-items: center;
+      text-align: center;
+    }
+    #morenews .morenewstext{
+      font-size: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+    #morenews .topnewstext{
+      font-size: 18px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /*"更多消息"按鈕*/
+    #btn-modal-1{
+     color:#486196; 
+     font-weight: 900;
+     left: 40%;
+     margin-bottom: 50px;
+     margin-top: -20px;
+     font-size: 20px;
+   }
+
+   /*更多消息浮動視窗*/
+   #modal-1{
+    width: 4%;
+    margin-left: 43%;
+    margin-top: 1%;
+  }
+
+  /*更多消息內容*/
+  .order-table{
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-weight:bold;
+    color: #0B346E;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    max-width: 1350px;
+  }
+
+  /*更多消息裡的更多消息*/
+  .smtitle1 h3{
+    font-size: 24px;
+  }
+  /*更多消息裡的搜尋消息*/
+  .translate{
+    font-size: 22px;
+  }
+
+  /*更多消息裡的月份按鈕*/
+  .news_month_btn{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /*特色優化教室標題*/
+  .classroomtitle{
+   text-align: center; 
+   color: #486196;
+   font-size: 30px;
+ }
+ /*輔大大事記標題*/
+ .historytitle{
+  font-size: 30px;
+  text-align: center; 
+  color: #486196;
+}
+/*網站地圖標題*/
+.mapstitle{
+  font-size: 30px;
+  text-align: center;
+  color: #486196;
+  margin-top: 30px;
+}
+
+
+/*FJ CU css*/
+.FJdiv{
+  display: flex;
+  /* 水平置中 */
+  justify-content: center;    
+  /* 垂直置中 */
+  align-items: center;    
+
+}
+
+.CUdiv{
+ display: flex;
+ /* 水平置中 */
+ justify-content: center;    
+ /* 垂直置中 */
+ align-items: center;    
+}
+/*常用地圖CSS*/
+
+.wrap {
+  width: 100%;
+  display: flex;
+  /* 水平置中 */
+  justify-content: center;    
+  /* 垂直置中 */
+  align-items: center; 
+}
+
+.group1 .item1 {
+  position: relative;
+  /*margin-right:-5px;/*區塊邊界*/
+  border-radius: 150%;
+}
+
+.group1 .item1 img {
+  width: 100px;
+  height: 100px;
+  border-radius:150%;
+  vertical-align: middle;
+}
+
+.group2 .item2 {
+  position: relative;
+  /*margin-bottom: 10px;*/
+  border-radius: 100%;
+}
+
+.group2 .item2 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.group3 .item3 {
+  position: relative;
+  border-radius: 100%;
+}
+
+.group3 .item3 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.group4 .item4 {
+  position: relative;
+  /*margin-left: -5px;*/
+  border-radius: 100%;
+}
+
+.group4 .item4 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.group5 .item5 {
+  position: relative;
+  /*margin-top: -320px;/*調整並排對齊*/
+  /*margin-left: 225px;/*調整並排對齊*/
+}
+
+.group5 .item5 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+.group6 .item6 {
+  position: relative;
+  /*margin-top: 10px;
+  margin-left: -5px;*/
+  border-radius: 100%;
+}
+
+.group6 .item6 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+
+
+
+/*.group:first-child .item {
+  width: 100%;
+}
+
+.group:last-child {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.group:last-child .item {
+  width: 100%;
+  }*/
+
+
+  .item1 .text {
+    text-align: center;
+    position: absolute;
+    /*padding: 20px;*/
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+    font-size: 50px;
+  }
+
+  /*滑鼠碰到的放大效果*/
+  .item1 img{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+  }
+  .item1 img:hover{
+    transform:scale(1.1,1.1);
+    border-radius: 100%;
+  }
+
+  .item1 .text h2{
+    color: #0B346E;
+    /*padding-bottom: 5px;
+    margin-bottom: 10px;*/
+    position: relative;
+
+  }
+
+  .item1 {
+    /*均勻控制位置*/
+    width: 100%; 
+    margin: 0 15px;
+  }
+
+  .item2 .text {
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+  }
+
+  /*滑鼠碰到的放大效果*/
+  .item2 img{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+  }
+  .item2 img:hover{
+    transform:scale(1.1,1.1);
+    border-radius: 100%;
+  }
+
+  .item2 {
+    /*均勻控制位置*/
+    width: 100%; 
+    margin: 0 15px;
+  }
+
+  .item3 .text {
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+  }
+
+  /*滑鼠碰到的放大效果*/
+  .item3 img{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+  }
+  .item3 img:hover{
+    transform:scale(1.1,1.1);
+    border-radius: 100%;
+  }
+
+  .item3 {
+    /*均勻控制位置*/
+    width: 100%; 
+    margin: 0 15px;
+  }
+
+  .item4 .text {
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+  }
+
+  /*滑鼠碰到的放大效果*/
+  .item4 img{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+  }
+  .item4 img:hover{
+    transform:scale(1.1,1.1);
+    border-radius: 100%;
+  }
+
+  .item4 {
+    /*均勻控制位置*/
+    width: 100%; 
+    margin: 0 15px;
+  }
+
+  .item5 .text {
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+  }
+
+  /*滑鼠碰到的放大效果*/
+  .item5 img{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+  }
+  .item5 img:hover{
+    transform:scale(1.1,1.1);
+    border-radius: 100%;
+  }
+
+  .item5 {
+    /*均勻控制位置*/
+    width: 100%; 
+    margin: 0 15px;
+  }
+
+  .item6 .text {
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, .6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: .5s;
+  }
+
+  /*滑鼠碰到的放大效果*/
+  .item6 img{
+    overflow:hidden;
+    transform:scale(1,1);
+    transition: all 1s ease-out;
+  }
+  .item6 img:hover{
+    transform:scale(1.1,1.1);
+    border-radius: 100%;
+  }
+
+  .item6 {
+    /*均勻控制位置*/
+    width: 100%; 
+    margin: 0 15px;
+  }
+  .item{
+    width: 100%;
+  }
+
+
+  /*下方footer*/
+  /*置底*/
+  footer{
+    /*置底層*/
+    position: relative;
+    margin-bottom: -500px;
+  }
+
+  footer li{
+    /*除去各項黑點*/
+    list-style: none;
+  }
+
+  .container-footer {
+    display: flex;
+    justify-content: space-between; /* 讓兩個div左右对齐 */
+    padding: 30px 0px;/* 设置上下左右距離固定*/
+    /*調整寬度邊界*/
+    width: 100%;
+    margin: auto;
+    /*底部背景色*/
+    background-color: #99B0E4;
+    opacity: 0.75;
+  /*斜紋-1
+  background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
+  /*斜紋-2
+  background: linear-gradient(to right, #fb3 50%, #58a 50%);
+  background-size:  50%;
+  */
+}
+#itemmap{
+  flex: 1; /* 讓兩個div平分父元素的剩餘空間 */
+  margin: 0 10px; /* 設置兩個div之間的距離為10像素*/
+}
+#itemfju{
+  margin-left: 5%;
+  
+}
+#itemmap{
+  margin-right: 5%;
+}
+.nav{
+  position: absolute;
+  margin-top: 50px;
+}
+.nav2{
+  position:absolute; 
+  width: 180px;
+  margin-right: 10px;
+  margin-left: 325px;
+  margin-top: 40px;
+
+}
+.nav3{
+  width:500px;
+  position: absolute; 
+  margin-top: 150px;
+  color: #344C80;
+  font-weight: 900;
+}
+
+/*選擇底層功能項的漸層填滿動畫*/
+.nav li:hover {
+  /*碰到字時的顏色改變*/
+  background-color: #FFFFFF; 
+  color: #49649F;
+  opacity: 0.7;
+  /*變化速度快慢調整*/
+  transition: 0.8s;
+}
+
+/*看不出來改了什麼*/
+.nav>li:hover::after {
+  left: 0;
+  right: 0;
+}
+
+
+.nav2 li {
+  display: inline;/*讓圖像可以橫的排列*/
+  vertical-align: middle;/*對齊*/
+  margin-right: 5%;
+}
+
+.nav2 a{
+  top: 1;
+  /*padding: 1px 1px;*//*圖像間的間隔*/
+}
+
+/*字的顏色&虛線分隔(FJU,連結...)*/
+.item .fjumintitle {
+  color: #344C80;
+  position: absolute;
+  /*虛線調整*/
+/*  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: 2px dashed;*/
+}
+.item .contactus{
+  position:absolute;
+  margin-left: 350px;
+  color: #344C80;
+}
+.nav2 img.fb{
+  width: 45px;
+  height:45px;
+
+}
+.nav2 img.ig{
+  width: 44px;
+  height:44px;
+  margin-top: 2px;
+}
+
+.item li {
+  margin-bottom: 15px;
+}
+/*選項的字體顏色並且去除底線*/
+.item li a {
+  color: #344C80;
+  text-decoration: none;
+}
+
+/*選擇後改變該選項的字體顏色*/
+.item li a:hover {
+  font-weight: 900;
+}
+#itemmap iframe{
+  width: 300px;
+  height: 230px;
+  border:0;   
+}
+
+/*訂閱電子報之列*/
+
+/*調整輸入email列*/
+.subs form {
+  display: flex;
+  width: 100%;
+  margin: auto 0px;
+}
+
+.subs input[type="email"],
+.subs button {
+  border: none;
+  padding: 5px 10px;
+}
+
+.subs input[type="email"]:focus,
+.subs button:focus {
+  outline: none;
+}
+/*輸入的預設字呈現(目前是Email)*/
+.subs input[type="email"]:focus::placeholder {
+  color: transparent;
+}
+/*輸入時的引線顏色*/
+.subs input[type="email"] {
+  width: 0;
+  flex-grow: 1;
+  color: #f56476;
+}
+
+/*按鈕的字體色與背景色*/
+.subs button {
+  color: #fff;
+  background-color: #0a090c;
+  cursor: pointer;
+}
+/*該列的字體色*/
+.item.subs a{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/*著作權列的調整*/
+.copyright {
+  background-color: #000000;
+  text-align: center;
+  padding: 5px 0;
+  color: #ffffff;
+  font-size: 14px;
+  
+}
+/*著作權列的功能調整*/
+.copyright a{
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+
+/*回到頂端按鈕CSS調整*/
+
+.toTop-arrow {
+  /*按鈕大小*/
+  width: 2.5rem;
+  height: 2.5rem;
+
+  /*按鈕外型，50%圓形、0%正方型*/
+  border-radius: 33%;
+
+  /*按鈕透明度*/
+  opacity: 0.6;
+
+  /*按鈕顏色*/
+  background: #FFFFFF;
+
+  /*浮動位置*/
+  right: 1rem;
+  bottom: 1rem;
+
+  display: none;
+  cursor: pointer;
+  position:fixed;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.toTop-arrow::before, .toTop-arrow::after {
+  /*箭頭粗細*/
+  width: 18px;
+  height: 5px;
+
+  /*箭頭顏色*/
+  background: #5877BB;
+
+  /*鍵頭上的文字*/
+  content: "";
+
+  border-radius: 100px;
+  position: absolute;
+}
+.toTop-arrow::before {
+  /*箭頭位置*/
+  transform: rotate(-45deg) translate(0, -50%);
+  left: 0.5rem;
+}
+.toTop-arrow::after {
+  /*箭頭位置*/
+  transform: rotate(45deg) translate(0, -50%);
+  right: 0.5rem;
+}
+.toTop-arrow:focus {outline: none;}
+
+
+/*網站地圖*/
+
+button {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  width:20%;
+  height:20%;
+}
+
+.btn { /*網站地圖按鈕*/
+  font-size: 16px;
+  line-height: 1;
+  padding: 5px 5px;
+  border-radius: 4px;
+  transition: box-shadow 0.1s, top 0.1s;
+  box-shadow: 0 0px 0 rgba(0,0,0,0.3);
+  top: 17px;
+  /*background: #fff;*/
+}
+
+.btn:hover {
+  box-shadow: 0 3px 0 transparent;
+  top: 20px;
+}
+.btn:active {
+  background: #f2f2f2;
+}
+
+/** Modal */
+.modal {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 999; /*讓網站地圖蓋住頁面*/
+  position: absolute;
+  text-align: left;
+  top: 10px;
+  left: 0;
+  right: 0;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+.modal .modal-close-btn { /*右上叉叉*/
+  position: absolute;
+  right: 50px;
+  top: 10px;
+  width: 30px;
+  height: 20px;
+  padding: 0px;
+}
+
+
+/** Overlay */
+.overlay {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 0%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/** JS */
+.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/** 網站地圖大標 ******************/
+
+.modal .smtitle{
+  width:180px;　 /*smtitle區塊寬度*/
+  line-height:50px;　 /*smtitle區塊高度*/
+  padding:20px;　 /*smtitle區塊內距*/
+  border:2px blue solid;　 /*smtitle區塊邊框*/
+  margin-right:10px;　 /*靠右外距*/
+  float:left;
+  display: inline-block; /*讓網站地圖大標並排*/
+  top: 0px;
+  vertical-align: top;
+}
+
+.smtitle{
+  color: #5877BB;
+  margin-bottom: 50px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-left: 50px;
+  font-size: 18px;
+}
+
+/*網站標題字體與虛線調整*/
+.smtitle h3 {
+  color: #344C80;
+  /*虛線調整*/
+  padding-bottom: .5em;
+  margin-bottom: .5em;
+  border-bottom: 2px dashed;
+}
+
+/*漢堡選單*/
+.mobile-menu{
+  display:none;
+}
+
+.main-menu{display: block;}
+
+.swiper-slide img{
+  width:100%; 
+  height: 100%; 
+  object-fit:cover;
+}
+
+.main-menu-thing li a img{
+ margin-left: -10px;
+ margin-top: 12px;
+}
+
+
+/*RWD*/
+@media (max-width:4500px){/*螢幕<3000*/
+  .container{
+    width: 90%;
+    font-size: 20px;
+  }
+
+  .container img{
+    margin-top:5px; 
+    margin-left:-15px; 
+    width:500px;
+    height:125px; 
+    float:left;
+  }
+
+  .mobile-menu{display: none;}
+
+  .main-menu{
+    margin-top: 5px;
+    display: flex;
+  }
+
+  .main-menu-thing{
+    padding: 0 50px;
+  }
+  .container{
+      width: 90%;
+      font-size: 15px;
+    }
+
+    .container img{
+      width:400px;
+      height:100px; 
+      float:left;
+    }
+
+    .main-menu{
+      margin-top: 5px;
+    }
+
+    .main-menu-thing{
+      padding: 0 20px;
+    }
+  /*.swiper mySwiper{width: 100%;}
+
+  .swiper-wrapper{width: 100%;}
+
+  .swiper-slide img{
+    width:100%; 
+    height: 100%; 
+    object-fit:cover;
+    }*/
+  }
+
+  @media (max-width:1900px){/*螢幕<1900*/
+    .container{
+      width: 90%;
+      font-size: 15px;
+    }
+
+    .container img{
+      width:400px;
+      height:100px; 
+      float:left;
+    }
+
+    .main-menu{
+      margin-top: 5px;
+    }
+
+    .main-menu-thing{
+      padding: 0 20px;
+    }
+
+  }
+
+
+  
+
+
+  @media(max-width:1200px){/*螢幕<1200*/
+
+    .container{
+      width: 90%;
+      font-size: 15px;
+    }
+
+    .container img{
+      margin-top:5px; 
+      margin-left:-15px; 
+      width:200px;
+      height:50px; 
+      float:left;
+    }
+
+    .main-menu-thing{
+      margin-left: -15px;
+    }
+    /*更多消息整個框寬度*/
+    .newsdiv{
+      width: 550px;
+    }
+    /*控制最新消息背景大小*/
+    .morenews{
+      width: 550px;
+    }
+
+    /*更多消息字體*/
+    #morenews .morenewstext{
+      font-size: 14px;
+
+    }
+    #morenews .topnewstext{
+      font-size: 14px;
+    }
+
+  
+
+    #btn-modal-1{
+      font-size: 16px;
+
+    }
+
+  /*.swiper mySwiper{width: 992px;}
+
+  .swiper-wrapper{width: 992px;}
+
+  .swiper-slide img{
+    width:70%; 
+    height:70% ; 
+    object-fit:cover;
+    }*/
+
+    /*#btn-modal-1{margin-left: -1000px;}*/
+
+
+  }
+  @media(max-width:1050px){/*螢幕<1050*/
+    /*更多消息整個框寬度*/
+    .newsdiv{
+      width: 500px;
+
+    }
+    /*控制最新消息背景大小*/
+    .morenews{
+      width: 500px;
+    }
+
+    /*更多消息字體*/
+    #morenews .morenewstext{
+      font-size: 12px;
+    }
+    #morenews .topnewstext{
+      font-size: 12px;
+    }
+
+    #btn-modal-1{
+      font-size: 14px;
+
+    }
+  }
+  
+  @media(max-width:1037px){/*螢幕<1037*/
+    .mobile-menu{
+      display: inline-block;/*不並排*/
+      overflow: hidden;/*不換行*/
+      float: right;
+      margin-top:-40px;/*微調漢堡選單位置*/
+      margin-right: 3%;
+    }
+
+    .main-menu{
+      display: none;
+    }
+  }
+
+
+  @media  (max-width:992px){/*螢幕<992*/
+   /*更多消息整個框寬度*/
+   .newsdiv{
+    width: 700px;
+
+  }
+  /*控制最新消息背景大小*/
+  .morenews{
+    width: 700px;
+  }
+
+  /*更多消息字體*/
+  #morenews .morenewstext{
+    font-size: 20px;
+
+  }
+  #morenews .topnewstext{
+      font-size: 20px;
+    }
+
+  #btn-modal-1{
+    font-size: 22px;
+
+  }
+
+  .container{
+    width: 90%;
+  }
+
+  .container img{
+    margin-top:5px; 
+    margin-left:-15px; 
+    width:200px;
+    height:50px; 
+    float:left;
+  }
+
+
+
+  .main-menu-thing{
+    margin-left: -20px;
+    margin-right: -25px;
+  }
+
+  /*更多消息裡的更多消息*/
+  .smtitle1 h3{
+    font-size: 21px;
+  }
+  /*更多消息裡的搜尋消息*/
+  .translate{
+    font-size: 19px;
+
+  }
+  /*更多消息內容*/
+  .order-table{
+    font-size: 20px;
+  }
+  /*.swiper mySwiper{width: 768px}
+
+  .swiper-wrapper{width: 768px;}
+
+  .swiper-slide img{
+    width:60%; 
+    height: 60%; 
+    object-fit:cover;
+    }*/
+
+    .container-footer{
+      display: flex;
+      justify-content: center;
+      flex-direction: column; /* 将两个div垂直排列 */
+      height: 500px;
+
+      padding: 20px 0; /* 修改padding值以适应垂直布局 */
+    }
+    .container-footer #itemfju{
+     margin: auto;
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+     margin-left: 0%;
+     width: 100%;
+     margin-bottom: 10px;
+   }
+   .fjumintitle{
+    margin-top: 70px;
+    margin-left: -240px;
+  }
+  .nav{
+    margin-top: 200px;
+    margin-left: -240px;
+    justify-content: center;
+    text-align: center;
+  }
+  .contactus{
+    margin-top: 70px;
+
+  }
+  .nav2{
+    margin-top: 170px;
+    margin-left: 420px;
+
+  }
+  .nav3{
+    margin-top: 380px;
+    justify-content: center;
+    text-align: center;
+  }
+  #itemmap{
+    margin-top: 230px;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 950px;
+  }
+
+
+}
+
+@media(max-width:959px){/*螢幕<959*/
+  #itemmap{
+    margin-top: 230px;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 900px;
+  }
+}
+
+@media(max-width:909px){/*螢幕<909*/
+  #itemmap{
+    margin-top: 230px;
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 850px;
+  }
+}
+
+@media(max-width:859px){/*螢幕<859*/
+  #itemmap{
+    width: 800px;
+  }
+}
+
+@media(max-width:809px){/*螢幕<809*/
+  #itemmap{
+    width: 750px;
+  }
+}
+
+@media (max-width:800px){/*螢幕<800*/
+  .group1 .item1 {
+    position: relative;
+    /*margin-right:-5px;/*區塊邊界*/
+    border-radius: 100%;
+  }
+  
+  .group1 .item1 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group2 .item2 {
+    position: relative;
+    /*margin-bottom: 10px;*/
+    border-radius: 100%;
+  }
+  
+  .group2 .item2 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group3 .item3 {
+    position: relative;
+    border-radius: 100%;
+  }
+  
+  .group3 .item3 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group4 .item4 {
+    position: relative;
+    /*margin-left: -5px;*/
+    border-radius: 100%;
+  }
+  
+  .group4 .item4 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group5 .item5 {
+    position: relative;
+    /*margin-top: -320px;/*調整並排對齊*/
+    /*margin-left: 225px;/*調整並排對齊*/
+  }
+  
+  .group5 .item5 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group6 .item6 {
+    position: relative;
+    /*margin-top: 10px;
+    margin-left: -5px;*/
+    border-radius: 100%;
+    width: 75px;
+    height: 75px;
+  }
+  
+  .group6 .item6 img {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+}
+
+
+
+@media (max-width:768px){/*螢幕<768*/
+ .container img{
+  margin-top:10px; 
+  margin-left:-20px; 
+  margin-right: 15px;
+  width:150px;
+  height:40px; 
+  float:left;
+}
+
+.main-menu-thing .a{
+  font-size: 12px;
+  width: 80px;
+  transform: scale(1);
+}
+
+.container{width: 90%;}
+/*最新消息外框寬度*/
+.newsdiv{
+  width:550px;
+}
+/*控制最新消息背景大小*/
+.morenews{
+  width: 550px;
+}
+/*最新消息字體大小*/
+.news{
+  font-size: 25px;
+}
+/*更多消息字體*/
+#morenews .morenewstext{
+  font-size: 18px;
+
+}
+#morenews .topnewstext{
+      font-size: 18px;
+    }
+
+#btn-modal-1{
+  font-size: 20px;
+
+}
+
+/*更多消息裡的更多消息*/
+.smtitle1 h3{
+  font-size: 18px;
+}
+/*更多消息裡的搜尋消息*/
+.translate{
+  font-size: 16px;
+
+}
+/*更多消息內容*/
+.order-table{
+  font-size: 17px;
+}
+/*特色優化教室標題*/
+.classroomtitle{
+  font-size: 25px;
+}
+/*輔大大事記標題*/
+.historytitle{
+  font-size: 25px;
+}
+/*網站地圖標題*/
+.mapstitle{
+  font-size: 25px;
+}
+
+  /*.swiper mySwiper{width: 480px;}
+
+  .swiper-wrapper{width: 480px;}
+
+  .swiper-slide img{
+    width:50%; 
+    height: 50%; 
+    object-fit:cover;
+    }*/
+    
+    #itemmap{
+      width: 700px;
+    }
+  }
+
+  @media(max-width:720px){/*螢幕<720*/
+
+    /*更多消息內容*/
+    .order-table{
+      font-size: 15px;
+    }
+  }
+
+  @media(max-width:709px){/*螢幕<709*/
+    #itemmap{
+      width: 650px;
+    }
+  }
+
+  @media(max-width:665px){/*螢幕<665*/
+
+
+   /*更多消息裡的更多消息*/
+   .smtitle1 h3{
+    font-size: 16px;
+  }
+  /*更多消息裡的搜尋消息*/
+  .translate{
+    font-size: 14px;
+  }
+
+  #itemmap{
+    width: 600px;
+  }
+}
+
+
+@media(max-width:625px){/*螢幕<625*/
+  .group1 .item1 {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .group1 .item1 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .group2 .item2 {
+    position: relative;
+    /*margin-bottom: 10px;*/
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .group2 .item2 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .group3 .item3 {
+    position: relative;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .group3 .item3 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .group4 .item4 {
+    position: relative;
+    /*margin-left: -5px;*/
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .group4 .item4 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .group5 .item5 {
+    position: relative;
+    /*margin-top: -320px;/*調整並排對齊*/
+    /*margin-left: 225px;/*調整並排對齊*/
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px;
+  }
+
+  .group5 .item5 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+  .group6 .item6 {
+    position: relative;
+/*margin-top: 10px;
+margin-left: -5px;*/
+border-radius: 100%;
+width: 60px;
+height: 60px;
+margin: 0 10px;
+}
+
+.group6 .item6 img {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  vertical-align: middle;
+}
+}
+
+@media(max-width:609px){/*螢幕<609*/
+  #itemmap{
+    width: 550px;
+  }
+}
+
+@media(max-width:580px){/*螢幕<580*/
+ /*最新消息外框寬度*/
+ .newsdiv{
+  width:450px;
+  height: 300px;
+  margin-bottom: 50px;
+}
+/*控制最新消息背景大小*/
+.morenews{
+  width: 450px;
+  height: 280px;
+}
+/*更多消息字體*/
+#morenews .morenewstext{
+  font-size: 15px;
+
+}
+#morenews .topnewstext{
+      font-size: 15px;
+    }
+
+#btn-modal-1{
+  font-size: 17px;
+
+}
+
+/*更多消息裡的更多消息*/
+.smtitle1 h3{
+  font-size: 14px;
+}
+/*更多消息裡的搜尋消息*/
+.translate{
+  font-size: 12px;
+
+}
+
+/*更多消息內容*/
+.order-table{
+  font-size: 13px;
+}
+
+.fjumintitle{
+  font-size: 16px;
+  margin-left: -150px;
+}
+.nav{
+  font-size: 13px;
+  margin-left: -150px;
+}
+.contactus{
+  font-size: 16px;
+  margin-right: 135px;
+  width: 80px;
+  text-align: center;
+}
+.nav2{
+  margin-top: 160px;
+  margin-left: 300px;
+}
+.nav2 img.fb{
+  width: 34px;
+  height:34px;
+}
+.nav2 img.ig{
+  width: 33px;
+  height:33px;
+  margin-top: 2px;
+}
+.nav3{
+  font-size: 13px;
+  justify-content: center;
+  text-align: center;
+  width: 400px;
+}
+}
+
+
+@media(max-width:555px){/*螢幕<555*/
+  .group1 .item1 {
+    position: relative;
+    /*margin-right:-5px;/*區塊邊界*/
+    border-radius: 100%;
+    margin: 0 7.5px;
+  }
+  
+  .group1 .item1 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group2 .item2 {
+    position: relative;
+    /*margin-bottom: 10px;*/
+    border-radius: 100%;
+    margin: 0 7.5px;
+  }
+  
+  .group2 .item2 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group3 .item3 {
+    position: relative;
+    border-radius: 100%;
+    margin: 0 7.5px;
+  }
+  
+  .group3 .item3 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group4 .item4 {
+    position: relative;
+    /*margin-left: -5px;*/
+    border-radius: 100%;
+    margin: 0 7.5px;
+  }
+  
+  .group4 .item4 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group5 .item5 {
+    position: relative;
+    /*margin-top: -320px;/*調整並排對齊*/
+    /*margin-left: 225px;/*調整並排對齊*/
+    margin: 0 7.5px;
+  }
+  
+  .group5 .item5 img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+  
+  .group6 .item6 {
+    position: relative;
+      /*margin-top: 10px;
+      margin-left: -5px;*/
+      border-radius: 100%;
+      margin: 0 7.5px;
+    }
+
+    .group6 .item6 img {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    #itemmap{
+      width: 500px;
+    }
+  }
+
+  @media(max-width:509px){/*螢幕<509*/
+    #itemmap{
+      width: 450px;
+    }
+  }
+  
+
+  @media (max-width:480px){/*螢幕<480*/
+    .container img{
+      margin-top:18px; 
+      margin-left:-15px; 
+      width:140px;
+      height:40px; 
+      float:left;
+    }
+
+    .main-menu-thing .a{
+      width: 80px;
+      font-size: 12px;
+      transform: scale(0.8);
+    }
+
+    .container{
+      width:90%;
+    }
+    /*更多消息內容*/
+    .order-table{
+      font-size: 12px;
+      transform: scale(0.9);
+    }
+
+  /*.swiper mySwiper{width: 300px;}
+
+  .swiper-wrapper{width: 300px;}
+
+  .swiper-slide img{
+    width:40%; 
+    height: 40%; 
+    object-fit:cover;
+    }*/
+    /*更多消息外框寬度*/
+    .newsdiv{
+
+      width:370px;
+    }
+    /*控制最新消息背景大小*/
+    .morenews{
+      width:370px;
+    }
+    /*更多消息字體*/
+    #morenews .morenewstext{
+      font-size: 12px;
+
+
+    }
+    #morenews .topnewstext{
+      font-size: 12px;
+    }
+
+    #btn-modal-1{
+      font-size: 14px;
+
+    }
+    /*特色優化教室標題*/
+    .classroomtitle{
+      font-size: 22px;
+    }
+    /*輔大大事記標題*/
+    .historytitle{
+      font-size: 22px;
+    }
+    /*網站地圖標題*/
+    .mapstitle{
+      font-size: 22px;
+    }
+
+    .container-footer{
+      height: 400px;
+    }
+    .fjumintitle{
+      font-size: 13px;
+      margin-top: 40px;
+    }
+    .nav{
+      font-size: 12px;
+      transform: scale(0.9);
+      margin-left: -150px;
+      margin-top: 150px;
+    }
+    .contactus{
+      font-size: 13px;
+      margin-right: 135px;
+      width: 80px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .nav2{
+      margin-top: 120px;
+      margin-left: 225px;
+      width: 90px;
+    }
+    .nav2 img.fb{
+      width: 27px;
+      height:27px;
+    }
+    .nav2 img.ig{
+      width: 26px;
+      height:26px;
+      margin-top: 2px;
+    }
+    .nav3{
+      font-size: 12px;
+      transform: scale(0.9);
+      justify-content: center;
+      text-align: center;
+      width: 400px;
+      margin-top: 290px;
+    }
+    #itemmap{
+      margin-top: 180px;
+    }
+    #itemmap iframe{
+      width:250px ;
+      height: 180px;
+    }
+
+  }
+
+  @media(max-width:459px){/*螢幕<459*/
+    #itemmap{
+      width: 400px;
+    }
+  }
+
+  @media (max-width:449px){/*螢幕<449*/
+    .wrap{
+      margin-left: 0px;
+    }
+    .group1 .item1 {
+      position: relative;
+      /*margin-right:-5px;/*區塊邊界*/
+      border-radius: 100%;
+      margin: 0 -2.5px;
+    }
+
+    .group1 .item1 img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .group2 .item2 {
+      position: relative;
+      /*margin-bottom: 10px;*/
+      border-radius: 100%;
+      margin: 0 -2.5px;
+    }
+
+    .group2 .item2 img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .group3 .item3 {
+      position: relative;
+      border-radius: 100%;
+      margin: 0 -2.5px;
+    }
+
+    .group3 .item3 img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .group4 .item4 {
+      position: relative;
+      /*margin-left: -5px;*/
+      border-radius: 100%;
+      margin: 0 -2.5px;
+    }
+
+    .group4 .item4 img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .group5 .item5 {
+      position: relative;
+      /*margin-top: -320px;/*調整並排對齊*/
+      /*margin-left: 225px;/*調整並排對齊*/
+      margin: 0 -2.5px;
+    }
+
+    .group5 .item5 img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      vertical-align: middle;
+    }
+
+    .group6 .item6 {
+      position: relative;
+    /*margin-top: 10px;
+    margin-left: -5px;*/
+    border-radius: 100%;
+    margin: 0 -2.5px;
+  }
+
+  .group6 .item6 img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    vertical-align: middle;
+  }
+
+}
+@media(max-width:409px){/*螢幕<409*/
+  #itemmap{
+    width: 350px;
+  }
+}
+
+
+@media(max-width:380px){/*螢幕<380*/
+  .news{
+    font-size: 20px;
+  }
+  #morenews{
+    margin-right: -15%;
+    margin-left: -15%;
+  }
+  #morenews .morenewstext{
+    font-size: 12px;
+    transform: scale(0.7);
+  }
+  #morenews .topnewstext{
+      font-size: 12px;
+      transform: scale(0.7);
+    }
+
+
+  .container-footer{
+    height: 300px;
+  }
+  .fjumintitle{
+    font-size: 12px;
+    transform: scale(0.9);
+    margin-top: 25px;
+  }
+  .nav{
+    font-size: 12px;
+    transform: scale(0.7);
+    margin-left: -118px;
+    margin-top: 110px;
+  }
+  .contactus{
+    font-size: 12px;
+    margin-right: 160px;
+    width: 80px;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .nav2{
+    margin-top: 90px;
+    margin-left: 300px;
+  }
+  .nav2 img.fb{
+    width: 22px;
+    height:22px;
+  }
+  .nav2 img.ig{
+    width: 21px;
+    height:21px;
+    margin-top: 2px;
+  }
+  .nav3{
+    font-size: 12px;
+    transform: scale(0.7);
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    margin-top: 100px;
+  }
+  #itemmap{
+    margin-top: 120px;
+  }
+  #itemmap iframe{
+    width:220px ;
+    height: 150px;
+  }
+
+}
+
+
+
+
+/**更多消息換頁設定*****************/
+.newsContent{
+  display: flex;
+  flex-direction: column;
+  align-content: center;  
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.box{
+  width:300px;
+  height:40px;
+}
+.page_btn{
+  display: flex;
+  justify-content:center;
+  margin-top: 10px;
+}
+.page_btn span{
+  width: 40px;
+  height: 40px;
+  border:1px solid;
+  margin: 10px;
+  padding:15px -15px;
+  margin-top:-5%;
+  line-height: 50px;
+  text-align: center;
+}
+.page_btn span:hover {
+  background: #444;
+  color: #fff;
+}
+/*漢堡*/
+.mobile-menu {
+/*
+background: #336193;
+color: #6ecddd;
+font-family: 'Bebas';*/
+text-align: center;
+max-width: 100%;
+overflow-x: hidden;
+padding: 0;
+margin: 0;
+}
+
+#toggle {
+  display: none;
+}
+
+/**
+Hamburger
+**/
+.hamburger {
+  position: absolute;
+  top: 5em;
+  right: 5%;
+  margin-left: 0em;
+  margin-top: -80px;
+  width: 2em;
+  height: 45px;
+  z-index: 9999999;
+}
+
+.hamburger div {
+  position: relative;
+  width: 3em;
+  height: 7px;
+  border-radius: 3px;
+  background-color: #5877BB;
+  margin-top: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/**
+Nav Styles
+**/
+.hb {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  top: -100%; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  z-index: 999999;
+}
+.hb-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 100%;
+  margin-top: 2.5%;
+}
+
+.hb-thing {
+  text-align: center;
+  margin: 30px ;
+}
+.hb-thing a {
+  position: relative;
+  text-decoration: none;
+  color: #5072BD;
+  font-size: 16px;
+  display: inline-block;
+  margin-top: 1.25em;
+  transition: color 0.2s ease-in-out;
+  letter-spacing: 1px;
+}
+
+.hb-thing a:hover {/*連結觸碰後變白色*/
+  color: #ffffff;
+}
+.hb-thing .all:hover > a{/*連結一整塊觸碰後連結變白色*/
+  color: #ffffff;
+}
+.hb-thing a:hover:before {
+  height: 100%;
+}
+.hb-thing:hover{/*連結一整塊觸碰後顏色*/
+  background-color: #486196;
+}
+
+/*導覽列動畫*/
+/*漸層填滿*/
+.hb-thing {
+  position: relative;
+  transition: .5s;
+  /*除去黑點用*/
+  list-style-type: none; 
+}
+.hb  {
+  /*導覽列高度調整*/
+  line-height: 60px;
+  /*color: #0b5394;*/
+}
+
+/*學院超連結觸碰後按鈕顏色*/
+.college a:hover,
+.hb .college:hover >a {
+  color: #D68057;
+}
+
+/*學系超連結觸碰後按鈕顏色*/
+#departments-1 li a:hover,
+#departments-1 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-2 li a:hover,
+#departments-2 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-3 li a:hover,
+#departments-3 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-4 li a:hover,
+#departments-4 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-5 li a:hover,
+#departments-5 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-6 li a:hover,
+#departments-6 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-7 li a:hover,
+#departments-7 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-8 li a:hover,
+#departments-8 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-9 li a:hover,
+#departments-9 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-10 li a:hover,
+#departments-10 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-11 li a:hover,
+#departments-11 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-12 li a:hover,
+#departments-12 li:hover >a{
+  color: #DEB254;
+}
+/*學系超連結觸碰後按鈕顏色*/
+#departments-13 li a:hover,
+#departments-13 li:hover >a{
+  color: #DEB254;
+}
+
+#menu-1 { /*第二層學院*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-3 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-4 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-5 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-6 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-7 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-8 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+#menu-9 { /*第二層其他*/
+  background-color: whitesmoke;
+  border: #ccc 1px solid;
+  opacity: 1;
+}
+
+/*其他超連結觸碰後按鈕顏色*/
+#menu-3 li a:hover,
+.hb #menu-3 li:hover > a {
+  color: #D68057;
+}
+/*其他超連結觸碰後按鈕顏色*/
+#menu-4 li a:hover,
+.hb #menu-4 li:hover > a {
+  color: #D68057;
+}
+/*其他超連結觸碰後按鈕顏色*/
+#menu-5 li a:hover,
+.hb #menu-5 li:hover > a {
+  color: #D68057;
+}
+/*其他超連結觸碰後按鈕顏色*/
+#menu-6 li a:hover,
+.hb #menu-6 li:hover > a {
+  color: #D68057;
+}
+/*其他超連結觸碰後按鈕顏色*/
+#menu-7 li a:hover,
+.hb #menu-7 li:hover > a {
+  color: #D68057;
+}
+/*其他超連結觸碰後按鈕顏色*/
+#menu-8 li a:hover,
+.hb #menu-8 li:hover > a {
+  color: #D68057;
+}
+/*其他超連結觸碰後按鈕顏色*/
+#menu-9 li a:hover,
+.hb #menu-9 li:hover > a {
+  color: #D68057;
+}
+
+.hb .college {
+  border-bottom: #ccc 1px solid;
+  /*除去黑點用*/
+  list-style-type: none; 
+}
+
+.hb ul li {
+  border-bottom: #ccc 1px solid;
+  /*除去黑點用*/
+  list-style-type: none; 
+}
+
+.hb ul li img{/*校徽系徽置中*/
+  vertical-align: middle;
+}
+
+/*導覽列底線動畫*/
+.hb-wrapper ::after ,
+.menu-1::after{
+  content: '';
+  position: absolute;
+  height: 4px;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  /*選擇時出現底線顏色*/
+  background-color: #ffffff; 
+  transition: .5s;
+}
+
+/*底線動畫調整*/
+.hb-wrapper :hover::after {
+  left: 0;
+  right: 0;
+}
+
+
+
+
+
+
+
+/**
+Animations
+**/
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -7px;
+}
+
+#toggle:checked + .hamburger + .hb {
+  top: 0;
+  transform: scale(1);
+}
+
+ 

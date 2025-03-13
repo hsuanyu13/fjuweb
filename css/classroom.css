@@ -1,0 +1,76 @@
+/*區塊大綱*/
+div .classroom {
+  position: relative;
+  height: 100%;
+  }
+
+div .classroom {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  }
+
+/*照片牆邊界*/
+.classroom .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  left: -3%;
+  }
+
+/*調整圖片底背 -> 圖片會隨之調整*/
+.classroom .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 300px;
+  }
+
+/*調整圖片相對位置與格式*/
+.classroom .swiper-slide img {
+  display: block;
+  max-height: 100%;  
+  max-width: 100%; 
+  width: auto;
+  height: auto;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+  border-radius: 20px;
+  }
+@media(max-width:580px){/*螢幕<580*/
+  /*調整圖片底背 -> 圖片會隨之調整*/
+.classroom .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 220px;
+  }
+
+}
+
+@media(max-width:555px){/*螢幕<555*/
+  /*照片牆邊界*/
+  .classroom .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    left: -4%;
+    }
+}
+@media(max-width:480px){/*螢幕<580*/
+  /*調整圖片底背 -> 圖片會隨之調整*/
+.classroom .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 170px;
+  }
+
+}

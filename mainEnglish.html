@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- 連結相關的css/js/照片檔案 -->
+    <link rel="stylesheet" type="text/css" href="css/main-eng.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
+    <link rel="icon" type="image/x-icon" href="picture/輔大校徽/0純校徽.gif">
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+
+    <!-- 回到頂端按鈕相關js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- 輔仁大事記css -->
+    <link rel="stylesheet" type="text/css" href="css/timeline-2.css">
+
+    <!-- 特色優化教室css -->
+    <link rel="stylesheet" type="text/css" href="css/classroom.css">
+
+    <!-- 更多消息js -->
+    <script type="text/javascript" src="js/month.js"></script>
+
+    <!-- 顯示在網頁頁籤的title -->
+    <title>Admissions website of Fu Jen Catholic University</title>
+  </head>
+
+  <!--漢堡選單-->
+<script type="text/javascript">
+  function toggleMenu(number){
+    var menu=document.getElementById("menu-"+number);
+    menu.classList.toggle("show");
+  }
+</script>
+
+<script type="text/javascript">
+  function toggleDepartments(number){
+    var departments=document.getElementById("departments-"+number);
+    departments.classList.toggle("show");
+  }
+</script>
+
+<style type="text/css">
+  .hide{display: none;}
+  #menu-1 {display: none;}
+  #menu-1.show {display: block;}
+  #menu-3 {display: none;}
+  #menu-3.show {display: block;}
+  #menu-4 {display: none;}
+  #menu-4.show {display: block;}
+  #menu-5 {display: none;}
+  #menu-5.show {display: block;}
+  #menu-6 {display: none;}
+  #menu-6.show {display: block;}
+  #menu-7 {display: none;}
+  #menu-7.show {display: block;}
+  #menu-8 {display: none;}
+  #menu-8.show {display: block;}
+  #menu-9 {display: none;}
+  #menu-9.show {display: block;}
+
+  #departments-1 {display: none;}
+  #departments-1.show {display: block;}
+  #departments-2 {display: none;}
+  #departments-2.show {display: block;}
+  #departments-3 {display: none;}
+  #departments-3.show {display: block;}
+  #departments-4 {display: none;}
+  #departments-4.show {display: block;}
+  #departments-5 {display: none;}
+  #departments-5.show {display: block;}
+  #departments-6 {display: none;}
+  #departments-6.show {display: block;}
+  #departments-7 {display: none;}
+  #departments-7.show {display: block;}
+  #departments-8 {display: none;}
+  #departments-8.show {display: block;}
+  #departments-9 {display: none;}
+  #departments-9.show {display: block;}
+  #departments-10 {display: none;}
+  #departments-10.show {display: block;}
+  #departments-11 {display: none;}
+  #departments-11.show {display: block;}
+  #departments-12 {display: none;}
+  #departments-12.show {display: block;}
+  #departments-13 {display: none;}
+  #departments-13.show {display: block;}
+</style>
+
+<!-- 頁面刷新時自動執行最新消息生成以及特色教室的js函式 -->
+<body background="picture/入口網站底圖e4(調整大小).png" onload="loadScripts()">
+  <!-- 導覽列 -->
+  <header class="main-header">
+  <div class="container">
+    <img src="picture/輔大校徽/3.gif" style="margin-top:7px; margin-left:-15px; width:200px; height:50px; float:left">
+    <nav>
+      <ul class="main-menu">
+        <li class="main-menu-thing">
+          <a href="#" style="width:100px ;text-align:center;font-weight: 900; line-height: 1;padding-top: 5px;">Colleges and Departments</a>
+          <ul class="all">
+            <li class="college"><a href="http://www.la.fju.edu.tw/"><img src="輔大院徽系徽/文學院/文學院.png" style="width: 30px; height:30px;"> College of Liberal Arts</a>
+              <ul class="departments">
+                <li ><a href="http://www.chinese.fju.edu.tw/index.php"><img src="輔大院徽系徽/文學院/中國文學系.png" style="width: 30px; height:30px;"> Department of Chinese Literature</a></li>
+                <li><a href="http://www.history.fju.edu.tw/chi/"><img src="輔大院徽系徽/文學院/歷史學系.png" style="width: 30px; height:30px;"> Department of History</a></li>
+                <li><a href="https://philosophy.ourpower.com.tw/index.php"><img src="輔大院徽系徽/文學院/哲學系.png" style="width: 30px; height:30px;"> Department of Philosophy</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="https://www.finearts.fju.edu.tw/zh/index.html"><img src="輔大院徽系徽/藝術學院/藝術學院.png" style="width: 30px; height:30px;"> College of Arts</a>
+              <ul class="departments">
+                <li><a href="https://www.music.fju.edu.tw/"><img src="輔大院徽系徽/藝術學院/音樂學系.png" style="width: 30px; height:30px;"> Department of Music</a></li>
+                <li><a href="https://www.landscape.fju.edu.tw/index.php"><img src="輔大院徽系徽/藝術學院/景觀設計學系.png" style="width: 30px; height:30px;"> Department of Landscape Architecture</a></li>
+                <li><a href="https://www.aart.fju.edu.tw/"><img src="輔大院徽系徽/藝術學院/應用美術學系.png" style="width: 30px; height:30px;"> Department of Applied Arts</a></li>
+                <li><a href="http://culture.finearts.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/藝術學院/藝術與文化創意學士學位學程.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Art and Cultural Creation</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.mc.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/醫學院.png" style="width: 30px; height:30px;"> College of Medicine</a>
+              <ul class="departments">
+                <li><a href="http://www.med.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/醫學院/醫學系.png" style="width: 30px; height:30px;"> School of Medicine</a></li>
+                <li><a href="https://www.nursing.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/護理學系.png" style="width: 30px; height:30px;"> Department of Nursing</a></li>
+                <li><a href="https://www.medph.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/公共衛生學系.png" style="width: 30px; height:30px;"> Department of Public Health</a></li>
+                <li><a href="http://www.cpsy.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/醫學院/臨床心理學系.png" style="width: 30px; height:30px;"> Department of Clinical Psychology</a></li>
+                <li><a href="http://www.ot.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Occupational Therapy</a>
+                <li><a href="http://www.drt.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/醫學院/呼吸治療學系.png" style="width: 30px; height:30px;"> Department of Respiratory Therapy</a></li>
+                <li><a href="http://www.gibps.fju.edu.tw/index.php"><img src="picture/fju.png" style="width: 30px; height:30px;"> Graduate Institute of Biomedical and Pharmaceutical Science</a></li>
+                <li><a href="http://tltc.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program in Transdisciplinary Long Term Care</a></li>
+                <li><a href="http://www.bdb.fju.edu.tw/tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Master's Program of Big Data Analysis in Biomedicine</a></li>
+                <li><a href="http://www.biopharma.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Ph.D. Program in Pharmaceutical Biotechnolgy</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.comm.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/傳播學院.png" style="width: 30px; height:30px;"> College of Communication</a>
+              <ul class="departments">
+                <li><a href="http://www.commarts.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/影像傳播學系.jpg" style="width: 30px; height:30px;"> Department of Communication Arts</a></li>
+                <li><a href="http://jcs.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/新聞傳播學系.png" style="width: 30px; height:30px;"> Department of Journalism and Communication Studies</a></li>
+                <li><a href="http://www.adpr.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/廣告傳播學系.png" style="width: 30px; height:30px;"> Department of Advertising and Public Relations</a></li>
+                <li><a href="http://www.gsmc.url.tw/?lang=TW"><img src="輔大院徽系徽/傳播學院/大眾傳播學研究所.png" style="width: 30px; height:30px;"> Graduate Institute of Mass Communication</a></li>
+                <li><a href="http://www.fjumedia.com/c0g/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Degree Program in Mass Communication</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.educ.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/教育學院.jpg" style="width: 30px; height:30px;"> College of Education</a>
+              <ul class="departments">
+                <li><a href="http://www.lins.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/圖書資訊學系.png" style="width: 30px; height:30px;"> Department of Library and Information Science</a></li>
+                <li><a href="https://www.phed.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/體育學系.png" style="width: 30px; height:30px;"> Department of Physical Education</a></li>
+                <li><a href="http://www.cte.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/師資培育中心.jpg" style="width: 30px; height:30px;"> Center for Teacher Education</a></li>
+                <li><a href="http://www.lead.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Graduate Institute of Educational Leadership and Development</a></li>
+                <li><a href="http://www.eltd.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Educational Leadership and Technology Development</a></li>
+                <li><a href="http://www.psrm.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program of Sport Recreation Management</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.se.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/理工學院.jpg" style="width: 30px; height:30px;"> College of Science and Engineering</a>
+              <ul class="departments">
+                <li><a href="http://www.math.fju.edu.tw/zh-hant/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Mathematics</a></li>
+                <li><a href="http://www.phy.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Departments of Physics</a></li>
+                <li><a href="http://www.ch.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/理工學院/化學系.png" style="width: 30px; height:30px;"> Department of Chemistry</a></li>
+                <li><a href="http://www.bio.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/生命科學系.png" style="width: 30px; height:30px;"> Department of Life Science</a></li>
+                <li><a href="http://www3.csie.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/資訊工程學系.png" style="width: 30px; height:30px;"> Department Computer Science and Information Engineering</a></li>
+                <li><a href="http://www.ee.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/電機工程學系.jpg" style="width: 30px; height:30px;"> Department of Electrical Engineering</a></li>
+                <li><a href="http://www.miia.fju.edu.tw/layout/oneorange/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Medical Informatics and Innovative Applications</a></li>
+                <li><a href="http://www.ase.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Ph.D. in the Graduate Institute of Applied Science and Engineering</a></li>
+                <li><a href="http://www.sedia.fju.edu.tw/wordpress/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Software Engineerung and Digital Innovation Application</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.cfl.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/外國語文學院.jpg" style="width: 30px; height:30px;"> College of Foreign Languages and Literatures</a>
+              <ul class="departments">
+                <li><a href="http://english.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/英國語文學系.png" style="width: 30px; height:30px;"> Department of English Language and Literature</a></li>
+                <li><a href="http://www.de.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/德語語文學系.png" style="width: 30px; height:30px;"> Department of German Language and Culture</a></li>
+                <li><a href="http://www.fren.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of French Language and Culture</a></li>
+                <li><a href="http://www.span.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/西班牙語文學系.png" style="width: 30px; height:30px;"> Department of Spanish Language and Culture</a></li>
+                <li><a href="http://www.jp.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/外國語文學院/日本語文學系.jpg" style="width: 30px; height:30px;"> Department of Japanese Language and Culture</a></li>
+                <li><a href="http://www.italy.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Italian Language and Culture</a></li>
+                <li><a href="https://giccs.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/跨文化研究所.jpg" style="width: 30px; height:30px;"> Graduate Institute of Cross-Culture Studies</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.he.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/民生學院.png" style="width: 30px; height:30px;"> College of Human Ecology</a>
+              <ul class="departments">
+                <li><a href="http://www.fs.fju.edu.tw/content/index.php"><img src="輔大院徽系徽/民生學院/食品科學系.png" style="width: 30px; height:30px;"> Department of Food Science</a></li>
+                <li><a href="http://www.ns.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Nutritional Science</a></li>
+                <li><a href="http://www.cfs.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/兒童與家庭學系.png" style="width: 30px; height:30px;"> Department of Child and Family Studies</a></li>
+                <li><a href="http://www.rhim.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/餐旅管理學系.png" style="width: 30px; height:30px;"> Department of Restaurant, Hotel and Institutional Management</a></li>
+                <li><a href="https://fjunfsdoctor.tw.he.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Ph. D. Program in Nutrition and Food Science</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.ls.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學院.png" style="width: 30px; height:30px;"> College of Law</a>
+              <ul class="departments">
+                <li><a href="http://www.laws.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學系.png" style="width: 30px; height:30px;"> >Department of Law</a></li>
+                <li><a href="http://www.financelaw.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/財經法律學系.png" style="width: 30px; height:30px;"> Department of Financial and Economic Law</a></li>
+                <li><a href="http://gd.laws.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/學士後法律學系.png" style="width: 30px; height:30px;"> Graduate Department of Law</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="https://www.social.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會科學院.png" style="width: 30px; height:30px;"> College of Social Sciences</a>
+              <ul class="departments">
+                <li><a href="https://www.economics.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/經濟學系.png" style="width: 30px; height:30px;"> Department of Economics</a></li>
+                <li><a href="https://www.soci.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會學系.png" style="width: 30px; height:30px;"> Department of Sociology</a></li>
+                <li><a href="http://fjusw.tw/Web/"><img src="輔大院徽系徽/社會科學院/社會工作學系.jpg" style="width: 30px; height:30px;"> Department of Social Work</a></li>
+                <li><a href="http://www.rsd.fju.edu.tw/index.php/zh/"><img src="輔大院徽系徽/社會科學院/宗教學系.png" style="width: 30px; height:30px;"> Department of Religious Studies</a></li>
+                <li><a href="http://www.psy.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/社會科學院/心理學系.png" style="width: 30px; height:30px;"> Department of Psychology</a></li>
+                <li><a href="http://bpcs.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Degree Program in Catholic Studies</a></li>
+                <li><a href="http://npo.social.fju.edu.tw/web/index/index.jsp?lang=tw"><img src="輔大院徽系徽/社會科學院/非營利組織管理碩士學位學程.png" style="width: 30px; height:30px;"> Master Program in Non-Profit Organization Management</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.management.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/管理學院.png" style="width: 30px; height:30px;"> College of Management</a>
+              <ul class="departments">
+                <li><a href="http://www.im.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/資訊管理學系.jpg" style="width: 30px; height:30px;"> Department of Information Management</a></li>
+                <li><a href="http://www.fib.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/金融與國際企業學系.png" style="width: 30px; height:30px;"> Department of Finance and International Business</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/acct/subindex.php"><img src="輔大院徽系徽/管理學院/會計學系.png" style="width: 30px; height:30px;"> Department of Accounting</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/mba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Business Administration</a></li>
+                <li><a href="http://www.stat.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/統計資訊學系.png" style="width: 30px; height:30px;"> Department of Statistics and Information Science</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/gemba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Master of Global Entrepreneurial Management Program</a></li>
+                <li><a href="http://www.bbm.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> Bachelor's Program in Business Management</a></li>
+                <li><a href="http://see.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Master’s program in Social Enterprise</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/technology/"><img src="picture/fju.png" style="width: 30px; height:30px;"> MS Program in Technology Management</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/phdba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Graduate Institute of Business Administration</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/immba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> MBA Program in International Management</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.ft.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品學院.png" style="width: 30px; height:30px;"> College of Fashion and Textiles</a>
+              <ul class="departments">
+                <li><a href="https://www.tc.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品服裝學系.png" style="width: 30px; height:30px;"> Department of Textiles and Clothing</a></li>
+                <li><a href="https://www.bfm.fju.edu.tw/web/"><img src="輔大院徽系徽/織品學院/品牌與時尚經營管理碩士學位學程.png" style="width: 30px; height:30px;"> MA Program in Brand and Fashion Management</a></li>
+                <li><a href="http://www.museumstudies.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/博物館學研究所.png" style="width: 30px; height:30px;"> Graduate Institute of Museum Studies</a></li>
+              </ul>
+            </li>
+            <li class="college"><a href="http://www.soce.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/進修部/進修部.png" style="width: 30px; height:30px;"> College of Continuing Education</a>
+              <ul class="departments">
+                <li><a href="http://www.chinese.fju.edu.tw/admission.php"><img src="輔大院徽系徽/進修部/中國文學系.png" style="width: 30px; height:30px;"> Department of Chinese Literature</a></li>
+                <li><a href="http://www.fjuhistory.tw/"><img src="輔大院徽系徽/進修部/歷史學系.png" style="width: 30px; height:30px;"> Department of History</a></li>
+                <li><a href="https://www.aart.fju.edu.tw/"><img src="輔大院徽系徽/進修部/應用美術學系.png" style="width: 30px; height:30px;"> Department of Applied Arts</a></li>
+                <li><a href="http://soce.eng.fju.edu.tw/"><img src="輔大院徽系徽/進修部/英國語文學系.png" style="width: 30px; height:30px;"> Department of English Language and Literature</a></li>
+                <li><a href="http://soce.jp.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/進修部/日本語文學系.jpg" style="width: 30px; height:30px;"> Department of Japanese Language and Culture</a></li>
+                <li><a href="http://www.rhim.fju.edu.tw/"><img src="輔大院徽系徽/進修部/餐旅管理學系.png" style="width: 30px; height:30px;"> Department of Restaurant, Hotel and Institutional Management</a></li>
+                <li><a href="http://www.lex.fju.edu.tw/"><img src="輔大院徽系徽/進修部/法律學系.png" style="width: 30px; height:30px;"> Department of Law</a></li>
+                <li><a href="http://soce.eco.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/進修部/經濟學系.png" style="width: 30px; height:30px;"> Department of Economics</a></li>
+                <li><a href="http://culture.finearts.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Art and Cultural Creation</a></li>
+                <li><a href="http://www.fjumedia.com/c0g/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Mass Communication</a></li>
+                <li><a href="http://www.psrm.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program of Sport Recreation Management</a></li>
+                <li><a href="http://www.sedia.fju.edu.tw/wordpress/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Software Engineering and Digital Innovation Application</a></li>
+                <li><a href="http://www.bbm.fju.edu.tw/"><img src="輔大院徽系徽/進修部/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> Bachelor's Program in Business Management</a></li>
+                <li><a href="http://hss.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Program in Humanities and Social Services</a></li>
+                <li><a href="http://www.mih.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Medical Informatics and Healthcare Technology</a></li>
+                <li><a href="http://ltchm.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Long-Term Care and Health Management</a></li>
+                <li><a href="http://iidl.fju.edu.tw/"><img src="輔大院徽系徽/進修部/資訊創新與數位生活進修學士學位學程.png" style="width: 30px; height:30px;"> Program in Information Innovation and Digital Life</a></li>
+                <li><a href="http://www.id.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program of Interior Design</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+  
+        <li class="main-menu-thing"><a href="https://exam.fju.edu.tw/admission" style="width:100px ;text-align:center;font-weight: 900;">Examinee</a></li>
+        <li class="main-menu-thing">
+          <a href="#" style="width:100px ;text-align:center;font-weight: 900;line-height: 1; padding-top: 10px;">Other Resources</a>
+          <ul class="other">
+             <li><a href="http://www.academic.fju.edu.tw/awardDetail.jsp?newsID=5">Double Major</a></li>
+             <li><a href="http://www.academic.fju.edu.tw/awardDetail.jsp?newsID=3">Minor</a></li>
+             <li><a href="https://www.interdisciplinary.fju.edu.tw/">Interdisciplinary Course Program</a></li>
+             <li><a href="http://engnet.fju.edu.tw/">EngNet</a></li>
+             <li><a href="https://www.ext.fju.edu.tw/">Extension Education Center</a></li>
+             <li><a href="http://edu.cc.fju.edu.tw/main_control/06/login.php">Software Download</a></li>
+             <li><a href="https://www.fjuclinic.com/">Fu Jen University Clinic</a></li>
+             <li><a href="http://www.hospital.fju.edu.tw/">Fu Jen Catholic University Hospital</a></li>
+          </ul>  
+        </li>
+
+      <li class="main-menu-thing"><a href="freshmanEnglish.html" style="width:100px ;text-align:center;font-weight: 900;">Freshmen</a></li>
+
+      <!--切換中文版-->
+      <li class="main-menu-thing"><a class="translate" onclick="Chinesetranslate()" style="width:100px ;text-align:center;font-weight: 900; font-size: 15px;">中文版</a></li>
+
+      <script type="text/javascript" src="js/translate.js"></script>
+      <!--瀏覽次數-->
+      <li style="padding:5px;margin:15px;width:120px ;color: rgba(41,64,148,0.76);text-align:center;font-weight: 900;white-space:nowrap;">View 
+        <script type="text/javascript" language="javascript" src="php/counter.php"></script>
+        <!--counter.php為計數器 每重新整理一次及加一次瀏覽次數-->
+      </li>
+
+        <button class="btn" id="btn-modal" style="color:rgba(41,64,148,0.76); font-weight: 900;">Sitemap</button>
+        <div class="overlay" id="overlay"></div>
+        <div class="modal" id="modal" style="background-image:url('picture/網站地圖底圖.png');">
+        <button class="modal-close-btn" id="close-btn" >
+        <i class="fa fa-times">close</i></button> <!--右上叉叉-->
+        <div><!--用來隔開右上叉叉跟網站地圖大標--></div>
+        <c class="smtitle" id="smtitle1">
+          <!--網站地圖大標-->
+          <h3>Web Page of Each Unit</h3> 
+          <ul>
+            <script>
+              function createLinkElement(prdname, connect, index) {
+                var b = document.createElement("b");
+                b.setAttribute("class", "list1-" + index);
+                if (b) { 
+                  b.innerHTML = '<a href="'+ connect +'" style="color:#7592D1">'+ prdname +'</a>';
+                  return b
+
+                } else {
+                  console.log('Element with class "list1-' + index + '" not found');
+                }
+              }
+
+              var links = [
+                { prdname: 'Business Units Contact Information', connect: 'https://www.fju.edu.tw/article.jsp?articleID=13' },
+                { prdname: 'Administration', connect: 'https://www.fju.edu.tw/administration.jsp' },
+                { prdname: 'Office of Academic Affairs', connect: 'http://www.academic.fju.edu.tw/#&panel1-1' },
+                { prdname: 'Office of Student Affairs', connect: 'http://www.dsa.fju.edu.tw/' },
+                { prdname: 'Office Of General Affairs', connect: 'http://www.ga.fju.edu.tw/' },
+                { prdname: 'Military Education and Student Safety Division', connect: 'http://smt.dsa.fju.edu.tw/' },
+                { prdname: 'Office Of Public Affairs', connect: 'https://pro.fju.edu.tw/' },
+                { prdname: 'Academic Units', connect: 'https://www.fju.edu.tw/resource.jsp?labelID=33' },
+                { prdname: 'Library', connect: 'http://home.lib.fju.edu.tw/TC/node/136' },
+                { prdname: 'Student Counseling Center', connect: 'http://www.scc.fju.edu.tw/' },
+                { prdname: 'Service Learning Center', connect: 'http://slc.fju.edu.tw/' }
+              ];
+
+              var smtitle = document.getElementById("smtitle1");
+              links.forEach(function(link, index) {
+                smtitle.appendChild(createLinkElement(link.prdname, link.connect, index+1));
+              });
+            </script>
+            <li><body link="#7592D1"></body></li>
+            </ul>
+          </c>
+          <c class="smtitle" id="smtitle2">
+            <h3>International Exchange</h3> <!--網站地圖大標 國際交流-->
+            <ul>
+            <script>
+              function createLinkElement(prdname, connect, index) {
+                var b = document.createElement("b");
+                b.setAttribute("class", "list2-" + index);
+                if (b) { 
+                  b.innerHTML = '<a href="'+ connect +'" style="color:#7592D1">'+ prdname +'</a>';
+                  return b
+
+                } else {
+                  console.log('Element with class "list2-' + index + '" not found');
+                }
+              }
+
+              var links = [
+                { prdname: 'Office of International Education', connect: 'https://www.oie.fju.edu.tw/#&panel1-1' },
+                { prdname: 'International Student Center', connect: 'http://isc.oie.fju.edu.tw/index.jsp' },
+                { prdname: 'Admission for International Students', connect: 'http://idsa.oie.fju.edu.tw/#&panel1-1' },
+                { prdname: 'Overseas Students Office', connect: 'http://overseas.fju.edu.tw/index.jsp#&panel1-4' },
+                { prdname: 'Outbound Exchange', connect: 'http://isc.oie.fju.edu.tw/generalServices.jsp?labelID=39' },
+                { prdname: 'Exchange School List', connect: 'http://aec.oie.fju.edu.tw/generalServices.jsp?labelID=30' },
+                { prdname: "Int'l Degree Students", connect: 'http://isc.oie.fju.edu.tw/administration.jsp?labelID=10' },
+                { prdname: 'Inbound Exchangev', connect: 'http://isc.oie.fju.edu.tw/teachingServices.jsp?labelID=8' }
+              ];
+
+              var smtitle = document.getElementById("smtitle2");
+              links.forEach(function(link, index) {
+                smtitle.appendChild(createLinkElement(link.prdname, link.connect, index+1));
+              });
+            </script>
+            <li><body link="#7592D1"></body></li>
+            </ul>
+          </c>
+          <c class="smtitle" id="smtitle3">
+            <h3>Senior High School Students</h3> <!--網站地圖大標 高中生專區-->
+            <ul>
+            <script>
+              function createLinkElement(prdname, connect, index) {
+                var b = document.createElement("b");
+                b.setAttribute("class", "list3-" + index);
+                if (b) { 
+                  b.innerHTML = '<a href="'+ connect +'" style="color:#7592D1">'+ prdname +'</a>';
+                  return b
+
+                } else {
+                  console.log('Element with class "list3-' + index + '" not found');
+                }
+              }
+
+              var links = [
+                { prdname: 'Dormitory Service Center', connect: 'http://www.dsc.fju.edu.tw/' },
+                { prdname: 'Course Information Search', connect: 'http://estu.fju.edu.tw/fjucourse/ava_form.asp' },
+                { prdname: 'Student Association List', connect: 'http://activity.fju.edu.tw/administration.jsp?labelID=35' },
+                { prdname: 'Student Clubs', connect: 'http://activity.fju.edu.tw/administration.jsp?labelID=36' },
+                { prdname: 'Campus Map', connect: 'https://www.fju.edu.tw/aboutFju.jsp?labelID=7' },
+                { prdname: 'Location and Traffic Information', connect: 'http://www.fju.edu.tw/aboutFju.jsp?labelID=9' }
+              ];
+
+              var smtitle = document.getElementById("smtitle3");
+              links.forEach(function(link, index) {
+                smtitle.appendChild(createLinkElement(link.prdname, link.connect, index+1));
+              });
+            </script>
+            <li><body link="#7592D1"></body></li>
+            </ul>            
+          </c>
+          <c class="smtitle" id="smtitle4">
+            <h3> Subsidy and Scholarship</h3> <!--網站地圖大標 獎學金與補助-->
+            <ul>
+              <script>
+                function createLinkElement(prdname, connect, index) {
+                  var b = document.createElement("b");
+                  b.setAttribute("class", "list4-" + index);
+                  if (b) { 
+                    b.innerHTML = '<a href="'+ connect +'" style="color:#7592D1">'+ prdname +'</a>';
+                    return b
+
+                  } else {
+                    console.log('Element with class "list4-' + index + '" not found');
+                  }
+                }
+
+                var links = [
+                  { prdname: 'Office of Student Affairs', connect: 'http://life.dsa.fju.edu.tw/' },
+                  { prdname: 'Student Loan', connect: 'http://life.dsa.fju.edu.tw/loan.html' },
+                  { prdname: 'Fees Exemption', connect: 'http://life.dsa.fju.edu.tw/fee.html' },
+                  { prdname: 'Scholarship Information System', connect: 'http://stuservice.fju.edu.tw/fjcugrant/' },
+                  { prdname: 'Emergency Relief Grant', connect: 'http://life.dsa.fju.edu.tw/help.htm' },
+                  { prdname: 'Tuition and Fees', connect: 'http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp' },
+                ];
+
+                var smtitle = document.getElementById("smtitle4");
+                links.forEach(function(link, index) {
+                  smtitle.appendChild(createLinkElement(link.prdname, link.connect, index+1));
+                });
+              </script>
+              <li><body link="#7592D1"></body></li>
+            </ul>                
+          </c>
+          <c class="smtitle" id="smtitle5">
+            <h3>Freshmen</h3> <!--網站地圖大標-->
+            <ul>
+              <script>
+                function createLinkElement(prdname, connect, index) {
+                  var b = document.createElement("b");
+                  b.setAttribute("class", "list5-" + index);
+                  if (b) { 
+                    b.innerHTML = '<a href="'+ connect +'" style="color:#7592D1">'+ prdname +'</a>';
+                    return b
+
+                  } else {
+                    console.log('Element with class "list5-' + index + '" not found');
+                  }
+                }
+
+                var links = [
+                  { prdname: 'New Student Registration', connect: 'http://www.fju.edu.tw/article.jsp?articleID=7' },
+                  { prdname: 'Student Portal', connect: 'https://portal.fju.edu.tw/student/' },
+                  { prdname: 'Tronclass System', connect: 'https://elearn2.fju.edu.tw/' },
+                  { prdname: 'Course Registration Website', connect: 'http://www.course.fju.edu.tw/' },
+                  { prdname: 'Course Information Search', connect: 'http://estu.fju.edu.tw/fjucourse/ava_form.asp' },
+                  { prdname: 'Course-selecting System', connect: 'http://signcourse.fju.edu.tw/' },
+                  { prdname: 'Holistic Education Center', connect: 'http://www.hec.fju.edu.tw/' },
+                  { prdname: 'Wish List for Holistic Education Course', connect: 'http://wishcourse.fju.edu.tw/' }
+                ];
+
+                var smtitle = document.getElementById("smtitle5");
+                links.forEach(function(link, index) {
+                  smtitle.appendChild(createLinkElement(link.prdname, link.connect, index+1));
+                });
+              </script>
+              <li><body link="#7592D1"></body></li>
+            </ul>                
+          </c>
+          <c class="smtitle" id="smtitle6">
+            <h3>Academic Industrial Cooperation</h3> <!--網站地圖大標 產學--><ul>
+              <script>
+                function createLinkElement(prdname, connect, index) {
+                  var b = document.createElement("b");
+                  b.setAttribute("class", "list6-" + index);
+                  if (b) { 
+                    b.innerHTML = '<a href="'+ connect +'" style="color:#7592D1">'+ prdname +'</a>';
+                    return b
+
+                  } else {
+                    console.log('Element with class "list5-' + index + '" not found');
+                  }
+                }
+
+                var links = [
+                  { prdname: 'Career Development and Placement Office', connect: 'http://eao.dsa.fju.edu.tw/' },
+                  { prdname: 'Internship and Job Hunting', connect: 'http://eao.dsa.fju.edu.tw/Intern_Job_Hunting/intern_job_hunting_internship_job_list/3' },
+                  { prdname: 'Center for Academic-Industrial Cooperation and Resources Integration', connect: 'http://cttri.obd.fju.edu.tw/' },
+                ];
+
+                var smtitle = document.getElementById("smtitle6");
+                links.forEach(function(link, index) {
+                  smtitle.appendChild(createLinkElement(link.prdname, link.connect, index+1));
+                });
+              </script>
+              <li><body link="#7592D1"></body></li>
+            </ul>      
+          </c>
+        </div>
+        <script>
+          document.getElementById('btn-modal').addEventListener('click', function() {
+            document.getElementById('overlay').classList.add('is-visible');
+            document.getElementById('modal').classList.add('is-visible');
+          });
+
+          document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('overlay').classList.remove('is-visible');
+            document.getElementById('modal').classList.remove('is-visible');
+          });
+          document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('overlay').classList.remove('is-visible');
+            document.getElementById('modal').classList.remove('is-visible');
+          }); 
+        </script>  
+      </ul>    
+    </nav>
+  </div>
+  <!--漢堡選單-->
+<div class="mobile-menu">
+  <div class="count-menu">
+    <li>View 
+        <script type="text/javascript" language="javascript" src="php/counter.php"></script>
+        <!--counter.php為計數器 每重新整理一次及加一次瀏覽次數-->
+    </li>
+  </div>
+
+  <input id="toggle" type="checkbox"></input>
+  <label for="toggle" class="hamburger">
+    <div class="top-bun"></div>
+    <div class="meat"></div>
+    <div class="bottom-bun"></div>
+  </label>
+
+  <div class="hb">
+    <div class="hb-wrapper">
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(1)">
+          <!--<li class="hb-thing">-->
+            <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Colleges and Departments</a>
+        </div>
+          <ul id="menu-1">
+            <!--<li class="college"><a href="http://www.la.fju.edu.tw/"><img src="輔大院徽系徽/文學院/文學院.png" style="width: 30px; height:30px;"> 文學院</a>-->
+              <div class="college" onclick="toggleDepartments(1)">
+                <a href="http://www.la.fju.edu.tw/"><img src="輔大院徽系徽/文學院/文學院.png" style="width: 30px; height:30px;"> College of Liberal Arts</a>
+              </div>
+                <ul id="departments-1">
+                  <li ><a href="http://www.chinese.fju.edu.tw/index.php"><img src="輔大院徽系徽/文學院/中國文學系.png" style="width: 30px; height:30px;"> Department of Chinese Literature</a></li>
+                  <li><a href="http://www.history.fju.edu.tw/chi/"><img src="輔大院徽系徽/文學院/歷史學系.png" style="width: 30px; height:30px;"> Department of History</a></li>
+                  <li><a href="https://philosophy.ourpower.com.tw/index.php"><img src="輔大院徽系徽/文學院/哲學系.png" style="width: 30px; height:30px;"> Department of Philosophy</a></li>
+                </ul>
+              <!--</li>-->
+              <!--<li class="college"><a href="https://www.finearts.fju.edu.tw/zh/index.html"><img src="輔大院徽系徽/藝術學院/藝術學院.png" style="width: 30px; height:30px;"> 藝術學院</a>-->
+              <div class="college" onclick="toggleDepartments(2)">
+                <a href="https://www.finearts.fju.edu.tw/zh/index.html"><img src="輔大院徽系徽/藝術學院/藝術學院.png" style="width: 30px; height:30px;"> College of Arts</a>
+              </div>
+                <ul id="departments-2">
+                  <li><a href="https://www.music.fju.edu.tw/"><img src="輔大院徽系徽/藝術學院/音樂學系.png" style="width: 30px; height:30px;"> Department of Music</a></li>
+                  <li><a href="https://www.landscape.fju.edu.tw/index.php"><img src="輔大院徽系徽/藝術學院/景觀設計學系.png" style="width: 30px; height:30px;"> Department of Landscape Architecture</a></li>
+                  <li><a href="https://www.aart.fju.edu.tw/"><img src="輔大院徽系徽/藝術學院/應用美術學系.png" style="width: 30px; height:30px;"> Department of Applied Arts</a></li>
+                  <li><a href="http://culture.finearts.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/藝術學院/藝術與文化創意學士學位學程.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Art and Cultural Creation</a></li>
+                </ul>
+                <!--</li>-->
+                <!--<li class="college"><a href="http://www.mc.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/醫學院.png" style="width: 30px; height:30px;"> 醫學院</a>-->
+                <div class="college" onclick="toggleDepartments(3)">
+                  <a href="http://www.mc.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/醫學院.png" style="width: 30px; height:30px;"> College of Medicine</a>
+                </div>
+                  <ul id="departments-3">
+                    <li><a href="http://www.med.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/醫學院/醫學系.png" style="width: 30px; height:30px;"> School of Medicine</a></li>
+                    <li><a href="https://www.nursing.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/護理學系.png" style="width: 30px; height:30px;"> Department of Nursing</a></li>
+                    <li><a href="https://www.medph.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/公共衛生學系.png" style="width: 30px; height:30px;"> Department of Public Health</a></li>
+                    <li><a href="http://www.cpsy.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/醫學院/臨床心理學系.png" style="width: 30px; height:30px;"> Department of Clinical Psychology</a></li>
+                    <li><a href="http://www.ot.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Occupational Therapy</a>
+                    <li><a href="http://www.drt.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/醫學院/呼吸治療學系.png" style="width: 30px; height:30px;"> Department of Respiratory Therapy</a></li>
+                    <li><a href="http://www.gibps.fju.edu.tw/index.php"><img src="picture/fju.png" style="width: 30px; height:30px;"> Graduate Institute of Biomedical and Pharmaceutical Science</a></li>
+                    <li><a href="http://tltc.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program in Transdisciplinary Long Term Care</a></li>
+                    <li><a href="http://www.bdb.fju.edu.tw/tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Master's Program of Big Data Analysis in Biomedicine</a></li>
+                    <li><a href="http://www.biopharma.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Ph.D. Program in Pharmaceutical Biotechnolgy</a></li>
+                  </ul>
+                  <!--</li>-->
+                  <!--<li class="college"><a href="http://www.comm.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/傳播學院.png" style="width: 30px; height:30px;"> 傳播學院</a>-->
+                  <div class="college" onclick="toggleDepartments(4)">
+                    <a href="http://www.comm.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/傳播學院.png" style="width: 30px; height:30px;"> College of Communication</a>
+                  </div>
+                    <ul id="departments-4">
+                      <li><a href="http://www.commarts.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/影像傳播學系.jpg" style="width: 30px; height:30px;"> Department of Communication Arts</a></li>
+                      <li><a href="http://jcs.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/新聞傳播學系.png" style="width: 30px; height:30px;"> Department of Journalism and Communication Studies</a></li>
+                      <li><a href="http://www.adpr.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/廣告傳播學系.png" style="width: 30px; height:30px;"> Department of Advertising and Public Relations</a></li>
+                      <li><a href="http://www.gsmc.url.tw/?lang=TW"><img src="輔大院徽系徽/傳播學院/大眾傳播學研究所.png" style="width: 30px; height:30px;"> Graduate Institute of Mass Communication</a></li>
+                      <li><a href="http://www.fjumedia.com/c0g/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Degree Program in Mass Communication</a></li>
+                    </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.educ.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/教育學院.jpg" style="width: 30px; height:30px;"> 教育學院</a>-->
+                    <div class="college" onclick="toggleDepartments(5)">
+                      <a href="http://www.educ.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/教育學院.jpg" style="width: 30px; height:30px;"> College of Education</a>
+                    </div>
+                      <ul id="departments-5">
+                        <li><a href="http://www.lins.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/圖書資訊學系.png" style="width: 30px; height:30px;"> Department of Library and Information Science</a></li>
+                        <li><a href="https://www.phed.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/體育學系.png" style="width: 30px; height:30px;"> Department of Physical Education</a></li>
+                        <li><a href="http://www.cte.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/師資培育中心.jpg" style="width: 30px; height:30px;"> Center for Teacher Education</a></li>
+                        <li><a href="http://www.lead.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Graduate Institute of Educational Leadership and Development</a></li>
+                        <li><a href="http://www.eltd.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Educational Leadership and Technology Development</a></li>
+                        <li><a href="http://www.psrm.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program of Sport Recreation Management</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.se.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/理工學院.jpg" style="width: 30px; height:30px;"> 理工學院</a>-->
+                    <div class="college" onclick="toggleDepartments(6)">
+                      <a href="http://www.se.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/理工學院.jpg" style="width: 30px; height:30px;"> College of Science and Engineering</a>
+                    </div>
+                      <ul id="departments-6">
+                        <li><a href="http://www.math.fju.edu.tw/zh-hant/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Mathematics</a></li>
+                <li><a href="http://www.phy.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Departments of Physics</a></li>
+                <li><a href="http://www.ch.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/理工學院/化學系.png" style="width: 30px; height:30px;"> Department of Chemistry</a></li>
+                <li><a href="http://www.bio.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/生命科學系.png" style="width: 30px; height:30px;"> Department of Life Science</a></li>
+                <li><a href="http://www3.csie.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/資訊工程學系.png" style="width: 30px; height:30px;"> Department Computer Science and Information Engineering</a></li>
+                <li><a href="http://www.ee.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/電機工程學系.jpg" style="width: 30px; height:30px;"> Department of Electrical Engineering</a></li>
+                <li><a href="http://www.miia.fju.edu.tw/layout/oneorange/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Medical Informatics and Innovative Applications</a></li>
+                <li><a href="http://www.ase.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Ph.D. in the Graduate Institute of Applied Science and Engineering</a></li>
+                <li><a href="http://www.sedia.fju.edu.tw/wordpress/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Software Engineerung and Digital Innovation Application</a></li>
+              </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.cfl.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/外國語文學院.jpg" style="width: 30px; height:30px;"> 外語學院</a>-->
+                    <div class="college" onclick="toggleDepartments(7)">
+                      <a href="http://www.cfl.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/外國語文學院.jpg" style="width: 30px; height:30px;"> College of Foreign Languages and Literatures</a>
+                    </div>
+                      <ul id="departments-7">
+                        <li><a href="http://english.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/英國語文學系.png" style="width: 30px; height:30px;"> Department of English Language and Literature</a></li>
+                <li><a href="http://www.de.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/德語語文學系.png" style="width: 30px; height:30px;"> Department of German Language and Culture</a></li>
+                <li><a href="http://www.fren.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of French Language and Culture</a></li>
+                <li><a href="http://www.span.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/西班牙語文學系.png" style="width: 30px; height:30px;"> Department of Spanish Language and Culture</a></li>
+                <li><a href="http://www.jp.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/外國語文學院/日本語文學系.jpg" style="width: 30px; height:30px;"> Department of Japanese Language and Culture</a></li>
+                <li><a href="http://www.italy.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Italian Language and Culture</a></li>
+                <li><a href="https://giccs.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/跨文化研究所.jpg" style="width: 30px; height:30px;"> Graduate Institute of Cross-Culture Studies</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.he.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/民生學院.png" style="width: 30px; height:30px;"> 民生學院</a>-->
+                    <div class="college" onclick="toggleDepartments(8)">
+                      <a href="http://www.he.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/民生學院.png" style="width: 30px; height:30px;"> College of Human Ecology</a>
+                    </div>
+                      <ul id="departments-8">
+                        <li><a href="http://www.fs.fju.edu.tw/content/index.php"><img src="輔大院徽系徽/民生學院/食品科學系.png" style="width: 30px; height:30px;"> Department of Food Science</a></li>
+                <li><a href="http://www.ns.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Nutritional Science</a></li>
+                <li><a href="http://www.cfs.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/兒童與家庭學系.png" style="width: 30px; height:30px;"> Department of Child and Family Studies</a></li>
+                <li><a href="http://www.rhim.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/餐旅管理學系.png" style="width: 30px; height:30px;"> Department of Restaurant, Hotel and Institutional Management</a></li>
+                <li><a href="https://fjunfsdoctor.tw.he.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Ph. D. Program in Nutrition and Food Science</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.ls.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學院.png" style="width: 30px; height:30px;"> 法律學院</a>-->
+                    <div class="college" onclick="toggleDepartments(9)">
+                      <a href="http://www.ls.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學院.png" style="width: 30px; height:30px;"> College of Law</a>
+                    </div>
+                      <ul id="departments-9">
+                        <li><a href="http://www.laws.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學系.png" style="width: 30px; height:30px;"> >Department of Law</a></li>
+                <li><a href="http://www.financelaw.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/財經法律學系.png" style="width: 30px; height:30px;"> Department of Financial and Economic Law</a></li>
+                <li><a href="http://gd.laws.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/學士後法律學系.png" style="width: 30px; height:30px;"> Graduate Department of Law</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="https://www.social.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會科學院.png" style="width: 30px; height:30px;"> 社會科學院</a>-->
+                    <div class="college" onclick="toggleDepartments(10)">
+                      <a href="https://www.social.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會科學院.png" style="width: 30px; height:30px;"> College of Social Sciences</a>
+                    </div>
+                      <ul id="departments-10">
+                         <li><a href="https://www.economics.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/經濟學系.png" style="width: 30px; height:30px;"> Department of Economics</a></li>
+                <li><a href="https://www.soci.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會學系.png" style="width: 30px; height:30px;"> Department of Sociology</a></li>
+                <li><a href="http://fjusw.tw/Web/"><img src="輔大院徽系徽/社會科學院/社會工作學系.png" style="width: 30px; height:30px;"> Department of Social Work</a></li>
+                <li><a href="http://www.rsd.fju.edu.tw/index.php/zh/"><img src="輔大院徽系徽/社會科學院/宗教學系.png" style="width: 30px; height:30px;"> Department of Religious Studies</a></li>
+                <li><a href="http://www.psy.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/社會科學院/心理學系.png" style="width: 30px; height:30px;"> Department of Psychology</a></li>
+                <li><a href="http://bpcs.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Degree Program in Catholic Studies</a></li>
+                <li><a href="http://npo.social.fju.edu.tw/web/index/index.jsp?lang=tw"><img src="輔大院徽系徽/社會科學院/非營利組織管理碩士學位學程.png" style="width: 30px; height:30px;"> Master Program in Non-Profit Organization Management</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.management.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/管理學院.png" style="width: 30px; height:30px;"> 管理學院</a>-->
+                    <div class="college" onclick="toggleDepartments(11)">
+                      <a href="http://www.management.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/管理學院.png" style="width: 30px; height:30px;"> College of Management</a>
+                    </div>
+                      <ul id="departments-11">
+                        <li><a href="http://www.im.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/資訊管理學系.jpg" style="width: 30px; height:30px;"> Department of Information Management</a></li>
+                <li><a href="http://www.fib.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/金融與國際企業學系.png" style="width: 30px; height:30px;"> Department of Finance and International Business</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/acct/subindex.php"><img src="輔大院徽系徽/管理學院/會計學系.png" style="width: 30px; height:30px;"> Department of Accounting</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/mba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Department of Business Administration</a></li>
+                <li><a href="http://www.stat.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/統計資訊學系.png" style="width: 30px; height:30px;"> Department of Statistics and Information Science</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/gemba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Master of Global Entrepreneurial Management Program</a></li>
+                <li><a href="http://www.bbm.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> Bachelor's Program in Business Management</a></li>
+                <li><a href="http://see.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Master’s program in Social Enterprise</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/technology/"><img src="picture/fju.png" style="width: 30px; height:30px;"> MS Program in Technology Management</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/phdba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Graduate Institute of Business Administration</a></li>
+                <li><a href="http://www.management.fju.edu.tw/subweb/immba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> MBA Program in International Management</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.ft.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品學院.png" style="width: 30px; height:30px;"> 織品學院</a>-->
+                    <div class="college" onclick="toggleDepartments(12)">
+                      <a href="http://www.ft.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品學院.png" style="width: 30px; height:30px;"> College of Fashion and Textiles</a>
+                    </div>
+                      <ul id="departments-12">
+                        <li><a href="https://www.tc.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品服裝學系.png" style="width: 30px; height:30px;"> Department of Textiles and Clothing</a></li>
+                <li><a href="https://www.bfm.fju.edu.tw/web/"><img src="輔大院徽系徽/織品學院/品牌與時尚經營管理碩士學位學程.png" style="width: 30px; height:30px;"> MA Program in Brand and Fashion Management</a></li>
+                <li><a href="http://www.museumstudies.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/博物館學研究所.png" style="width: 30px; height:30px;"> Graduate Institute of Museum Studies</a></li>
+                      </ul>
+                    <!--</li>-->
+                    <!--<li class="college"><a href="http://www.soce.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/進修部/進修部.png" style="width: 30px; height:30px;"> 進修部</a>-->
+                    <div class="college" onclick="toggleDepartments(13)">
+                      <a href="http://www.soce.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/進修部/進修部.png" style="width: 30px; height:30px;"> College of Continuing Education</a>
+                    </div>
+                      <ul id="departments-13">
+                        <li><a href="http://www.chinese.fju.edu.tw/admission.php"><img src="輔大院徽系徽/進修部/中國文學系.png" style="width: 30px; height:30px;"> Department of Chinese Literature</a></li>
+                <li><a href="http://www.fjuhistory.tw/"><img src="輔大院徽系徽/進修部/歷史學系.png" style="width: 30px; height:30px;"> Department of History</a></li>
+                <li><a href="https://www.aart.fju.edu.tw/"><img src="輔大院徽系徽/進修部/應用美術學系.png" style="width: 30px; height:30px;"> Department of Applied Arts</a></li>
+                <li><a href="http://soce.eng.fju.edu.tw/"><img src="輔大院徽系徽/進修部/英國語文學系.png" style="width: 30px; height:30px;"> Department of English Language and Literature</a></li>
+                <li><a href="http://soce.jp.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/進修部/日本語文學系.jpg" style="width: 30px; height:30px;"> Department of Japanese Language and Culture</a></li>
+                <li><a href="http://www.rhim.fju.edu.tw/"><img src="輔大院徽系徽/進修部/餐旅管理學系.png" style="width: 30px; height:30px;"> Department of Restaurant, Hotel and Institutional Management</a></li>
+                <li><a href="http://www.lex.fju.edu.tw/"><img src="輔大院徽系徽/進修部/法律學系.png" style="width: 30px; height:30px;"> Department of Law</a></li>
+                <li><a href="http://soce.eco.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/進修部/經濟學系.png" style="width: 30px; height:30px;"> Department of Economics</a></li>
+                <li><a href="http://culture.finearts.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Art and Cultural Creation</a></li>
+                <li><a href="http://www.fjumedia.com/c0g/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Mass Communication</a></li>
+                <li><a href="http://www.psrm.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program of Sport Recreation Management</a></li>
+                <li><a href="http://www.sedia.fju.edu.tw/wordpress/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor's Program in Software Engineering and Digital Innovation Application</a></li>
+                <li><a href="http://www.bbm.fju.edu.tw/"><img src="輔大院徽系徽/進修部/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> Bachelor's Program in Business Management</a></li>
+                <li><a href="http://hss.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Program in Humanities and Social Services</a></li>
+                <li><a href="http://www.mih.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Medical Informatics and Healthcare Technology</a></li>
+                <li><a href="http://ltchm.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Bachelor Degree Program of Long-Term Care and Health Management</a></li>
+                <li><a href="http://iidl.fju.edu.tw/"><img src="輔大院徽系徽/進修部/資訊創新與數位生活進修學士學位學程.png" style="width: 30px; height:30px;"> Program in Information Innovation and Digital Life</a></li>
+                <li><a href="http://www.id.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> Program of Interior Design</a></li>
+                      </ul>
+                      <!--</li>-->
+          </ul>
+      </div>
+
+      <div class="hb-thing">
+        <div class="all">
+          <a href="https://exam.fju.edu.tw/admission" style="width:300px ;text-align:center;font-weight: 900;">Examinee</a>
+        </div>
+      </div>
+
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(3)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Other Resources</a>
+        </div>
+        <ul id="menu-3">
+          <li><a href="http://www.academic.fju.edu.tw/awardDetail.jsp?newsID=5">Double Major</a></li>
+             <li><a href="http://www.academic.fju.edu.tw/awardDetail.jsp?newsID=3">Minor</a></li>
+             <li><a href="https://www.interdisciplinary.fju.edu.tw/">Interdisciplinary Course Program</a></li>
+             <li><a href="http://engnet.fju.edu.tw/">EngNet</a></li>
+             <li><a href="https://www.ext.fju.edu.tw/">Extension Education Center</a></li>
+             <li><a href="http://edu.cc.fju.edu.tw/main_control/06/login.php">Software Download</a></li>
+             <li><a href="https://www.fjuclinic.com/">Fu Jen University Clinic</a></li>
+             <li><a href="http://www.hospital.fju.edu.tw/">Fu Jen Catholic University Hospital</a></li>
+          </ul> 
+      </div>
+
+      <!--網站地圖-->
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(4)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Freshmen</a>
+        </div>
+        <ul id="menu-4">
+          <li><a href="freshmanEnglish.html">Freshmen</a></li>
+          <li><a href="http://www.fju.edu.tw/article.jsp?articleID=7">New Student Registration</a></li>
+          <li><a href="https://portal.fju.edu.tw/student/">Student Portal</a></li>
+          <li><a href="https://elearn2.fju.edu.tw/">Tronclass System</a></li>
+          <li><a href="http://www.course.fju.edu.tw/">Course Registration Website</a></li>
+          <li><a href="http://estu.fju.edu.tw/fjucourse/ava_form.asp">Course Information Search</a></li>
+          <li><a href="http://signcourse.fju.edu.tw/">Course-selecting System</a></li>
+          <li><a href="http://www.hec.fju.edu.tw/">Holistic Education Center</a></li>
+          <li><a href="http://wishcourse.fju.edu.tw/">Wish List for Holistic Education Course</a></li>
+        </ul>
+      </div>  
+
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(5)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Web Page of Each Unit</a>
+        </div>
+        <ul id="menu-5">
+          <li><a href="https://www.fju.edu.tw/article.jsp?articleID=13">Business Units Contact Information</a></li>
+          <li><a href="https://www.fju.edu.tw/administration.jsp">Administration</a></li>
+          <li><a href="http://www.academic.fju.edu.tw/#&panel1-1">Office of Academic Affairs</a></li>
+          <li><a href="http://www.dsa.fju.edu.tw/">Office of Student Affairs</a></li>
+          <li><a href="http://www.ga.fju.edu.tw/">Office Of General Affairs</a></li>
+          <li><a href="http://smt.dsa.fju.edu.tw/">Military Education and Student Safety Division</a></li>
+          <li><a href="https://pro.fju.edu.tw/">Office Of Public Affairs</a></li>
+          <li><a href="https://www.fju.edu.tw/resource.jsp?labelID=33">Academic Units</a></li>
+          <li><a href="http://home.lib.fju.edu.tw/TC/node/136">Library</a></li>
+          <li><a href="http://www.scc.fju.edu.tw/">Student Counseling Center</a></li>
+          <li><a href="http://slc.fju.edu.tw/">Service Learning Center</a></li>
+        </ul>
+      </div>  
+
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(6)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">International Exchange</a>
+        </div>
+        <ul id="menu-6">
+          <li><a href="https://www.oie.fju.edu.tw/#&panel1-1">Office of International Education</a></li>
+          <li><a href="http://isc.oie.fju.edu.tw/index.jsp">International Student Center</a></li>
+          <li><a href="http://idsa.oie.fju.edu.tw/#&panel1-1">Admission for International Students</a></li>
+          <li><a href="http://overseas.fju.edu.tw/index.jsp#&panel1-4">Overseas Students Office</a></li>
+          <li><a href="http://isc.oie.fju.edu.tw/generalServices.jsp?labelID=39">Outbound Exchange</a></li>
+          <li><a href="http://aec.oie.fju.edu.tw/generalServices.jsp?labelID=30">Exchange School List</a></li>
+          <li><a href="http://isc.oie.fju.edu.tw/administration.jsp?labelID=10">Int'l Degree Students</a></li>
+          <li><a href="http://isc.oie.fju.edu.tw/teachingServices.jsp?labelID=8">Inbound Exchangev</a></li>
+        </ul>
+      </div>  
+
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(7)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Senior High School Students</a>
+        </div>
+        <ul id="menu-7">
+          <li><a href="http://www.dsc.fju.edu.tw/">Dormitory Service Center</a></li>
+          <li><a href="http://estu.fju.edu.tw/fjucourse/ava_form.asp">Course Information Search</a></li>
+          <li><a href="http://activity.fju.edu.tw/administration.jsp?labelID=35">Student Association List</a></li>
+          <li><a href="http://activity.fju.edu.tw/administration.jsp?labelID=36">Student Clubs</a></li>
+          <li><a href="https://www.fju.edu.tw/aboutFju.jsp?labelID=7">Campus Map</a></li>
+          <li><a href="http://www.fju.edu.tw/aboutFju.jsp?labelID=9">Location and Traffic Information</a></li>
+        </ul>
+      </div>  
+
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(8)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Subsidy and Scholarship</a>
+        </div>
+        <ul id="menu-8">
+          <li><a href="http://life.dsa.fju.edu.tw/">Office of Student Affairs</a></li>
+          <li><a href="http://life.dsa.fju.edu.tw/loan.html">Student Loan</a></li>
+          <li><a href="http://life.dsa.fju.edu.tw/fee.html">Fees Exemption</a></li>
+          <li><a href="http://stuservice.fju.edu.tw/fjcugrant/">Scholarship Information System</a></li>
+          <li><a href="http://life.dsa.fju.edu.tw/help.htm">Emergency Relief Grant</a></li>
+          <li><a href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp">Tuition and Fees</a></li>
+        </ul>
+      </div>  
+
+      
+
+      <div class="hb-thing">
+        <div class="all" onclick="toggleMenu(9)">
+          <a href="#" style="width:300px ;text-align:center;font-weight: 900;">Academic Industrial Cooperation</a>
+        </div>
+        <ul id="menu-9">
+          <li><a href="http://eao.dsa.fju.edu.tw/">Career Development and Placement Office</a></li>
+          <li><a href="http://eao.dsa.fju.edu.tw/Intern_Job_Hunting/intern_job_hunting_internship_job_list/3">Internship and Job Hunting</a></li>
+          <li><a href="http://cttri.obd.fju.edu.tw/">Center for Academic-Industrial Cooperation and Resources Integration</a></li>
+        </ul>
+      </div>         
+
+      <div class="hb-thing">
+        <!--<li class="hb-thing">-->
+          <div class="all">
+            <a class="translate" onclick="Chinesetranslate()" style="width:300px ;text-align:center;font-weight: 900; font-size: 15px;">中文版</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> 
+</header>
+
+
+
+
+  <div class="swiperandnews">
+  <!-- 動態投影牆 -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/fnrjcUKR_5Y?si=wRnqTF-FaFzdIB3R&mute=1&autoplay=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--           <video width="100%" height="100%" controls autoplay loop>
+            <source src="picture/動態投影牆/輔大招生影片_第三版_20220215.mp4" type="video/mp4">
+          </video> -->
+        </div>
+<!--         <div class="swiper-slide" >
+          <video width="100%" height="100%" controls autoplay loop muted>
+            <source src="picture/動態投影牆/招生影片短版_中文版_片頭片尾修_220209 (2).mp4" type="video/mp4">
+          </video>
+        </div> -->
+<!--         <div class="swiper-slide"><img src="picture/動態投影牆/投影牆1.jpg" style="width:100%; height: 100%; object-fit:cover;"></div>
+        <div class="swiper-slide"><img src="picture/動態投影牆/投影牆2.jpg" style="width:100%; height: 100%; object-fit:cover;"></div>
+        <div class="swiper-slide"><img src="picture/動態投影牆/投影牆3.jpg" style="width:100%; height: 100%; object-fit:cover;"></div>
+        <div class="swiper-slide"><img src="picture/動態投影牆/投影牆4.jpg" style="width:100%; height: 100%; object-fit:cover;"></div> -->
+      </div>
+      <div><img class="swiper-button-next" src="picture/素材/右邊箭頭.png" style="width:80px; height:80px;"></div>
+      <div><img class="swiper-button-prev" src="picture/素材/左邊箭頭.png" style="width:80px; height:80px;"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- 動態投影牆的js程式碼 -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      //分頁器
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      //前進後退按鈕
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      });
+    </script>
+  
+  <!-- 按鈕js程式碼 -->
+  <script>
+    $(function(){
+      // 當點擊這個按鈕時，自動捲動到網頁最上方，0.333秒完成捲動的動作
+      $('#btnHis').click(function(){ 
+        $('html,body').animate({scrollTop:1100}, 333);
+      });
+      $('#btnmaps').click(function(){ 
+        $('html,body').animate({scrollTop:1750}, 333);
+      });
+      $('#btnClass').click(function(){ 
+        $('html,body').animate({scrollTop:700}, 333);
+      });
+      $('#btnNews').click(function(){ 
+        $('html,body').animate({scrollTop:350}, 333);
+      });
+      // 當瀏覽器的捲軸在移動時
+      $(window).scroll(function() {
+        // 判斷網頁可視範圍的最上方距離網頁頂端是否超過 300 px
+        if ( $(this).scrollTop() > 0 ){
+          // 超過 300 px，以0.222秒的特效顯示按鈕
+          $('#btnHis').fadeIn(222);
+          $('#btnmaps').fadeIn(222);
+          $('#btnClass').fadeIn(222);
+          $('#btnNews').fadeIn(222);
+        }
+      }).scroll();
+    });
+  </script>
+
+  <!-- 最新消息 -->
+  <script type="text/javascript" src="js/main.js"></script>
+  <div class="newsdiv">
+  <h1 class="news"><img src="picture/中美堂.png">News</h1>
+  <div class="morenews">
+      <div style="background-color:rgba(179, 197, 237, 0.5);">
+        <table id="morenews" style="opacity: 0.5;text-align: left;">
+          <tr class="topnewstext" id="topnews1" >
+          </tr>
+          <tr class="topnewstext" id="topnews2" >
+          </tr>
+          <tr class="topnewstext" id="topnews3">
+          </tr>
+        <!-- #B3C5ED = rgba(179, 197, 237) -->
+        　<tr class="morenewstext" id="morenews1"></tr>
+        　<tr class="morenewstext" id="morenews2"></tr>
+        　<tr class="morenewstext" id="morenews3"></tr>
+        　<tr class="morenewstext" id="morenews4"></tr>
+        　<tr class="morenewstext" id="morenews5"></tr>
+          <tr class="morenewstext" id="morenews6"></tr>
+        　<tr class="morenewstext" id="morenews7"></tr>
+        　<tr class="morenewstext" id="morenews8"></tr>
+        </table>
+        <br>
+      </div>  
+        <!--更多消息框框-->
+        <button class="btn" id="btn-modal-1" style="opacity: 0.5;">More news</button>
+        <div class="overlay" id="overlay-1"></div>
+        <div class="modal" id="modal-1" style="background-image:url('picture/查找消息底圖.png'); width:47%; margin-left: 50%; margin-top: 0.5%;background-color:rgba(179, 197, 237, 0.5);">
+        <button class="modal-close-btn" id="close-btn-1" >
+        <i class="fa fa-times">close</i></button> <!--右上叉叉-->
+        <c class="smtitle1" style="word-wrap:break-word;">
+          <h3 style="color:#486196;">More news</h3>
+            <a class="translate" href="php/search.php" style="width:100px ;text-align:center;font-weight: 900;">Search news</a></li>
+                <table class="order-table" id="news"  style="text-align: left;align-items: center;padding-left: 10%;padding-right: 10%;">
+                  <!--<tr id="news1" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news2" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news3" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news4" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news5" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                    <tr id="news6" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news7" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news8" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news9" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news10"class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>-->
+                </table>
+
+          <!--頁數按鈕初始3頁，新增資料筆數會自行增加頁數-->
+          <div class="page_btn" >
+            <!--<span>1</span>
+            <span>2</span>
+            <span>3</span>-->
+          </div>
+          <script>
+            $.getJSON("./php/newsAndDate.php",function(data){
+              console.log(data);
+
+              var ary=data;
+
+              var alldata=[]; 
+              for(let i=0; i<ary[0].length; i++){  //放資料title+日期的陣列
+                  alldata[i]=ary[0][i].toString()+"    "+ary[1][i].toString();
+                  //ary.push((i+1).toString());
+              }
+              console.log(alldata);
+
+              var link=[];
+              for(let i=0; i<ary[2].length; i++){  //放資料連結的陣列
+                  link[i]=ary[2][i];
+              }
+
+              //需要頁數、按鈕數量
+              function showBtn(){   //放頁數按鈕
+                var page=document.querySelector('.page_btn');  
+                var btnNum=Math.ceil(alldata.length/10);  //需要的按鈕數(頁數) 每個按鈕放10筆資料
+                // console.log(btnNum);
+
+                var str='';     //按鈕數量(總共幾頁)
+                for (var i=0;i<btnNum;i++){
+                    str+=`<span>${i+1}</span>` //根據資料總筆數計算需要幾個按鈕(36/10=3.6~4)
+                };
+                page.innerHTML=str; //新增至總頁數
+
+                var btn=document.querySelectorAll('.page_btn span'); //選取每顆按鈕
+                for (var i=0;i<btn.length;i++){
+                    //當按鈕有click動作，即啟動changePage這個function
+                    btn[i].addEventListener('click', changePage.bind(this,(i+1),alldata,link));
+                };   
+              };
+              changePage(1,alldata,link); //預設初始出現第一頁
+              showBtn();
+
+              function changePage(page,data,link){ //page(頁數按鈕)、data(把ary裡的資料帶入function)
+                  var items = 10;   //每頁出現 10 筆資料
+                  var pageIndexStart = (page-1)*items;  //每頁起始值 1 11 21
+                  var pageIndexEnd = page * items;  //每頁結束值 10 20 30
+                  var str=''; //塞資料用
+                  for (var i=pageIndexStart;i<pageIndexEnd;i++){
+                      if (i>=data.length){break;}
+                      str+=`<li>
+                              <a class="box" id="news${i+1}" style="text-decoration:none;width:500px;height:16px;" href="${link[i]}">${data[i]}
+                              </a>
+                            </li><br>` 
+                      // 在資料title+日期加日超連結
+                  };
+                  document.querySelector('.order-table').innerHTML=str;
+              };
+              });
+          </script>
+
+          <h3 style="color:#486196;">News of the month</h3>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('january'); monthnews(1,'january');"><img src="picture/最新消息按鈕/1月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('february'); monthnews(2,'february');"><img src="picture/最新消息按鈕/2月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('march'); monthnews(3,'march');"><img src="picture/最新消息按鈕/3月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('april'); monthnews(4,'april');"><img src="picture/最新消息按鈕/4月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('may'); monthnews(5,'may');"><img src="picture/最新消息按鈕/5月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('june'); monthnews(6,'june');"><img src="picture/最新消息按鈕/6月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('july'); monthnews(7,'july');"><img src="picture/最新消息按鈕/7月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('august'); monthnews(8,'august');"><img src="picture/最新消息按鈕/8月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('september'); monthnews(9,'september');"><img src="picture/最新消息按鈕/9月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('october'); monthnews(10,'october');"><img src="picture/最新消息按鈕/10月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('november'); monthnews(11,'november');"><img src="picture/最新消息按鈕/11月.png" class="news_month_btn"></button>
+          <button class="show" style="width: 100px;flex-direction: column;" onclick="show('december'); monthnews(12,'december');"><img src="picture/最新消息按鈕/12月.png" class="news_month_btn"></button>
+
+          <button class="hide" id="hidden" style="float: right; width:100px; flex-direction:row; display:none; margin-top:6%; margin-right:3%;" onclick="hidden_all()"><img src="picture/最新消息按鈕/隱藏消息.png" style="width:100%;"></button>
+          <!--<button class="hide" id="hidden" style="border: solid;float: right;width: 100px;flex-direction:row;display: none;" onclick="hidden_all()">全部消息隱藏</button>-->
+          <div style="height:10px"><!--用來隔開月份顯示按鈕和隱藏按鈕--></div>
+          
+
+          <!--1月消息-->
+          <table id="january" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--2月消息-->
+          <table id="february" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--3月消息-->
+          <table id="march" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--4月消息-->
+          <table id="april" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--5月消息-->
+          <table id="may" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--6月消息-->
+          <table id="june" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--7月消息-->
+          <table id="july" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--8月消息-->
+          <table id="august" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--9月消息-->
+          <table id="september" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--10月消息-->
+          <table id="october" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--11月消息-->
+          <table id="november" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+          <!--12月消息-->
+          <table id="december" style="align-items: center; text-align: left; margin: auto; font-weight:bold; color: #0B346E; margin-bottom: 40px; margin-top: 20px;display: none;">
+          </table>
+        </c>
+        </div>
+        <script>
+          document.getElementById('btn-modal-1').addEventListener('click', function() {
+            document.getElementById('overlay-1').classList.add('is-visible');
+            document.getElementById('modal-1').classList.add('is-visible');
+          });
+          document.getElementById('close-btn-1').addEventListener('click', function() {
+            document.getElementById('overlay-1').classList.remove('is-visible');
+            document.getElementById('modal-1').classList.remove('is-visible');
+          });
+          document.getElementById('overlay-1').addEventListener('click', function() {
+            document.getElementById('overlay-1').classList.remove('is-visible');
+            document.getElementById('modal-1').classList.remove('is-visible');
+          }); 
+        </script>
+  </div><!--最新消息結束-->
+</div>
+</div>
+
+
+<!-- 常用網站地圖區 -->
+
+  <h1 class="mapstitle" style="margin-top:40px"><img src="picture/校碑.png" >SiteMap</h1>
+  <div class="wrap" style="margin-top: 50px; margin-bottom: -100px">
+    <div class="group1">
+      <div class="item1">
+         <a href="freshmanEnglish.html"><img src="picture/常用地圖區/E1.jpg" ></a>
+        <div class="text">
+          <a href="freshmanEnglish.html" style="text-decoration: none;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="group2">
+      <div class="item2">
+        <a href="http://life.dsa.fju.edu.tw/scholarship.htm"><img src="picture/常用地圖區/E2.jpg"></a>
+        <div class="text">
+          <a href="http://life.dsa.fju.edu.tw/scholarship.htm" style="text-decoration: none;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="group3">
+      <div class="item3">
+        <a href="https://exam.fju.edu.tw/newslist/page/33"><img src="picture/常用地圖區/E3.jpg"></a>
+        <div class="text">
+          <a href="https://exam.fju.edu.tw/newslist/page/33" style="text-decoration: none;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="group4">
+      <div class="item4">
+       <a href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp"><img src="picture/常用地圖區/E5.jpg" ></a>
+          <div class="text">
+            <a href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp" style="text-decoration: none;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="group5">
+      <div class="item5">
+         <a href="http://140.136.202.95/fjudreamnetwork/head.php"><img src="picture/常用地圖區/E4.jpg" ></a>
+          <div class="text">
+            <a href="http://140.136.202.95/fjudreamnetwork/head.php" style="text-decoration: none;"></a>
+        </div>
+        </div>
+    </div>
+    <div class="group6">
+      <div class="item6">
+        <a href="questionEnglish.html"><img src="picture/常用地圖區/E6.jpg" ></a>
+        <div class="text">
+          <a href="questionEnglish.html" style="text-decoration: none;"></a>
+        </div>
+      </div>  
+    </div>
+  </div>
+
+
+  <!-- 特色優化教室 -->
+  <h1 class="classroomtitle " style="margin-top:200px ;margin-bottom: -50px;"><img src="picture/輔醫.png">New Enhanced Learning Spaces</h1>
+  <div class="classroom" style="margin-top: 0%;">
+     <div class="swiper mySwiper-classroom"  >
+      <div class="swiper-wrapper" id="swiper-wrapper">
+      <div class="swiper-pagination" ></div>
+    </div>
+  </div>
+
+    <!--時間軸-->
+    <h1 class="historytitle">Fu Jen Memorabilia<img src="picture/聖母像.png"></h1>
+    <section class="timeline" style="margin-top: 30px;">
+      <ol id="history_timeline">
+        <li>
+          <div>
+            <time>1925</time>
+            <p>
+            Founded in Beijing by the Benedictines of the United States, the university preparatory course was initially named "Furen Club Affiliated to Beijing Catholic University".
+            </p>
+          </div>
+        </li>
+      </ol>
+      <div class="arrows">
+        <button class="arrow arrow__prev disabled" disabled>
+          <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_prev.svg" alt="prev timeline arrow"> -->
+          <img src="picture/素材/大事記箭頭左 .png" alt="prev timeline arrow" style="width:60px; height:60px">
+        </button>
+        <button class="arrow arrow__next">
+          <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/arrow_next.svg" alt="next timeline arrow"> -->
+          <img src="picture/素材/大事記箭頭右.png" alt="prev timeline arrow" style="width:60px; height:60px">
+        </button>
+      </div>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js'></script>
+      <script src="js/timeline.js"></script>
+    </section>
+
+  <!-- 頁尾 -->
+    <footer>
+    <div class="container-footer" >
+      <div class="item" id="itemfju"  >
+        <h3 class ="fjumintitle" >Fu Jen Catholic University</h3>
+        <ul class="nav">
+          <li><a href="https://goo.gl/maps/YCQen4popHpuNdmH9"><i class="fa fa-angle-right"></i>| Address：No.510, Zhongzheng Rd.,</a></li>
+          <li><a href="https://goo.gl/maps/YCQen4popHpuNdmH9"><i class="fa fa-angle-right"></i>  Xinzhuang Dist., New Taipei City 242062, Taiwan (R.O.C.)</a></li>
+          <li><a><i class="fa fa-angle-right"></i>| Telephone：0229052000</a></li>
+        </ul>
+        <ul class="nav3"> 
+          <li><a href="aboutUs.html">製作: 蔡方寧 吳家欣 何端容 劉芷伃 楊翊婕 陳彥彬 洪于雅 邱琦茵 同學</a></li>
+          <li><a href="aboutUs.html">指導: 大數據跨領域微學程召集人 杜逸寧 副教授</a></li>
+        </ul>
+        <h3 class="contactus">Contact Us</h3>
+        <ul class="nav2" >
+          <li style="margin-left:13px">
+            <a href="https://zh-tw.facebook.com/FuJenCatholicUniversity/"><i class="fa fa-angle-right"></i>
+              <img class="fb" src="picture/facebook.png" >
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/fujencatholicuniversity/"><i class="fa fa-angle-right"></i>
+              <img class="ig" src="picture/instagram.png" >
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- google地圖 -->
+      <div class="item" id="itemmap" style="position:relative; display:flex;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.933618133569!2d121.43046621400262!3d25.03632674435428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a7dd8be91eaf%3A0xe342a67d6574f896!2z5aSp5Li75pWZ6LyU5LuB5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1673271864542!5m2!1szh-TW!2stw" 
+         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="border-radius: 20px;">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- 智慧財產權 -->
+    <div class="copyright">©FJU2023<br>
+      <a href="register.html"></i>manager</a> 
+      <!-- <a href="http://www.fju.edu.tw/aboutFju.jsp?labelID=9" ></i>map</a> -->
+      <!-- <a href="" ></i>opinion</a> -->
+      <!-- <a href="" ><i class="btn"></i>opinion</a> -->
+      <script type="text/javascript" src="js/translate.js"></script>
+      <!--權限-->
+<!--       <li style="padding-top: 5px;">
+        <a href="manager.html">權限</a>
+      </li> -->
+    </div>
+  </footer>
+
+  <!-- 回到頂端按鈕 -->
+  <button type="button" id="BackTop" class="toTop-arrow" style="right: 2%;"></button>
+  
+  <!-- 回到頂端按鈕相關js程式碼 -->
+  <script>
+    $(function(){
+      // 當點擊這個按鈕時，自動捲動到網頁最上方，0.333秒完成捲動的動作
+      $('#BackTop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, 333);
+      });
+      // 當瀏覽器的捲軸在移動時
+      $(window).scroll(function() {
+        // 判斷網頁可視範圍的最上方距離網頁頂端是否超過 300 px
+        if ( $(this).scrollTop() > 300 ){
+          // 超過 300 px，以0.222秒的特效顯示按鈕
+          $('#BackTop').fadeIn(222);
+        } else {
+          // 未超過 300 px，先停止正在進行的特效，接著以 0.222 秒的特效隱藏按鈕
+          $('#BackTop').stop().fadeOut(222);
+        }
+      }).scroll();
+    });
+  </script>
+
+  <script src="main.js"></script>
+  <script>
+    function loadScripts() {
+         swiper();
+         history_english();
+         morenews();
+         page();
+      }
+  </script>
+</body>
+</html>

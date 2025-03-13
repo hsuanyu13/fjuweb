@@ -1,0 +1,153 @@
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+body{
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	position: absolute;
+	background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#back{
+	align-items: left;
+	margin-left: -90%;
+}
+
+/*-----------login form css調整-----------*/
+
+.login_form{
+	border-radius: 10px;
+	width: 350px;
+	color: black;
+	height: 450px;
+	text-align: center;
+	box-shadow:0px 2px 5px 1px #cccccc;
+}
+
+/*login登入大標文字*/
+.login h1{
+	font-size: 35px;
+}
+
+/*圖片和文字放在同一個排版*/
+.upper-left{
+	float:left;
+	width: 110px;
+	height: 120px;
+	padding-top: 3%;
+	margin-left: 3%;
+}
+.upper-right{
+	float:left;
+	width: 215px;
+	height: 134px;
+}
+
+
+
+/*登入按鈕div*/
+.submit{
+	width: 400px;
+	height: 50px;
+	text-align: center;
+}
+
+/*帳號密碼input*/
+.login input{
+	height: 15px;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	background: none;
+	padding: 12px;
+	font-size: 20px;
+	outline: none;
+}
+
+/*帳號、密碼input*/
+.login input[type="text"], .login input[type="password"], .login input[type="email"]{
+	border: 1px solid #B2B0B1;
+	width: 230px;
+}
+
+/*登入、註冊按鈕*/
+button[type="btn btn-1"]{
+	width: 200px;
+	height: 40px;
+	border: 2px solid #7DA3D4;
+	cursor: pointer; 
+	color:white;
+	font-size: 15px;
+	font-weight: 600;
+	background-color: #7DA3D4;
+	padding: 3px 0px;
+}
+
+table{
+	margin-bottom: 50px;
+}
+
+.login input[type="text"]:focus, .login input[type="password"]:focus, .login input[type="email"]:focus{
+	border-color: #99B0E4;
+	width: 280px;
+	transition: 0.5s;
+}
+
+/*標題文字*/
+#background2 p{
+  font-family: 'cwTeXFangSong', serif;
+  margin-right: 400px;
+  margin-top: 20px;
+  font-size: 48px;
+  color: #16537e;
+  font-weight:600;
+  letter-spacing:5px;
+  vertical-align: middle;
+}
+
+::placeholder{
+  color: black;
+  font-weight: bold;
+}
+
+/*註冊div*/
+.register{
+ width: 350px;
+ color: black;
+ height: 80px;
+ text-align: center;
+}
+
+.register button{
+  padding: 3px 0px;
+	font-size: 15px;
+	height: 40px;
+}
+
+
+ /*RWD*/
+ /*白框變小*/
+ @media(max-width:850px){/*螢幕<365像素*/
+    .login_form{
+    	max-width:100%
+    }
+		#back{
+			align-items: left;
+			margin-left: -60%;
+		}
+  }
+ 
+ @media(max-width:365px){/*螢幕<365像素*/
+    .login_form{
+    	max-width:100%
+    }
+		#back{
+			align-items: left;
+			margin-left: -60%;
+		}
+  }
+ 

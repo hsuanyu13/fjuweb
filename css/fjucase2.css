@@ -1,0 +1,165 @@
+body {
+  background-color: #FFFFFF;/*底色白色*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;/*設定字體*/
+}
+
+
+/*下方文字波浪動畫*/
+.navy {
+  position: absolute;
+  left: 29%;
+  top: 70%;
+  -webkit-box-reflect: below -12px linear-gradient(transparent, rgba(0,0,0,0.2));/*鏡面反射文字*/
+}
+
+.navy span {
+  position: relative;
+  display: inline-block;
+  color: #003D79;
+  font-size: 3.5em;
+  animation: float 2s ease-in-out infinite;/*重複波浪效果*/
+  animation-delay: calc(0.1s * var(--i));
+}
+
+/*波浪效果*/
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-20px);
+  }
+  40%,100% {
+    transform: translateY(0px);
+  }
+}
+
+
+/*校徽動畫*/
+.FJU{
+    left: 43%;
+    top: 20%;
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    animation:fade 2s linear 0s infinite;/*重複淡入效果*/
+}
+
+/*淡入效果*/
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+
+/*校徽外loading動畫*/
+.container
+   {
+    left: 51%;
+    top: 38%;
+      position: absolute;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+   .loader
+   {
+      position:absolute;
+      border-radius: 50%;
+      border-bottom:10px solid #003D79;
+      animation:load 2s infinite,/*重複旋轉效果，每次花費2秒*/
+                fadeOut 2s linear 0s infinite ;/*重複淡出效果，每次花費2秒*/
+   }
+   .loader:nth-child(1)
+   {
+      width:250px;
+      height:250px;
+      /*margin-left: 30px;*/
+   }
+   /*
+   .loader:nth-child(2)
+   {
+      width:330px;
+      height:330px;
+      animation-direction: reverse;
+
+   }*/
+
+/*旋轉效果*/
+@keyframes load
+{
+  0%   { transform:rotate(0deg); }
+  100% { transform:rotate(360deg); }
+}
+
+/*淡出效果*/
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@media(max-width:1240px){
+  .FJU{
+    width: 13%;
+  }
+  .navy{
+    left: 23%;
+  }
+}
+
+@media(max-width:1024px){
+  .FJU{
+    width: 13%;
+  }
+  .navy{
+    left: 20%;
+  }
+}
+
+@media(max-width:850px){
+  .FJU{
+    width: 13%;
+  }
+  .navy{
+    left: 15%;
+    text-align: center;
+  }
+}
+
+@media(max-width:700px){
+  .FJU{
+    width: 13%;
+  }
+  .navy{
+    left: 5%;
+    text-align: center;
+  }
+}
+
+@media(max-width:500px){
+  .FJU{
+    width: 15%;
+  }
+  .navy{
+    left: 5%;
+    top: 70%;
+    text-align: center;
+  }
+}

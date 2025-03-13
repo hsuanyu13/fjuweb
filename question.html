@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--改搜尋列圖標-->
+    <meta charset="utf-8"> 
+    <title>常見問題 | 輔仁大學招生網</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/question.css">
+    <link rel="icon" type="image/x-icon" href="picture/輔大校徽/0純校徽.gif">
+</head>
+    <body >
+  <!--導覽列-->
+  <header class="main-header">
+    <div class="container-header">
+      <img src="picture/輔大校徽/8.gif" style="margin-top:4px; margin-left:15px; width:18%; height:80%; float:left">
+      <nav>
+        <ul class="main-menu">
+          <li class="main-menu-thing">
+            <a href="questionEnglish.html" class="translate" onclick="Englishtranslate_Q()" style="position: relative; margin-top: 20px; right:150px;width:100px ;text-align:center;font-weight: 900;background-color: transparent;">English</a>
+          </li>
+          <script type="text/javascript" src="js/translate.js"></script>
+          <li class="main-menu-thing"><a href="http://www.fju.edu.tw/article.jsp?articleID=13" style="position: relative; margin-top: 20px; right: 95px;width:100px ;text-align:center;font-weight: 900; background-color: transparent;">聯絡我們</a>
+          </li>
+          <li class="main-menu-thing">
+            <a href="main.html" style=" z-index: 2;position: relative; margin-top: 20px; right: 60px ;width:100px ;text-align:center;font-weight: 900;background-color: transparent;">首頁</a>
+          </li>
+          <li class="main-menu-thing" style="padding:5px;margin-top:30px;right: 25px ;width:120px ;color:#2B528D;font-size: 18px;text-align:center;font-weight: 900; white-space:nowrap;">瀏覽次數 
+            <script type="text/javascript" language="javascript" src="php/counter.php"></script>
+            <!--counter.php為計數器 每重新整理一次及加一次瀏覽次數-->
+          </li>
+        </ul> 
+          <img src="picture/常見問答首頁符號.gif" style="z-index: 0; width:100px; position:relative; bottom:75%; left:38%;">
+      </nav>
+    </div>
+  </header>
+
+        <!--圖牆-->
+        <div class="wall" >
+            <div class="box" style="background: url('picture/常見問答橫幅-無文字.jpg'); background-size: cover; background-position: 0px -5px;">
+                <p>常見問題Q&A</p>
+            </div>  
+        </div>
+
+    
+        
+        <!--相關連結(左)-->
+        <div class="left-connect">
+            <ul class="menu">
+                <p>🔗相關連結</p>
+                <div style="width:100%; height: 10px; border-bottom:2px #ffffff dashed;"></div>
+                <li><a href="freshman.html">新生專區</a></li>
+                 <li><a href="https://whoami.fju.edu.tw/">單一帳號啟動</a></li>
+                <li><a href="http://www.secretariat.fju.edu.tw/article.jsp?articleID=8">行事曆</a></li>
+                <li><a href="http://activity.fju.edu.tw/#&panel1-1">課外活動指導組</a></li>
+                <li><a href="http://eao.dsa.fju.edu.tw/">職輔組</a></li>
+                <li><a href="http://www.dsc.fju.edu.tw/">宿舍服務中心</a></li>
+                <li><a href="https://house.nfu.edu.tw/FJU">校外租屋</a></li>
+                <li><a href="https://exam.fju.edu.tw/admission">招生資訊平台</a></li>
+                <li><a href="http://www.course.fju.edu.tw/">選課資訊網</a></li>
+                <li><a href="https://elearn2.fju.edu.tw/">Tronclass教學平台</a></li>
+                <li><a href="https://learningcounseling.fju.edu.tw/Student/GuidePage">畢業審核</a></li>
+                <li><a href="https://www.oie.fju.edu.tw/#&panel1-1">國際及兩岸教育處</a></li>
+                <li><a href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp">學雜分費專區</a></li>
+                <li><a href="http://life.dsa.fju.edu.tw/scholarship.htm">校內獎助學金</a></li>
+                <li><a href="http://edu.cc.fju.edu.tw/main_control/06/login.php">校園共享軟體下載</a></li>
+                <li><a href="http://home.lib.fju.edu.tw/TC/node/136">圖書館</a></li>
+                <li><a href="https://www.ext.fju.edu.tw/">推廣教育中心</a></li>
+                <li><a href="http://engnet.fju.edu.tw/">英語網路學院</a></li>
+                <li><a href="http://activity.dsa.fju.edu.tw/ActivityList.jsp">活動管理系統</a></li>
+                <li><a href="http://www.scc.fju.edu.tw/">學生輔導中心</a></li>
+                <li><a href="http://smt.dsa.fju.edu.tw/">軍訓室</a></li>                
+                <li><a href="http://www.fju.edu.tw/aboutFju.jsp?labelID=9">地理位置與交通</a></li>
+                <li><a href="https://www.fju.edu.tw/aboutFju.jsp?labelID=7">校園地圖與學院代號</a></li>                 
+            </ul>
+        </div>
+ 
+              
+
+
+        <!--常見問題區塊(右)-->
+        <div class="right-Q" >
+            <input type="search" class="light-table-filter" data-table="order-table" placeholder="請輸入關鍵字：" style="outline:none; margin-bottom: 30px;">
+            <!--<button class="search-btn"></button>-->
+            <table id="table_result"  class="order-table" style="width:100%">
+              <tbody>
+                <!--第1題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans1()" style="font-weight: 600; border-radius:5px;">👉 什麼是單一帳號LDAP?<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" style="text-align:right; float:right; text-decoration:none; ">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans1" style="display:none;">  
+                        <button class="answerBtn" id="hideAns1" onclick="hideAns1()" style="display:none">學校所有成員利用同一組帳號及密碼，即可登入校內所有資訊系統，並獲得應有之資訊或服務，這組帳密就稱為「單一帳號」，詳細帳戶啟用細節可參考<a class="translate" href="https://whoami.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">輔仁大學單一帳號(LDAP)啟動網站</a>之說明。</button>
+                      </table>
+                    </td>
+                    <script>
+                      function ans1(){
+                        var myTable = document.getElementById( "ans1" ); myTable.style.display = " block " ;
+                        var myButton = document.getElementById( "hideAns1" ); myButton.style.display = " block " ;
+                      };
+                      function hideAns1(){
+                        var myTable = document.getElementById( "ans1" ); myTable.style.display = " none " ;
+                        var myButton = document.getElementById( "hideAns1" ); myButton.style.display = " none " ;
+                      };
+                    </script>
+                </tr>
+                <br>
+                <!--第2題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans2()" style="font-weight: 600; border-radius:5px;">👉 學校的行事曆?<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans2" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns2" onclick="hideAns2()" style="display:none">可至輔仁大學秘書書校務資訊的<a class="translate" href="http://www.secretariat.fju.edu.tw/article.jsp?articleID=8" style="width:100px ;text-align:center;font-weight: 900;">行事曆</a>查詢上下學期的年度行事曆。</button>
+                      </table>
+                    </td>
+                    <script>
+                      function ans2(){
+                        var myTable = document.getElementById( "ans2" ); myTable.style.display = " block " ;
+                        var myButton = document.getElementById( "hideAns2" ); myButton.style.display = " block " ;
+                      };
+                      function hideAns2(){
+                        var myTable = document.getElementById( "ans2" ); myTable.style.display = " none " ;
+                        var myButton = document.getElementById( "hideAns2" ); myButton.style.display = " none " ;
+                      };
+                    </script>
+                </tr>
+                <!--第3題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans3()" style="font-weight: 600; border-radius:5px;">👉 如何查詢社團相關資訊?<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans3" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns3" onclick="hideAns3()" style="display:none">可至輔仁大學<a class="translate" href="http://activity.fju.edu.tw/index.jsp" style="width:100px ;text-align:center;font-weight: 900;">課外活動指導組</a>瀏覽社團相關資訊。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans3(){
+                      var myTable = document.getElementById( "ans3" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns3" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns3(){
+                      var myTable = document.getElementById( "ans3" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns3" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第4題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans4()" style="font-weight: 600; border-radius:5px;">👉 有哪些工讀及實習求職的機會?<a data-toggle="collapse" data-parent="#accordion" href="#collapse4" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans4" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns4" onclick="hideAns4()" style="display:none">可至輔仁大學<a class="translate" href="http://eao.dsa.fju.edu.tw/Intern_Job_Hunting/intern_job_hunting_internship_job_list/2" style="width:100px ;text-align:center;font-weight: 900;">職輔組</a>網站瀏覽校內各單位的工讀消息及校外實習與求職機會。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans4(){
+                      var myTable = document.getElementById( "ans4" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns4" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns4(){
+                      var myTable = document.getElementById( "ans4" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns4" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第5題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans5()" style="font-weight: 600; border-radius:5px;">👉 宿舍的申請資訊?<a data-toggle="collapse" data-parent="#accordion" href="#collapse5" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans5" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns5" onclick="hideAns5()" style="display:none">請至「學生資訊管理系統」列印住宿申請表，並於規定日期前(以郵戳為憑)將申請表及各項資料寄至宿舍服務中心，詳細申請規範可至
+                        <a class="translate" href="http://www.dsc.fju.edu.tw/index.jsp#&panel1-1" style="width:100px ;text-align:center;font-weight: 900;">宿舍服務中心</a>查詢相關資料。
+                        宿舍服務中心電話： 2905-5269</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans5(){
+                      var myTable = document.getElementById( "ans5" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns5" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns5(){
+                      var myTable = document.getElementById( "ans5" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns5" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第6題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans6()" style="font-weight: 600; border-radius:5px;">👉 哪裡可以找到有住屋資訊?<a data-toggle="collapse" data-parent="#accordion" href="#collapse6" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans6" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns6" onclick="hideAns6()" style="display:none">租屋資源可參閱<a class="translate" href="https://www.tmm.org.tw/contents/text?id=12" style="width:100px ;text-align:center;font-weight: 900;">崔媽媽基金會網站</a>（內含內政部版房屋租賃契約書範本、崔媽媽版看屋檢查表）。以下租屋資訊僅供參考，本校恕不負任何法律責任，亦不作任何保證</br>
+                                    ★ <a class="translate" href="https://house.nfu.edu.tw/FJU" style="width:100px ;text-align:center;font-weight: 900;">輔仁大學校外賃居網</a></br>
+                                    ★ <a class="translate" href="https://www.99star.com.tw/" style="width:100px ;text-align:center;font-weight: 900;">明日之星</a>：位於輔大側門，提供日租、月租和長期租房</br>
+                                    ★ <a class="translate" href="https://rent.tmm.org.tw/" style="width:100px ;text-align:center;font-weight: 900;">蟹居網</a></br>
+                        (參考至<a class="translate" href="http://isc.oie.fju.edu.tw/teachingServices.jsp?labelID=15" style="width:100px ;text-align:center;">http://isc.oie.fju.edu.tw/teachingServices.jsp?labelID=15</a>)</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans6(){
+                      var myTable = document.getElementById( "ans6" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns6" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns6(){
+                      var myTable = document.getElementById( "ans6" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns6" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第7題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans7()" style="font-weight: 600; border-radius:5px;">👉 我要如何申請輔大?<a data-toggle="collapse" data-parent="#accordion" href="#collapse7" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans7" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns7" onclick="hideAns7()" style="display:none">點選輔仁大學<a class="translate" href="https://exam.fju.edu.tw/admission" style="width:100px ;text-align:center;font-weight: 900;">招生資訊平台</a>，可透過轉學考、在職專班、特殊選材等方式進入本校，詳情請參考招生資訊平台之公告。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans7(){
+                      var myTable = document.getElementById( "ans7" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns7" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns7(){
+                      var myTable = document.getElementById( "ans7" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns7" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第8題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans8()" style="font-weight: 600; border-radius:5px;">👉 系上課表或其他系所的課程資訊哪裡可以找到?<a data-toggle="collapse" data-parent="#accordion" 
+                    href="#collapse8" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans8" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns8" onclick="hideAns8()" style="display:none">可至各系所的課程資訊查尋當學期課程表或至輔仁大學<a class="translate" href="http://www.course.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">選課資訊網</a>依您所屬系別年級，查詢您想了解的課程即可。如不知如何操作，可參閱選課資訊網的選課指南。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans8(){
+                      var myTable = document.getElementById( "ans8" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns8" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns8(){
+                      var myTable = document.getElementById( "ans8" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns8" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第9題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans9()" style="font-weight: 600; border-radius:5px;">👉 選課系統說明?<a data-toggle="collapse" data-parent="#accordion" href="#collapse9" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans9" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns9" onclick="hideAns9()" style="display:none">選課系統依照輔仁大學<a class="translate" href="http://www.course.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">選課資訊網</a>公告之選課須知選填</br>
+                         ★ <a class="translate" href="http://wishcourse.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">全人課程志願選填系統</a>:學士班學生選填通識課程/大二體育/大二英文志願
+                         *選填前請確認<a class="translate" href="http://140.136.251.56/gencourselist/" style="width:100px ;text-align:center;font-weight: 900;">各系所通識課程排除表</a></br>
+                          ★ <a class="translate" href="http://signcourse.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">選課系統</a>:選填院系必選及選修課程(必修課程系統自動帶入)</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans9(){
+                      var myTable = document.getElementById( "ans9" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns9" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns9(){
+                      var myTable = document.getElementById( "ans9" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns9" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第10題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans10()" style="font-weight: 600; border-radius:5px;">👉 輔仁大學Tronclass系統是什麼?<a data-toggle="collapse" data-parent="#accordion" href="#collapse10" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans10" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns10" onclick="hideAns10()" style="display:none">使用輔仁大學單一帳號 (LDAP) 登入，進入系統後第一個頁面為「我的主頁」，可協助您快速掌握所有課程的最新動態與進度，詳細系統操作方式可參考<a class="translate" href="https://support.tronclass.com/tw/question/login/" style="width:100px ;text-align:center;font-weight: 900;">Tronclass系統幫助中心</a>及<a class="translate" href="https://dba.asia.edu.tw/uploads/asset/data/613071bd905fc3e912000034/tronclass%E5%AD%B8%E7%94%9F%E7%89%88%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%A9%9F.pdf" style="width:100px ;text-align:center;font-weight: 900;">學生版使用說明手冊</a>。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans10(){
+                      var myTable = document.getElementById( "ans10" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns10" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns10(){
+                      var myTable = document.getElementById( "ans10" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns10" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第11題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans11()" style="font-weight: 600; border-radius:5px;">👉 學分計算問題?<a data-toggle="collapse" data-parent="#accordion" href="#collapse11" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans11" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns11" onclick="hideAns11()" style="display:none">可至輔仁大學<a class="translate" href="http://www.academic.fju.edu.tw/generalServices.jsp?labelID=37" style="width:100px ;text-align:center;font-weight: 900;">教務處</a>查詢畢業條件及學分抵免事宜，各系所也會訂定相關之修業規則。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans11(){
+                      var myTable = document.getElementById( "ans11" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns11" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns11(){
+                      var myTable = document.getElementById( "ans11" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns11" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第12題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans12()" style="font-weight: 600; border-radius:5px;">👉 有哪些國際交流的學習?<a data-toggle="collapse" data-parent="#accordion" href="#collapse12" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans12" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns12" onclick="hideAns12()" style="display:none">輔仁大學為實踐國際化綜合型大學的目標，於2008年成立國際教育處，後更名為<a href="https://www.oie.fju.edu.tw/#&panel1-1" style="width:100px ;text-align:center;font-weight: 900;">國際及兩岸教育處</a>，由本校基督宗教關係與連結、結合校內多元學術專長、積極拓展國際化各類交流活動，從姊妹校、學生交換、交流團、研討會，至交換教授、合作研究等，進而開啟與國際學術機構間的深度交流。為有效推動校園國際化，更陸續建立學術交流中心、華語文中心、輔仁大學歐洲聯盟中心、國際學生中心。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans12(){
+                      var myTable = document.getElementById( "ans12" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns12" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns12(){
+                      var myTable = document.getElementById( "ans12" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns12" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第13題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans13()" style="font-weight: 600; border-radius:5px;">👉 我要到哪裡繳交學費?<a data-toggle="collapse" data-parent="#accordion" href="#collapse13" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans13" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns13" onclick="hideAns13()" style="display:none">學雜費請至台新學雜費入口網列印繳費單繳費，帳號為您的學號，密碼請至輔仁大學-台新銀行學雜費入口網密碼查詢，其他就學貸款、優待減免等事宜可至<a href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp" style="width:100px ;text-align:center;font-weight: 900;">學雜分費專區</a>查詢。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans13(){
+                      var myTable = document.getElementById( "ans13" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns13" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns13(){
+                      var myTable = document.getElementById( "ans13" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns13" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第14題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans14()" style="font-weight: 600; border-radius:5px;">👉 哪裡可以找到獎助學金申請?<a data-toggle="collapse" data-parent="#accordion" href="#collapse14" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans14" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns14" onclick="hideAns14()" style="display:none">可至<a href="http://life.dsa.fju.edu.tw/scholarship.htm" style="width:100px ;text-align:center;font-weight: 900;">學生事務處生活輔導組</a>查詢校內/外各類獎助學金申請須知及應申辦事宜，各系所的網站上也會公告獎助學金申請方式。</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans14(){
+                      var myTable = document.getElementById( "ans14" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns14" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns14(){
+                      var myTable = document.getElementById( "ans14" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns14" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第15題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans15()" style="font-weight: 600; border-radius:5px;">👉 學校有哪些可以使用的資源?<a data-toggle="collapse" data-parent="#accordion" href="#collapse15" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans15" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns15" onclick="hideAns15()" style="display:none">★ <a class="translate" href="http://edu.cc.fju.edu.tw/main_control/06/login.php" style="width:100px ;text-align:center;font-weight: 900;">輔大校園共享軟體下載</a>(雲端服務軟體、線上課程等)</br>
+                        ★ <a class="translate" href="http://home.lib.fju.edu.tw/TC/node/136" style="width:100px ;text-align:center;font-weight: 900;">圖書館</a>(電子資源、借閱圖書等)</br>
+                        ★ <a class="translate" href="https://www.ext.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">推廣教育中心</a>(證照專班、學分班、推廣班等)</br>
+                        ★ <a class="translate" href="http://engnet.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">輔仁英語學院</a>(自學及數位課程等)</br>
+                        ★ <a class="translate" href="http://activity.dsa.fju.edu.tw/ActivityList.jsp" style="width:100px ;text-align:center;font-weight: 900;">輔大活動管理系統</a>(心靈修養、教育訓練、專題演講、專題研討等)</br>
+                        ★ <a class="translate" href="http://www.scc.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">學生輔導中心</a>(諮商服務、推廣活動、心理健康專區等)</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans15(){
+                      var myTable = document.getElementById( "ans15" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns15" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns15(){
+                      var myTable = document.getElementById( "ans15" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns15" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第16題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans16()" style="font-weight: 600; border-radius:5px;">👉 兵役相關問題<a data-toggle="collapse" data-parent="#accordion" href="#collapse16" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans16" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns16" onclick="hideAns16()" style="display:none">可至輔仁大學<a class="translate" href="http://smt.dsa.fju.edu.tw/index.jsp#&panel1-1" style="width:100px ;text-align:center;font-weight: 900;">軍訓室</a>查詢兵役相關資訊</br>
+                        ★ <a class="translate" href="http://smt.dsa.fju.edu.tw/aboutFju.jsp?labelID=1" style="width:100px ;text-align:center;font-weight: 900;">軍訓課程表</a></br>
+                        ★ <a class="translate" href="http://smt.dsa.fju.edu.tw/aboutFju.jsp?labelID=4" style="width:100px ;text-align:center;font-weight: 900;">申請免修軍訓SOP</a></br>
+                        ★ <a class="translate" href="http://smt.dsa.fju.edu.tw/aboutFju.jsp?labelID=3" style="width:100px ;text-align:center;font-weight: 900;">在校免修軍訓課程申請表</a></br></button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans16(){
+                      var myTable = document.getElementById( "ans16" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns16" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns16(){
+                      var myTable = document.getElementById( "ans16" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns16" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第17題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans17()" style="font-weight: 600; border-radius:5px;">👉 如何到輔大?<a data-toggle="collapse" data-parent="#accordion" href="#collapse17" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans17" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns17" onclick="hideAns17()" style="display:none">輔仁大學校址：臺北縣新莊市中正路510號</br>
+                        輔大位於新莊市中正路（一省道），後門緊臨泰山鄉中山路（二省道）， 中正路為新莊市交通要道，向西可至桃園，交通便利，除聯營公車外，還 有三重客運、指南客運、台北客運、台汽客運可達。</br>
+                        １．聯營公車：</br>
+                        &emsp;&emsp;２３５（正線）　（新莊民安站－－國父紀念館）</br>
+                        &emsp;&emsp;２３５（龍安線）（新莊民安站－－國父紀念館）</br>
+                        &emsp;&emsp;２９９（永春高中－－輔大）</br>
+                        &emsp;&emsp;６１５（丹鳳－－台北車站）</br>
+                        &emsp;&emsp;６１８（新莊站－－士林陽明戲院）</br>
+                        ２．三重客運：</br>
+                        &emsp;&emsp;５１３(台北車站－輔大)</br>
+                        &emsp;&emsp;６３５(台北－中興橋－迴龍)</br>
+                        &emsp;&emsp;６３６(迴龍－圓環)</br>
+                        &emsp;&emsp;６３７(台北－中興橋－泰山)</br>
+                        &emsp;&emsp;６３８(泰山－圓環)</br>
+                        &emsp;&emsp;八里－板橋</br>
+                        &emsp;&emsp;迴龍－板橋</br>
+                        ３．指南客運：</br>
+                        &emsp;&emsp;指１(指南宮－泰山)、指３(木柵－泰山)、指１０(樹林－淡海)</br>
+                        ４．台北客運：</br>
+                        &emsp;&emsp;９９(新莊民安站－板橋南雅站)</br>
+                        ５．台汽客運：</br>
+                        &emsp;&emsp;中崙－中壢、中崙－新竹、板橋－楊梅、基隆－中壢</br>
+                        6．本校可搭乘捷運新莊線至「輔大站」</br>
+                        (參考至<a class="translate" href="https://www.fju.edu.tw/aboutFju.jsp?labelID=9" style="width:100px ;text-align:center;">https://www.fju.edu.tw/aboutFju.jsp?labelID=9</a>)</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans17(){
+                      var myTable = document.getElementById( "ans17" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns17" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns17(){
+                      var myTable = document.getElementById( "ans17" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns17" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第18題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans18()" style="font-weight: 600; border-radius:5px;">👉 校園地圖?<a data-toggle="collapse" data-parent="#accordion" href="#collapse18" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans18" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns18" onclick="hideAns18()" style="display:none"><img src="picture/校園平面圖.jpg" style="width:70%; height:60%;"></br>
+                        <a class="translate" href="https://www.fju.edu.tw/aboutFju.jsp?labelID=7" style="width:100px ;text-align:center;font-weight: 900;">校園平面圖</a></button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans18(){
+                      var myTable = document.getElementById( "ans18" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns18" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns18(){
+                      var myTable = document.getElementById( "ans18" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns18" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+              </tbody>
+            </table>
+            <div id="barcon">
+              <script type="text/javascript" src="js/page.js"></script>
+            </div>
+            <img src="picture/小熊/新版吉祥物去背.gif" style="margin-left:30%; margin-top:3%; width:70%; height:70%;">
+        <script type="text/javascript" src="js/question.js"></script>
+    </div>
+
+    <!--底頁-->
+<footer>
+  <div class="container-footer">
+    <div class="item-left" >
+      <ul class="nav">
+        <li>📌 天主教輔仁大學</li>
+        <li>242062 新北市新莊區中正路510號</li>
+      </ul>
+    </div>
+
+    <div class="item-center">
+      <ul class="nav">
+        <li>📞(02) 2905 2000</li>
+        <li>✉ pro@mail.fju.edu.tw</li>
+      </ul>
+    </div>
+    
+    <div class="item-right">
+      <ul class="nav">
+        <a href="aboutUs.html"><li>製作: 蔡方寧 吳家欣 何端容 劉芷伃 楊翊婕 陳彥彬 洪于雅 邱琦茵 同學</li>
+        <li>指導: 大數據跨領域微學程召集人 杜逸寧 副教授</li></a>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+  <!-- 回到頂端按鈕 -->
+  <button type="button" id="BackTop" class="toTop-arrow"><p style="position: relative;bottom: -20%; font-weight: 700; color:#ffffff;">TOP</p></button>
+  
+  <!-- 回到頂端按鈕相關js程式碼 -->
+  <script>
+    $(function(){
+      // 當點擊這個按鈕時，自動捲動到網頁最上方，0.333秒完成捲動的動作
+      $('#BackTop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, 333);
+      });
+      // 當瀏覽器的捲軸在移動時
+      $(window).scroll(function() {
+        // 判斷網頁可視範圍的最上方距離網頁頂端是否超過 300 px
+        if ( $(this).scrollTop() > 300 ){
+          // 超過 300 px，以0.222秒的特效顯示按鈕
+          $('#BackTop').fadeIn(222);
+        } else {
+          // 未超過 300 px，先停止正在進行的特效，接著以 0.222 秒的特效隱藏按鈕
+          $('#BackTop').stop().fadeOut(222);
+        }
+      }).scroll();
+    });
+  </script>
+</body>
+</html>

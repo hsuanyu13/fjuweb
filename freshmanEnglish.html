@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/freshman-eng.css">
+  <link rel="icon" type="image/x-icon" href="picture/輔大校徽/0純校徽.gif">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+         crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/freshman.js"></script>
+  <script type="text/javascript" src="js/month.js"></script>
+  <title>FreshmanEnglish</title>
+ </head>
+
+ <body background="picture/新生專區底圖e4素圖.png" onload="morenews();">
+  <!--導覽列-->
+  <header class="main-header"style="position: absolute;">
+    <div class="container-header">
+      <img src="picture/輔大校徽/3.gif" style="margin-top:4px; margin-left:15px;width:200px; height:50px; float:left">
+      <nav>
+        <ul class="main-menu">
+          <li class="main-menu-thing">
+            <a id="dream" href="http://140.136.202.95/fjudreamnetwork/head.php" style="text-align:center;font-weight: 900;">輔大高中生專屬落點分析築夢網</a>
+          </li>
+          <li class="main-menu-thing">
+            <a id="office" href="http://www.academic.fju.edu.tw/#&panel1-1" style="text-align:center;font-weight: 900;">Office of Academic Affairs</a>
+          </li>
+           <li class="main-menu-thing">
+            <a id="QandA" href="questionEnglish.html" style="text-align:center;font-weight: 900;"> Q & A</a>
+          </li>
+          </li>
+          <li class="main-menu-thing">
+            <a id= "chinese" href="freshman.html" style="text-align:center;font-weight: 900">中文版</a>
+          </li>
+          <li class="main-menu-thing">
+           <a id ="homepage" href="mainEnglish.html" style="text-align:center;font-weight: 900;">Back to Home</a>
+          </li>
+          <!--瀏覽次數-->
+          <li style="margin-top:20px;width:120px ;color: #5072BD;text-align:center;font-weight: 900;white-space:nowrap;">View 
+            <script type="text/javascript" language="javascript" src="php/counter.php"></script>
+            <!--counter.php為計數器 每重新整理一次及加一次瀏覽次數-->
+          </li>
+        </ul> 
+      </nav>
+    </div>
+    <!--漢堡選單-->
+<div class="mobile-menu">
+  <div class="count-menu">
+    <li>View 
+        <script type="text/javascript" language="javascript" src="php/counter.php"></script>
+        <!--counter.php為計數器 每重新整理一次及加一次瀏覽次數-->
+    </li>
+  </div>
+
+  <input id="toggle" type="checkbox"></input>
+  <label for="toggle" class="hamburger">
+    <div class="top-bun"></div>
+    <div class="meat"></div>
+    <div class="bottom-bun"></div>
+  </label>
+
+  <div class="hb">
+    <div class="hb-wrapper">
+      <div class="hb-thing">
+        <div class="all">
+            <a href="http://140.136.202.95/fjudreamnetwork/head.php" style="width:250px ;text-align:center;font-weight: 900;">輔大高中生專屬落點分析築夢網</a>
+        </div>
+      </div>
+
+      <div class="hb-thing">
+        <div class="all">
+          <a href="http://www.academic.fju.edu.tw/#&panel1-1" style="width:250px ;text-align:center;font-weight: 900;">Office of Academic Affairs</a>
+        </div>
+      </div>
+
+      <div class="hb-thing">
+        <div class="all">
+          <a href="questionEnglish.html" style="width:250px ;text-align:center;font-weight: 900;"> Q & A</a>
+        </div>
+      </div>
+
+      <div class="hb-thing">
+        <!--<li class="hb-thing">-->
+          <div class="all">
+            <a href="freshman.html" style="width:250px ;text-align:center;font-weight: 900">中文版</a>
+          </div>
+      </div>        
+
+      <div class="hb-thing">
+        <!--<li class="hb-thing">-->
+          <div class="all">
+            <a href="mainEnglish.html" style="width:250px ;text-align:center;font-weight: 900;">Back to Home</a>
+          </div>
+      </div>
+    </div>
+  </div>
+</div> 
+  </header>
+  <!--上方虛線1-->
+  <div class="dottedline1"><img src="picture/上方虛線1.png"></div>
+  <!--上方虛線2-->
+  <div class="dottedline2"><img src="picture/上方虛線2.png"></div>
+
+
+  <!--行事曆-->
+  <div class="newsandcalendar" >
+  <div class="calendardiv" >
+  <h1 class="calendartitle-1" >Calendar</h1>
+  <div class="calendar" style="margin-top: 30px">
+    <iframe src="https://calendar.google.com/calendar/embed?src=fjcu207208%40gmail.com&ctz=Asia%2FTaipei&amp;showTitle=0" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+  </div>
+
+
+  <!--最新公告-->
+  <script type="text/javascript" src="js/freshman.js"></script>
+  <div class="newsdiv">
+    <h1 class="newstitle" > Latest News</h1>
+      <div class="mbtn" style="margin-bottom: 0%;margin-top: 1.5%;">
+        <!--<button onclick="window.location.href='#'">x月</button><br>
+        <button onclick="window.location.href='#'">o月</button><br>
+        <button onclick="window.location.href='#'">$月</button>-->
+
+        <!--篩選月份-->
+        <!--4月消息-->
+        <button class="btn4" id="btn-modal-4" style="color:white; ">4月</button>
+        <div class="overlay4" id="overlay-4"></div>
+        <div class="modal4" id="modal-4" style="margin-top: 0.5%;background-color:rgba(179, 197, 237, 1);">
+        <button class="modal-close-btn4" id="close-btn-4">
+        <i class="fa fa-times" style="color:#486196;">close</i></button> <!--右上叉叉-->
+        <c class="smtitle1" style="word-wrap:break-word;">
+          <h3 style="color:#486196;">4月消息</h3>
+                <table class="order-table-4" id="news" style="width:90%; left:0%;text-align: left;">
+                  <!--<tr id="news1" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news2" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news3" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news4" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news5" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                    <tr id="news6" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news7" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news8" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news9" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news10"class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>-->
+                </table>
+
+          <!--頁數按鈕初始3頁，新增資料筆數會自行增加頁數-->
+          <div class="page_btn_4" >
+            <!--<span>1</span>
+            <span>2</span>
+            <span>3</span>-->
+          </div>
+          <script>
+            $.getJSON("./php/month4.php",function(data){
+              console.log(data);
+
+              var ary=data;
+
+              var alldata=[]; 
+              for(let i=0; i<ary[0].length; i++){  //放資料title+日期的陣列
+                  alldata[i]=ary[0][i].toString()+"    "+ary[1][i].toString();
+                  //ary.push((i+1).toString());
+              }
+
+              var link=[];
+              for(let i=0; i<ary[2].length; i++){  //放資料連結的陣列
+                  link[i]=ary[2][i];
+              }
+
+              //需要頁數、按鈕數量
+              function showBtn(){   //放頁數按鈕
+                var page=document.querySelector('.page_btn_4');  
+                var btnNum=Math.ceil(alldata.length/10);  //需要的按鈕數(頁數) 每個按鈕放10筆資料
+                // console.log(btnNum);
+
+                var str='';     //按鈕數量(總共幾頁)
+                for (var i=0;i<btnNum;i++){
+                    str+=`<span>${i+1}</span>` //根據資料總筆數計算需要幾個按鈕(36/10=3.6~4)
+                };
+                page.innerHTML=str; //新增至總頁數
+
+                var btn=document.querySelectorAll('.page_btn_4 span'); //選取每顆按鈕
+                for (var i=0;i<btn.length;i++){
+                    //當按鈕有click動作，即啟動changePage這個function
+                    btn[i].addEventListener('click', changePage.bind(this,(i+1),alldata,link));
+                };   
+              };
+              changePage(1,alldata,link); //預設初始出現第一頁
+              showBtn();
+
+              function changePage(page,data,link){ //page(頁數按鈕)、data(把ary裡的資料帶入function)
+
+                  var items = 10;   //每頁出現 10 筆資料
+                  var pageIndexStart = (page-1)*items;  //每頁起始值 1 11 21
+                  var pageIndexEnd = page * items;  //每頁結束值 10 20 30
+                  var str=''; //塞資料用
+                  for (var i=pageIndexStart;i<pageIndexEnd;i++){
+                      if (i>=data.length){break;}
+                      str+=`<li>
+                              <a class="box" id="news${i+1}" style="text-decoration:none;width:500px;height:16px;color:#5877BB" href="${link[i]}">${data[i]}
+                              </a>
+                            </li><br>` 
+                      // 在資料title+日期加日超連結
+                  };
+                  document.querySelector('.order-table-4').innerHTML=str;
+              };
+              });
+          </script>
+          </c>
+        </div>
+        <script>
+          document.getElementById('btn-modal-4').addEventListener('click', function() {
+            document.getElementById('overlay-4').classList.add('is-visible4');
+            document.getElementById('modal-4').classList.add('is-visible4');
+          });
+          document.getElementById('close-btn-4').addEventListener('click', function() {
+            document.getElementById('overlay-4').classList.remove('is-visible4');
+            document.getElementById('modal-4').classList.remove('is-visible4');
+          });
+          document.getElementById('overlay-4').addEventListener('click', function() {
+            document.getElementById('overlay-4').classList.remove('is-visible4');
+            document.getElementById('modal-4').classList.remove('is-visible4');
+          }); 
+        </script>
+
+        <!--5月消息-->
+        <button class="btn5" id="btn-modal-5" style="color:white;">5月</button>
+        <div class="overlay5" id="overlay-5"></div>
+        <div class="modal5" id="modal-5" style="margin-top: 0.5%;background-color:rgba(179, 197, 237, 1);">
+        <button class="modal-close-btn5" id="close-btn-5" >
+        <i class="fa fa-times" style="color:#486196;">close</i></button> <!--右上叉叉-->
+        <c class="smtitle1" style="word-wrap:break-word;">
+          <h3 style="color:#486196;">5月消息</h3>
+                <table class="order-table-5" id="news" style="width:90%; left:0%;text-align:left;">
+                  <!--<tr id="news1" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news2" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news3" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news4" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news5" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                    <tr id="news6" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news7" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news8" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news9" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news10"class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>-->
+                </table>
+
+          <!--頁數按鈕初始3頁，新增資料筆數會自行增加頁數-->
+          <div class="page_btn_5" >
+            <!--<span>1</span>
+            <span>2</span>
+            <span>3</span>-->
+          </div>
+          <script>
+            $.getJSON("./php/month5.php",function(data){
+              console.log(data);
+
+              var ary=data;
+
+              var alldata=[]; 
+              for(let i=0; i<ary[0].length; i++){  //放資料title+日期的陣列
+                  alldata[i]=ary[0][i].toString()+"    "+ary[1][i].toString();
+                  //ary.push((i+1).toString());
+              }
+
+              var link=[];
+              for(let i=0; i<ary[2].length; i++){  //放資料連結的陣列
+                  link[i]=ary[2][i];
+              }
+
+              //需要頁數、按鈕數量
+              function showBtn(){   //放頁數按鈕
+                var page=document.querySelector('.page_btn_5');  
+                var btnNum=Math.ceil(alldata.length/10);  //需要的按鈕數(頁數) 每個按鈕放10筆資料
+                // console.log(btnNum);
+
+                var str='';     //按鈕數量(總共幾頁)
+                for (var i=0;i<btnNum;i++){
+                    str+=`<span>${i+1}</span>` //根據資料總筆數計算需要幾個按鈕(36/10=3.6~4)
+                };
+                page.innerHTML=str; //新增至總頁數
+
+                var btn=document.querySelectorAll('.page_btn_5 span'); //選取每顆按鈕
+                for (var i=0;i<btn.length;i++){
+                    //當按鈕有click動作，即啟動changePage這個function
+                    btn[i].addEventListener('click', changePage.bind(this,(i+1),alldata,link));
+                };   
+              };
+              changePage(1,alldata,link); //預設初始出現第一頁
+              showBtn();
+
+              function changePage(page,data,link){ //page(頁數按鈕)、data(把ary裡的資料帶入function)
+                var items = 10;   //每頁出現 10 筆資料
+                var pageIndexStart = (page-1)*items;  //每頁起始值 1 11 21
+                var pageIndexEnd = page * items;  //每頁結束值 10 20 30
+                var str=''; //塞資料用
+                for (var i=pageIndexStart;i<pageIndexEnd;i++){
+                    if (i>=data.length){break;}
+                    str+=`<li>
+                            <a class="box" id="news${i+1}" style="text-decoration:none;width:500px;height:16px;color:#5877BB" href="${link[i]}">${data[i]}
+                            </a>
+                          </li><br>` 
+                    // 在資料title+日期加日超連結
+                };
+                document.querySelector('.order-table-5').innerHTML=str;
+              };
+              });
+          </script>
+          </c>
+        </div>
+        <script>
+          document.getElementById('btn-modal-5').addEventListener('click', function() {
+            document.getElementById('overlay-5').classList.add('is-visible5');
+            document.getElementById('modal-5').classList.add('is-visible5');
+          });
+          document.getElementById('close-btn-5').addEventListener('click', function() {
+            document.getElementById('overlay-5').classList.remove('is-visible5');
+            document.getElementById('modal-5').classList.remove('is-visible5');
+          });
+          document.getElementById('overlay-5').addEventListener('click', function() {
+            document.getElementById('overlay-5').classList.remove('is-visible5');
+            document.getElementById('modal-5').classList.remove('is-visible5');
+          }); 
+        </script>
+
+        <!--6月消息-->
+        <button class="btn6" id="btn-modal-6" style="color:white;">6月</button>
+        <div class="overlay6" id="overlay-6"></div>
+        <div class="modal6" id="modal-6" style="margin-top: 0.5%;background-color:rgba(179, 197, 237, 1);">
+        <button class="modal-close-btn6" id="close-btn-6" >
+        <i class="fa fa-times" style="color:#486196;">close</i></button> <!--右上叉叉-->
+        <c class="smtitle1" style="word-wrap:break-word;">
+          <h3 style="color:#486196;">6月消息</h3>
+                <table class="order-table-6" id="news" style="width:90%; left:0%;text-align:left;">
+                  <!--<tr id="news1" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news2" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news3" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news4" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news5" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                    <tr id="news6" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news7" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news8" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news9" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news10"class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>-->
+                </table>
+
+          <!--頁數按鈕初始3頁，新增資料筆數會自行增加頁數-->
+          <div class="page_btn_6" >
+            <!--<span>1</span>
+            <span>2</span>
+            <span>3</span>-->
+          </div>
+          <script>
+            $.getJSON("./php/month6.php",function(data){
+              console.log(data);
+
+              var ary=data;
+
+              var alldata=[]; 
+              for(let i=0; i<ary[0].length; i++){  //放資料title+日期的陣列
+                  alldata[i]=ary[0][i].toString()+"    "+ary[1][i].toString();
+                  //ary.push((i+1).toString());
+              }
+
+              var link=[];
+              for(let i=0; i<ary[2].length; i++){  //放資料連結的陣列
+                  link[i]=ary[2][i];
+              }
+
+              //需要頁數、按鈕數量
+              function showBtn(){   //放頁數按鈕
+                var page=document.querySelector('.page_btn_6');  
+                var btnNum=Math.ceil(alldata.length/10);  //需要的按鈕數(頁數) 每個按鈕放10筆資料
+                // console.log(btnNum);
+
+                var str='';     //按鈕數量(總共幾頁)
+                for (var i=0;i<btnNum;i++){
+                    str+=`<span>${i+1}</span>` //根據資料總筆數計算需要幾個按鈕(36/10=3.6~4)
+                };
+                page.innerHTML=str; //新增至總頁數
+
+                var btn=document.querySelectorAll('.page_btn_6 span'); //選取每顆按鈕
+                for (var i=0;i<btn.length;i++){
+                    //當按鈕有click動作，即啟動changePage這個function
+                    btn[i].addEventListener('click', changePage.bind(this,(i+1),alldata,link));
+                };   
+              };
+              changePage(1,alldata,link); //預設初始出現第一頁
+              showBtn();
+
+              function changePage(page,data,link){ //page(頁數按鈕)、data(把ary裡的資料帶入function)
+                var items = 10;   //每頁出現 10 筆資料
+                var pageIndexStart = (page-1)*items;  //每頁起始值 1 11 21
+                var pageIndexEnd = page * items;  //每頁結束值 10 20 30
+                var str=''; //塞資料用
+                for (var i=pageIndexStart;i<pageIndexEnd;i++){
+                    if (i>=data.length){break;}
+                    str+=`<li>
+                            <a class="box" id="news${i+1}" style="text-decoration:none;width:500px;height:16px;color:#5877BB" href="${link[i]}">${data[i]}
+                            </a>
+                          </li><br>` 
+                    // 在資料title+日期加日超連結
+                };
+                document.querySelector('.order-table-6').innerHTML=str;
+              };
+              });
+          </script>
+          </c>
+        </div>
+        <script>
+          document.getElementById('btn-modal-6').addEventListener('click', function() {
+            document.getElementById('overlay-6').classList.add('is-visible6');
+            document.getElementById('modal-6').classList.add('is-visible6');
+          });
+          document.getElementById('close-btn-6').addEventListener('click', function() {
+            document.getElementById('overlay-6').classList.remove('is-visible6');
+            document.getElementById('modal-6').classList.remove('is-visible6');
+          });
+          document.getElementById('overlay-6').addEventListener('click', function() {
+            document.getElementById('overlay-6').classList.remove('is-visible6');
+            document.getElementById('modal-6').classList.remove('is-visible6');
+          }); 
+        </script>
+      </div>
+
+      <div class="morenews">
+        <div>
+          <table id="morenews">
+          <!-- #B3C5ED = rgba(179, 197, 237) -->
+          　<tr class="morenewstext" id="morenews1"></tr>
+          　<tr class="morenewstext" id="morenews2"></tr>
+          　<tr class="morenewstext" id="morenews3"></tr>
+          </table>
+        </div>
+        <button class="btn" id="btn-modal-1" style="opacity: 0.5;">More news</button>
+        <div class="overlay" id="overlay-1" style=""></div>
+        <div class="modal" id="modal-1" style="margin-top: 0.5%;background-color:rgba(179, 197, 237, 1);">
+        <button class="modal-close-btn" id="close-btn-1" >
+        <i class="fa fa-times">close</i></button> <!--右上叉叉-->
+        <c class="smtitle1" style="word-wrap:break-word;">
+          <img src="picture/更多消息.png" style="width:30%;display:block; margin:auto;">
+                <table class="order-table" id="news" style="width:90%; left:0%;text-align: left;">
+                  <!--<tr id="news1" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news2" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news3" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news4" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news5" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                    <tr id="news6" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news7" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news8" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news9" class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>
+                  　<tr id="news10"class="box" style="width:500px;height:20px;background-color:#ffffff;"></tr>-->
+                </table>
+
+          <!--頁數按鈕初始3頁，新增資料筆數會自行增加頁數-->
+          <div class="page_btn" >
+            <!--<span>1</span>
+            <span>2</span>
+            <span>3</span>-->
+          </div>
+          <script>
+            $.getJSON("./php/newsAndDate.php",function(data){
+              console.log(data);
+
+              var ary=data;
+
+              var alldata=[]; 
+              for(let i=0; i<ary[0].length; i++){  //放資料title+日期的陣列
+                  alldata[i]=ary[0][i].toString()+"    "+ary[1][i].toString();
+                  //ary.push((i+1).toString());
+              }
+
+              var link=[];
+              for(let i=0; i<ary[2].length; i++){  //放資料連結的陣列
+                  link[i]=ary[2][i];
+              }
+
+              //需要頁數、按鈕數量
+              function showBtn(){   //放頁數按鈕
+                var page=document.querySelector('.page_btn');  
+                var btnNum=Math.ceil(alldata.length/10);  //需要的按鈕數(頁數) 每個按鈕放10筆資料
+                // console.log(btnNum);
+
+                var str='';     //按鈕數量(總共幾頁)
+                for (var i=0;i<btnNum;i++){
+                    str+=`<span>${i+1}</span>` //根據資料總筆數計算需要幾個按鈕(36/10=3.6~4)
+                };
+                page.innerHTML=str; //新增至總頁數
+
+                var btn=document.querySelectorAll('.page_btn span'); //選取每顆按鈕
+                for (var i=0;i<btn.length;i++){
+                    //當按鈕有click動作，即啟動changePage這個function
+                    btn[i].addEventListener('click', changePage.bind(this,(i+1),alldata,link));
+                };   
+              };
+              changePage(1,alldata,link); //預設初始出現第一頁
+              showBtn();
+
+              function changePage(page,data,link){ //page(頁數按鈕)、data(把ary裡的資料帶入function)
+                  var items = 10;   //每頁出現 10 筆資料
+                  var pageIndexStart = (page-1)*items;  //每頁起始值 1 11 21
+                  var pageIndexEnd = page * items;  //每頁結束值 10 20 30
+                  var str=''; //塞資料用
+                  for (var i=pageIndexStart;i<pageIndexEnd;i++){
+                    if (i>=data.length){break;}
+                    str+=`<li>
+                            <a class="box" id="news${i+1}" style="text-decoration:none;width:500px;height:16px;color:#5877BB" href="${link[i]}">${data[i]}
+                            </a>
+                          </li><br>` 
+                    // 在資料title+日期加日超連結
+                };
+                  document.querySelector('.order-table').innerHTML=str;
+              };
+              });
+          </script>
+          </c>
+        </div>
+        <script>
+          document.getElementById('btn-modal-1').addEventListener('click', function() {
+            document.getElementById('overlay-1').classList.add('is-visible');
+            document.getElementById('modal-1').classList.add('is-visible');
+          });
+          document.getElementById('close-btn-1').addEventListener('click', function() {
+            document.getElementById('overlay-1').classList.remove('is-visible');
+            document.getElementById('modal-1').classList.remove('is-visible');
+          });
+          document.getElementById('overlay-1').addEventListener('click', function() {
+            document.getElementById('overlay-1').classList.remove('is-visible');
+            document.getElementById('modal-1').classList.remove('is-visible');
+          }); 
+        </script>
+  </div><!--最新消息結束-->
+  </div>
+      <!--更多消息-->
+      
+              <!--<tbody>
+                <tr>
+                  <td style="width: 80px;">2023-02-27</td>
+                  <td><a href="http://140.136.202.95/fjudreamnetwork/head.php" style="text-decoration: none;">輔大築夢資訊網-輔大專屬高中生落點分析預測系統</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2023-02-24</td>
+                  <td><a href="https://exam.fju.edu.tw/admission/86" style="text-decoration: none; ">輔仁大學112學年度申請入學備審資料準備指引</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2023-02-15</td>
+                  <td><a href="https://exam.fju.edu.tw/admission/101" style="text-decoration: none;">112學年度運動成績優良學生單獨招生術科測驗細則</td>
+                </tr>
+              </tbody>-->
+
+
+      <!--<div class="fresh_morenews" >
+        <a class="button" href="#popup1">讀取更多...</a>
+      </div>
+      <div id="popup1" class="overlay">
+        <div class="popup">
+          <h2>更多消息</h2>
+            <a class="close" href="#">&times;</a>
+              <div class="content">
+              <table>
+                <tbody>
+                <tr>
+                  <td style="width: 80px;">2023-02-03</td>
+                  <td><a href="https://exam.fju.edu.tw/admission/99" style="text-decoration: none;">「國際創業與經營管理碩士在職專班」112學年度線上招生說明會歡迎報名參加</a></td>
+                  </tr>
+                <tr>
+                  <td>2023-01-17</td>
+                  <td><a href="https://exam.fju.edu.tw/admission/89/announcement" style="text-decoration: none;">輔仁大學111學年度(日間部)寒假轉學生1階段第1梯次遞補名單</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2023-01-17</td>
+                  <td><a href="https://exam.fju.edu.tw/admission/89/announcement" style="text-decoration: none;">輔仁大學111學年度(日間部)寒假轉學生1階段第1梯次遞補名單</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2023-01-17</td>
+                  <td><a href="https://exam.fju.edu.tw/admission/89/announcement" style="text-decoration: none;">輔仁大學111學年度(日間部)寒假轉學生1階段第1梯次遞補名單</a>
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+  </div>
+
+ 
+ <!--新生懶人包-->
+<h1 class="quicktitle-1" style=" text-align: center;color: #5877BB;"><img src="picture/火車頭.png"  style="width: 70px ; height: 60px; margin-right: 20px; " >Lazy Guide</h1>
+    <div class="lazybag" style="margin-top: 30px; margin-bottom: 40px; ">
+      <div id="choicetable" >
+        <div class="group1 ">
+          <div class="theform1" >
+            <p style="text-align:center; ">Freshman</p><br><br>
+            <a style="text-align:center;" href="http://www.fju.edu.tw/aboutFju.jsp?labelID=7">Campus Map</a><br>
+            <a style="text-align:center;" href="http://www.fju.edu.tw/aboutFju.jsp?labelID=9">Location and Traffic Information</a><br>
+            <a style="text-align:center;" href="http://activity.fju.edu.tw/administration.jsp?labelID=36">Student Club</a><br>
+            <a style="text-align:center;" href="http://activity.fju.edu.tw/administration.jsp?labelID=35">Student Association</a><br>
+            <a style="text-align:center;" href="https://elearn2.fju.edu.tw/">Troncless System</a><br><br>
+          </div>
+          <img class="rail1"src="picture/橫鐵軌.png">
+          <img class="trafficlights"src="picture/紅綠燈.png">
+          <!--
+          <div class="theform1" style="cursor: pointer;" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">
+            <p style="text-align:center;"><br>新生入學</p>
+            <p style="text-align:center;">新生入學</p>
+          </div>
+        -->
+          <div class="theform4">
+            <p style="text-align:center; " href="#">Subsidy and Scholarship</p><br><br>
+            <a style="text-align:center;" href="http://life.dsa.fju.edu.tw/">Office of Student Affairs</a><br>
+            <a style="text-align:center;" href="http://life.dsa.fju.edu.tw/loan.html">Student Loan</a><br>
+            <a style="text-align:center;" href="http://life.dsa.fju.edu.tw/fee.html">Fee Exemption</a><br>
+            <a style="text-align:center;" href="http://life.dsa.fju.edu.tw/help.htm">Emergency Relief Grant</a>
+            <!--
+          <div class="theform4" style="cursor: pointer;" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">
+            <p style="text-align:center;"><br>獎助學金</p>
+          </div>
+          -->
+          </div>
+         <img class="rail2" src="picture/橫鐵軌.png" >
+        </div>
+        <div class="group2">
+          <div class="theform2">
+            <p style="text-align:center;  " href="#">Courses and Academics</p><br><br>
+            <a style="text-align:center;" href="http://www.course.fju.edu.tw/">Course Registration Website</a><br>
+            <a style="text-align:center;" href="http://estu.fju.edu.tw/fjucourse/ava_form.asp">Course Information Search</a><br>
+            <a style="text-align:center;" href="http://signcourse.fju.edu.tw/">Course Selection System</a><br>
+            <a style="text-align:center;" href="http://www.hec.fju.edu.tw/">Holistic Education Center</a><br>
+            <a style="text-align:center;" href="http://wishcourse.fju.edu.tw/">HEC Open Course Registration Slip</a>
+          </div>
+          <img class="rail3" src="picture/橫鐵軌.png">
+          <img class="rail4" src="picture/斜鐵軌.png">
+          <img class="signs" src="picture/行人號誌.png">
+          <!--
+          <div class="theform2" style="cursor: pointer;" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">
+            <p style="text-align:center;"><br>選課</p>
+          </div>
+          -->
+          <div class="theform5">
+            <p style="text-align:center;  " href="#">Student Affairs</p><br><br>
+            <a style="text-align:center;" href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp">Tuition and Fees</a><br>
+            <a style="text-align:center;" href="https://portal.fju.edu.tw/student/">Student Portal</a><br>
+            <a style="text-align:center;" href="http://www.secretariat.fju.edu.tw/article.jsp?articleID=8">Calendar</a><br>
+            <a style="text-align:center;" href="http://activity.dsa.fju.edu.tw/ActivityList.jsp">Extracurricular Activity Management System</a>
+          </div>
+          <!--
+          <div class="theform5" style="cursor: pointer;" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">
+            <p style="text-align:center;"><br>學務須知</p>
+          </div>
+           -->  
+        </div>
+        <div class="group3"> 
+          <div class="theform3">
+            <p style="text-align:center;  " href="#">Dormitory</p><br><br>
+            <a style="text-align:center;" href="http://www.dsc.fju.edu.tw/">Dormitory service center</a><br>
+          </div><!--
+          <div class="theform3" style="cursor: pointer;" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">
+            <p style="text-align:center;"><br>宿舍</p>
+          </div>
+          -->
+          <div class="theform6">
+            <p style="text-align:center;  " href="#">Others</p><br><br>
+            <a style="text-align:center;" href="http://home.lib.fju.edu.tw/TC/node/136">Library</a><br>
+            <a style="text-align:center;" href="http://engnet.fju.edu.tw/">EngNET</a><br>
+            <a style="text-align:center;" href="http://edu.cc.fju.edu.tw/main_control/06/login.php">Software Download</a><br>
+            <a style="text-align:center;" href="https://www.fjuclinic.com/">Fu Jen University Clinic</a><br>
+            <a style="text-align:center;" href="http://www.hospital.fju.edu.tw/">Fu Jen Catholic University Hospital</a>
+          </div>
+
+          <!--
+          <div class="theform6" style="cursor: pointer;" onclick="window.open(' http://tw.yahoo.com ', 'Yahoo', config='height=500,width=500');">
+            <p style="text-align:center;"><br>其他平台</p>
+          </div>
+          -->
+          
+        </div> 
+    </div>
+  </div>
+
+
+   <!--新生的話-->
+    <div class="sayings">
+    <h1 class="talkstitle">A word of advice for you all</h1>
+      <div class="saying" style="position: relative;">
+        <img src="picture/羽毛.png" ><img >
+          <p style="color:#5877BB">Dear freshmen,</br>
+         Congratulations to everyone who is about to graduate from high school. First of all, I welcome you to enter the warm, friendly and harmonious family of Fu Jen Catholic University. I think this is an entirely correct choice.  Fu Jen Catholic University is pleased to have the honor of spending the best chapter of  life with you.
+         I want to encourage you, “Dream what you want to dream; go where you want to go; be what you want to be, because you have only one life and one chance to do all the things you want to do."
+         I look forward to seeing you.</p>
+         <p style="color:#5877BB;float: right;right: 0; position: absolute;margin-top: 210px;"></br></p>
+      </div>
+    </div>
+      
+  <!--底頁-->
+   <footer>
+   <div class="container-footer" >
+    <div class="contactus" >
+         <ul class="nav">
+           <li class="item-recruit"><a>Office of Academic Affairs</a></li>
+           <li class="item-information"><a>TEL:(02)2905-2224</a></li>
+           <li class="item-information"><a>E-mail:adm@mail.fju.edu.tw</a></li>
+           <li class="item-information"><a>Fax:(02)2904-9088</a></li>
+           <li class="item-information"><a href="https://goo.gl/maps/TcC7x5Gqm2eptNMc7">Address: No.510, Zhongzheng Rd.,</a></li>
+           <li class="item-information"><a href="https://goo.gl/maps/TcC7x5Gqm2eptNMc7">Xinzhuang Dist.,New Taipei City 242, Taiwan, ROC</a></li>
+         </ul>
+        </div>
+        <div class="logo" >
+          <img src="picture/自製校徽(new).png"  alt="logo" title="logo">
+        </div>
+        <div class="name" >
+          <ul class="nav">
+            <li class="nametext"><a href="aboutUs.html">製作: 蔡方寧 吳家欣 何端容 劉芷伃 楊翊婕 陳彥彬 洪于雅 邱琦茵 同學</a></li>
+            <li class="nametext"><a href="aboutUs.html">指導: 大數據跨領域微學程召集人 杜逸寧 副教授</a></li>
+          </ul>
+        </div>
+    </div>
+  </footer>
+ </body>
+</html>

@@ -1,0 +1,841 @@
+ /*置頂與DIV間縫隙去除*/
+ * {
+  margin:0;
+  padding:0;
+}
+
+body {
+  /*主背景顏色*/
+  background-color: #E1E5F4; 
+  background-size: cover;
+
+}
+
+header{
+  position: relative;
+  width: 100%;
+  /*放置最頂層 position: fixed z-index: 1;*/
+  /*z-index: 1;*/
+}
+header a {
+  display: block;
+  font-size: 18px;
+  /*去除超連結底線*/
+  text-decoration: none;
+  color: #2B528D;
+}
+
+
+.main-header {
+  /*導覽列寬度*/
+  /*width: 100%*/
+  /*導覽列顏色更換*/
+  margin: 0 auto;
+  background-color:#E4E6F5;
+  /*z-index: 99999; */
+}
+
+.container-header {
+  /*導覽列功能排版*/
+  width: 100%;
+  height: 80px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.main-menu {
+  display: flex;
+}
+
+
+/*導覽列*/
+/*漸層填滿*/
+.main-menu li {
+  position: relative;
+  /*除去黑點用*/
+  list-style-type: none; 
+}
+
+.main-menu li a {
+  /*導覽列功能間隔*/
+  padding: 0 10px;
+  /*導覽列高度調整*/
+  line-height: 60px;
+  /*color: #0b5394;*/
+  text-decoration: none;
+}
+
+
+
+/*常見問題圖牆*/
+.wall{
+  width: 100%;
+  height:80%;
+  background-color: #B3C5ED;
+  /*box水平垂直置中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+/*圖牆盒設置*/
+.wall .box {
+  width: 100%;
+  height: 200px;
+  /*盒子置中*/
+  position: relative;
+  margin: 0 auto;
+  background-color: transparent;
+  /*文字水平垂直置中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*圖牆字體*/
+.box p{
+  font-size: 100px;
+  font-weight: 1000;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #6B6B6B;
+}
+
+
+
+/*相關連結(左)*/
+.left-connect{
+  /*與圖牆的邊界*/
+  padding-top: 55px;
+  width: 35%;
+  float: left;
+  padding-bottom: 65px;
+}
+
+/*相關連結區塊設置*/
+.left-connect ul{
+  width: 50%;
+  height: 100%;
+  background-color: #B3C5ED;
+}
+
+/*相關連結標題*/
+.left-connect p{
+  font-size: 26px;
+  font-weight: 700;
+  
+  /*字體間距*/
+  letter-spacing: 10px;
+  color:  #2C5597;
+  /*調整位置*/
+  position: relative;
+  padding-left: 5%;
+  top: 10px;
+
+}
+
+/*相關連結內容欄*/
+.left-connect li a{
+  font-size: 16px;
+  position: relative;
+  padding-left: 40px;
+  /*行距*/
+  line-height: 2.5;
+  color:  #2C5597;
+  font-weight: 900;
+}
+
+/*吉祥物位置調整*/
+.left-connect img{
+  position: relative;
+  margin-top: 10%;
+}
+
+/*常見問題區塊(右)*/
+
+/*常見問題區塊位置*/
+.right-Q  {
+  /*與圖牆上邊界*/
+  padding-top: 50px;
+  width: 65%;
+  /*使其在相關連結的右側*/
+  float: left;
+  /*右邊界*/
+  padding-right: 50px;
+  /*與底層邊界*/
+  padding-bottom: 100px;
+  /*調整與相關連結間的位置*/
+  position: relative;
+  left: -5%;
+  /*行距*/
+  line-height: 2.5;
+
+}
+
+/*常見問題-搜尋欄*/
+/*關鍵字色碼
+ 邊框:C2D8ED
+ 提示字:B1CAE9
+ 問題顏色(淺):B1CAE9
+ 問題顏色(深):CDE7FF*/
+ .right-Q .light-table-filter{
+  width: 100%;
+  height: 70px;
+  background-color: transparent;
+  border:1.5px solid #BFD5EA;
+  font-size: 20px;
+  margin-top: 6px;
+}
+
+
+input::-webkit-input-placeholder { 
+  color: #B1CAE9;
+}
+
+
+
+
+/*常見問題-問題區塊*/
+.question{
+  /*width: 100%;
+  height: 100px;*/
+  outline:none;
+  display: flex;
+  flex-direction: column;
+  
+}
+.answer{
+  /*width: 100%;
+  height: 100px;*/
+  outline:none;
+  display: flex;
+  flex-direction: column;
+}
+
+.questionBtn1{ /*奇數問題*/
+  position: relative;
+  width: 100%;
+  background-color: #EDFBFE; 
+  color: ;
+  box-shadow:0px 2px 5px 1px #cccccc;
+  border: none;
+  text-align:left;　/*向左對齊*/
+  margin: 10px;
+  padding: 10px;
+}
+.questionBtn2{ /*偶數問題*/
+  position: relative;
+  width: 100%;
+  background-color: #CDE7FF; 
+  box-shadow:0px 2px 5px 1px #cccccc;
+  border: none;
+  text-align:left;　/*向左對齊*/
+  margin: 10px;
+  padding: 10px
+}
+
+
+.answerBtn{ /*答案*/
+  position: relative;
+  width: 100%;
+  background-color: #ffffff; 
+  box-shadow:0px 2px 5px 1px #cccccc;
+  border: none;
+  text-align:left;　/*向左對齊*/
+  margin: 10px;
+  padding: 10px;
+}
+
+/*底頁*/
+.container-footer{
+  justify-content:space-between;
+  width: 100%;
+  height: 100px
+  margin: auto;
+  display: flex;
+  /*底部背景色*/
+  background-color: #B2C6EB;
+}
+
+/*尾頁左右區塊*/
+.container-footer .item-left {
+  float: left;
+  background-color: transparent;
+  margin-left: 3%;
+  padding-top: 20px;
+
+}
+
+.container-footer .item-left li {
+  float: left;
+  font-size: 20px;
+  font-weight: 700;
+  color: #6D9FD4;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
+
+.container-footer .item-center {
+  height: 100%;
+  margin: 0px 100px;
+  background-color: transparent;
+  padding-top: 0px;
+  margin-top: 10px;
+}
+
+.container-footer .item-center li {
+  font-size: 20px;
+  color: #6D9FD4;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.container-footer .item-right {
+  float: right;
+  background-color: transparent;
+  padding-top: 12px;
+  margin-right: 3%;
+}
+
+.container-footer .item-right li {
+  font-size: 16px;
+  color: #6D9FD4;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.container-footer .item-right a {
+  text-decoration: none;
+  }
+
+
+/*回到頂端按鈕CSS調整*/
+.toTop-arrow {
+  /*按鈕大小*/
+  width: 6rem;
+  height: 6rem;
+
+  /*按鈕外型，50%圓形、0%正方型*/
+  border-radius: 33%;
+
+  /*按鈕透明度*/
+  opacity: 0.6;
+
+  /*按鈕顏色*/
+  background: #B3C5ED;
+
+  /*浮動位置*/
+  right: 2rem;
+  bottom: 12rem;
+
+  display: none;
+  cursor: pointer;
+  position:fixed;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+
+.toTop-arrow::before, .toTop-arrow::after {
+  /*箭頭粗細*/
+  width: 18px;
+  height: 5px;
+
+  /*箭頭顏色*/
+  background: #ffffff;
+
+  /*鍵頭上的文字*/
+  content: "";
+
+  border-radius: 100px;
+  position: absolute;
+}
+.toTop-arrow::before {
+  /*箭頭位置*/
+  transform: rotate(-30deg) translate(0, -50%);
+  left: 1.65rem;
+  top: 1.5rem;
+}
+.toTop-arrow::after {
+  /*箭頭位置*/
+  transform: rotate(30deg) translate(0, -50%);
+  right: 1.65rem;
+  top: 1.5rem;
+}
+.toTop-arrow:focus {outline: none;}
+
+
+
+
+
+/*RWD*/
+@media (max-width:1580px){/*螢幕<1580*/
+  .container-footer .item-left li {
+    font-size: 17px;
+
+  }
+  .container-footer .item-center li {
+    font-size: 17px;
+
+  }
+  .container-footer .item-right li {
+    font-size: 13px;
+
+  }
+
+}
+@media (max-width:1380px){/*螢幕<1380*/
+
+.container-footer .item-left li {
+  font-size: 14px;
+
+}
+.container-footer .item-center li {
+  font-size: 14px;
+
+}
+.container-footer .item-right li {
+  font-size: 12px;
+  transform: scale(0.9);
+
+}
+
+}
+@media (max-width:1250px){/*螢幕<1250*/
+  .container-footer{
+    height:200px;
+    display: flex;
+    flex-direction: column;/*div上下照順序排列*/
+
+  }
+  .container-footer .item-left{
+    /*置中*/
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-left: 0%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .container-footer .item-left li {
+    margin: auto;
+    font-size: 18px;
+  }
+  .container-footer .item-center {
+    /*置中*/
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-left: 0%;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .container-footer .item-center li {
+    font-size: 18px;
+  }
+  .container-footer .item-right {
+    width: 100%;
+    margin-bottom: 10px;
+
+  }
+  .container-footer .item-right li {
+    font-size: 15px;
+    /*置中*/
+    justify-content: center;
+    text-align: center;
+    
+  }
+  /*相關連結標題*/
+  .left-connect p{
+    font-size: 22px;
+    font-weight: 700;
+
+    /*字體間距*/
+    letter-spacing: 10px;
+    color:  #2C5597;
+    /*調整位置*/
+    position: relative;
+    padding-left: 5%;
+    top: 10px;
+
+  }
+
+  /*相關連結內容欄*/
+  .left-connect li a{
+    font-size: 14px;
+    position: relative;
+    padding-left: 40px;
+    /*行距*/
+    line-height: 2.5;
+    color:  #2C5597;
+    font-weight: 900;
+  }
+
+}
+
+
+@media (max-width:1061px){/*螢幕<1061*/
+  /*.container-header img{
+    margin-top:10px; 
+    margin-left:-20px; 
+    margin-right: 15px;
+    width:150px;
+    height:40px; 
+    float:left;
+    }*/
+
+  /*.main-menu-thing{
+    font-size: 10px;
+    width: 80px;
+    transform: scale(1);
+    }*/
+
+    .container{width: 90%;}
+    /*圖牆字體*/
+    .box p{
+      font-size: 90px;
+      font-weight: 1000;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #6B6B6B;
+    }
+    /*相關連結區塊設置*/
+    .left-connect ul{
+      width: 70%;
+      height: 1000px;
+      background-color: #B3C5ED;
+    }
+    /*相關連結標題*/
+    .left-connect p{
+      font-size: 26px;
+      font-weight: 700;
+
+      /*字體間距*/
+      letter-spacing: 10px;
+      color:  #2C5597;
+      /*調整位置*/
+      position: relative;
+      padding-left: 5%;
+      top: 10px;
+
+    }
+
+    /*相關連結內容欄*/
+    .left-connect li a{
+      font-size: 16px;
+      position: relative;
+      padding-left: 40px;
+      /*行距*/
+      line-height: 2.5;
+      color:  #2C5597;
+      font-weight: 900;
+    }
+
+    /*常見問題區塊位置*/
+    .right-Q  {
+      /*與圖牆上邊界*/
+      padding-top: 50px;
+      width: 65%;
+      /*使其在相關連結的右側*/
+      float: left;
+      /*右邊界*/
+      padding-right: 15px;
+      /*與底層邊界*/
+      padding-bottom: 100px;
+      /*調整與相關連結間的位置*/
+      position: relative;
+      left: -5%;
+      /*行距*/
+      line-height: 2.5;
+
+    }
+    .container-footer{
+      height:250px;
+      display: flex;
+      flex-direction: column;/*div上下照順序排列*/
+
+    }
+    /*.container-footer .item-left{
+      line-height: 3;
+      padding-top:30px; 
+      margin-bottom: -30px;
+    }
+    .container-footer .item-center {
+      line-height: 3;
+      margin-bottom: -30px;
+    }
+    .container-footer .item-right {
+      line-height: 2.5;
+      margin-bottom: 30px;
+    }*/
+
+
+
+    .questionBtn1{ /*奇數問題*/
+      font-size: 20px;
+    }
+    .questionBtn2{ /*偶數問題*/
+      font-size: 20px;
+    }
+
+
+    .answerBtn{ /*答案*/
+      font-size: 20px;
+    }
+
+  
+
+  }
+
+  @media (max-width:992px){/*螢幕<992*/
+    /*圖牆字體*/
+    .box p{
+      font-size: 80px;
+      font-weight: 1000;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #6B6B6B;
+    }
+  }
+
+
+  @media (max-width:850px){/*螢幕<850*/
+    /*相關連結區塊設置*/
+    .left-connect ul{
+      width: 70%;
+      height: 875px;
+      background-color: #B3C5ED;
+    }
+    /*相關連結標題*/
+    .left-connect p{
+      font-size: 23.5px;
+      font-weight: 700;
+
+      /*字體間距*/
+      letter-spacing: 10px;
+      color:  #2C5597;
+      /*調整位置*/
+      position: relative;
+      padding-left: 5%;
+      top: 10px;
+
+    }
+
+    /*相關連結內容欄*/
+    .left-connect li a{
+      font-size: 14px;
+      position: relative;
+      padding-left: 40px;
+      /*行距*/
+      line-height: 2.5;
+      color:  #2C5597;
+      font-weight: 900;
+    }
+
+    .container-header {
+      /*導覽列功能排版*/
+      width: 90%;
+      height: 80px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .main-menu-thing a{
+      font-size: 15px;
+      width: 80px;
+      transform: scale(1);
+      letter-spacing: 0px;
+    }
+    .main-menu li{
+      margin:0 -10px;
+    }
+    .main-menu-thing li{
+      font-size: 15px;
+    }
+  }
+
+
+  @media (max-width:786px){/*螢幕<786*/
+    /*圖牆字體*/
+    .box p{
+      font-size: 70px;
+      font-weight: 1000;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #6B6B6B;
+    }
+
+    /*相關連結區塊設置*/
+    .left-connect ul{
+      width: 70%;
+      height: 850px;
+      background-color: #B3C5ED;
+    }
+    /*相關連結標題*/
+    .left-connect p{
+      font-size: 20px;
+      font-weight: 700;
+
+      /*字體間距*/
+      letter-spacing: 10px;
+      color:  #2C5597;
+      /*調整位置*/
+      position: relative;
+      padding-left: 5%;
+      top: 10px;
+
+    }
+
+    /*相關連結內容欄*/
+    .left-connect li a{
+      font-size: 14px;
+      position: relative;
+      padding-left: 40px;
+      /*行距*/
+      line-height: 2.5;
+      color:  #2C5597;
+      font-weight: 900;
+    }
+  }
+
+  @media (max-width:720px){/*螢幕<720*/
+
+    /*相關連結區塊設置*/
+    .left-connect ul{
+      width: 80%;
+      height: 850px;
+      background-color: #B3C5ED;
+    }
+    /*相關連結標題*/
+    .left-connect p{
+      font-size: 20px;
+      font-weight: 700;
+
+      /*字體間距*/
+      letter-spacing: 10px;
+      color:  #2C5597;
+      /*調整位置*/
+      position: relative;
+      padding-left: 5%;
+      top: 10px;
+
+    }
+
+    /*相關連結內容欄*/
+    .left-connect li a{
+      font-size: 14px;
+      position: relative;
+      padding-left: 40px;
+      /*行距*/
+      line-height: 2.5;
+      color:  #2C5597;
+      font-weight: 900;
+    }
+    /*常見問題區塊位置*/
+    .right-Q  {
+      /*與圖牆上邊界*/
+      padding-top: 50px;
+      width: 65%;
+      /*使其在相關連結的右側*/
+      float: left;
+      /*右邊界*/
+      padding-right: 20px;
+      /*與底層邊界*/
+      padding-bottom: 100px;
+      /*調整與相關連結間的位置*/
+      position: relative;
+      left: -2.5%;
+      /*行距*/
+      line-height: 3.5;
+
+    }
+  }
+
+
+@media (max-width:650px){/*螢幕<650*/
+    /*相關連結區塊設置*/
+    .left-connect ul{
+      width: 80%;
+      height: 850px;
+      background-color: #B3C5ED;
+    }
+    /*相關連結標題*/
+    .left-connect p{
+      font-size: 18px;
+      font-weight: 700;
+
+      /*字體間距*/
+      letter-spacing: 8px;
+      color:  #2C5597;
+      /*調整位置*/
+      position: relative;
+      padding-left: 5%;
+      top: 10px;
+
+    }
+
+    /*相關連結內容欄*/
+    .left-connect li a{
+      font-size: 14px;
+      position: relative;
+      padding-left: 40px;
+      /*行距*/
+      line-height: 2.5;
+      color:  #2C5597;
+      font-weight: 900;
+    }
+  }
+
+  @media (max-width:555px){/*螢幕<555*/
+    /*圖牆字體*/
+    .box p{
+      font-size: 60px;
+      font-weight: 1000;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #6B6B6B;
+    }
+  }
+
+
+  @media (max-width:520px){/*螢幕<1250*/
+    .container-footer{
+      height: 200px;
+
+     }
+    .container-footer .item-left li {
+      margin: auto;
+      font-size: 12px;
+    }
+    .container-footer .item-center li {
+      font-size: 12px;
+    }
+
+    .container-footer .item-right li {
+      font-size: 12px;
+      transform: scale(0.9);
+      justify-content: center;
+      text-align: center;
+
+    }
+
+
+  }
+
+  @media (max-width:444px){/*螢幕<444*/
+    /*圖牆字體*/
+    .box p{
+      font-size: 50px;
+      font-weight: 1000;
+      color: #ffffff;
+      text-shadow: 1px 1px 1px #6B6B6B;
+    }
+  }
+
+
+

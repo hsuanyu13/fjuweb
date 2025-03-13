@@ -1,0 +1,121 @@
+body {
+	background-color:#f9ffff;
+	width: 100%;
+	/*height: 100vh;*/
+	margin: 0;
+	position: absolute;
+	background-attachment: fixed;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+
+/*signup form css調整*/
+.signup_table{
+	border-radius: 10px;
+	width: 350px;
+	color: black;
+	height: 500px;
+	text-align: center;
+	box-shadow:0px 2px 5px 1px #cccccc;
+	background-color: #fff;
+}
+
+.upper-left., .upper-right {
+	display: inline-block;
+	float: left;
+	width: 350px;
+	margin-left: 10px;
+}
+
+.upper-left {
+	position: relative;
+	width: 125px;
+	height: 80px;
+	float:left;
+	margin-left: 7%;
+	padding-top: 30px;
+}
+
+.upper-right {
+	font-family:"微軟正黑體";
+	padding-top: 10px;
+	width: 185px;
+	height: 100px;
+	float:left;
+}
+
+.upper-right h1{ 
+	/*文字顏色改在html color: #2e75b6;*/
+	position:absolute;
+	padding-right: 15%;
+}
+
+
+.submit{
+	width: 400px;
+	color: white;
+	height: 50px;
+	text-align: center;
+}
+
+/*帳號、電子郵件...輸入格格式調整在html*/
+/*.signup .lower input{
+	height: 10px;
+	display: block;
+	/*margin: 20px auto;*/
+	/*text-align: center;
+	background: none;
+	padding: 12px;
+	font-size: 20px;
+	outline: none;
+	color: black;
+}
+
+/*帳號、電子郵件...輸入格*/
+.signup  input[type="text"], .signup input[type="password"], .signup input[type="email"]{
+	border: 1px solid #DDDDDD;
+	width: 270px;
+	height: 25px;
+}
+
+/*註冊按鈕*/
+.submit button{
+	width: 170px;
+	height: 30px;
+	cursor: pointer; 
+	font-size: 20px;
+	font-weight: 600;
+	margin-top: 7%;
+	margin-left: -13%;
+}
+
+.signup input[type="text"]:focus, .signup input[type="password"]:focus, .signup input[type="email"]:focus{
+	width: 20px;
+	transition: 0.5s;
+}
+
+table.signup_table{
+  width: 400px;
+  height: 450px;
+  /*border: 1px solid #f00;*/
+  margin: auto;
+}
+table.signup_table td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+ /*RWD*/
+ /*返回鍵*/
+ @media (max-width:1070px){/*螢幕寬度<1070像素，套用這個區塊的css*/
+  #back{
+    margin-left:50px;/*左邊界距離調整*/
+  }
+ }
+
+  /*手機>360，<295像素signup_table才會變形*/
+ 

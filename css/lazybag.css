@@ -1,0 +1,129 @@
+/*懶人包大綱*/
+.lazybag {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  background-color:#E1E5F4;
+}
+.lazybag h1{
+ color: #5877BB;
+ font-size: 50px;
+ position: absolute;
+ left: 635px;
+ bottom: -1050px;
+
+
+/*各區塊調整*/
+}
+.theform1{/*新生入學*/
+ font-size: 20px;
+ font-weight: bolder;
+ color:  #5877BB;/*標題文字:#5877BB*//*內文:#778CD6*/
+ width: 200px;
+ height: 300px;
+ border-radius: 50px;
+ background: #B3C5ED;
+ position: absolute;
+ left: 310px;
+ top: 2200px;
+ }
+
+
+.theform2{/*選課*/
+ font-size: 20px;
+ font-weight: bolder;
+ color: #5F9F87;/*標題文字:#5F9F87，內文:#70A89C*/
+ width: 200px;
+ height: 300px;
+ border-radius: 50px;
+ background: #B7D8A5;
+ position: absolute;
+ left: 660px;
+ top: 2200px;
+ }
+
+.theform3{/*宿舍*/
+ font-size: 20px;
+ font-weight: bolder;
+ color: #DD947B;/*標題文字:#DD947B，內文:#D69768*/
+ width: 200px;
+ height: 300px;
+ border-radius: 50px;
+ background: #DFCEB1;
+ position: absolute;
+ left: 1010px;
+ top: 2200px;
+ }
+
+
+.theform4{/*獎助學金*/
+ font-size: 20px;
+ font-weight: bolder;
+ color: #D69F57;/*標題文字:#D69F57，內文:#D8A82B*/
+ width: 200px;
+ height: 300px;
+ border-radius: 50px;
+ background: #EFE7A3;
+ position: absolute;
+ left: 310px;
+ top: 2570px;
+ }
+
+.theform5{/*學務須知*/
+ font-size: 20px;
+ font-weight: bolder;
+ color:  #D17999;/*標題文字:#D17999，內文:#DF82A3*/
+ width: 200px;
+ height: 300px;
+ border-radius: 50px;
+ background: #E6BCCF;
+ position: absolute;
+ left: 660px;
+ top: 2570px;
+ }
+
+.theform6{/*其他平台*/
+ font-size: 20px;
+ font-weight: bolder;
+ color: #A865D1;/*標題文字:#A865D1，內文:#A879C4*/
+ width: 200px;
+ height: 300px;
+ border-radius: 50px;
+ background: #DBBCE6;
+ position: absolute;
+ left: 1010px;
+ top: 2570px;
+ }
+
+
+/*各區塊動畫*/
+.theform1:hover{
+  color: #fff;
+  background-color: #008891;
+  transition: .3s .1s;
+}
+.theform2:hover{
+  color: #fff;
+  background-color: #008891;
+  transition: .3s .1s;
+}
+.theform3:hover{
+  color: #fff;
+  background-color: #008891;
+  transition: .3s .1s;
+}
+.theform4:hover{
+  color: #fff;
+  background-color: #008891;
+  transition: .3s .1s;
+}
+.theform5:hover{
+  color: #fff;
+  background-color: #008891;
+  transition: .3s .1s;
+}
+.theform6:hover{
+  color: #fff;
+  background-color: #008891;
+  transition: .3s .1s;
+}

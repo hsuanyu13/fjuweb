@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--改搜尋列圖標-->
+    <meta charset="utf-8"> 
+    <title>Question and Answer | Admissions website of Fu Jen Catholic University</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/questionEng.css">
+    <link rel="icon" type="image/x-icon" href="picture/輔大校徽/0純校徽.gif">
+</head>
+    <body >
+  <!--導覽列-->
+  <header class="main-header">
+    <div class="container-header">
+      <img src="picture/輔大校徽/2.gif" style="margin-top:5px; margin-left:15px; width:18%; height:80%; float:left">
+      <nav>
+        <ul class="main-menu">
+          <li class="main-menu-thing">
+            <a href="question.html" class="translate" onclick="Englishtranslate_Q()" style="position: relative; margin-top: 20px; right:150px;width:100px ;text-align:center;font-weight: 900;background-color: transparent;">中文版</a>
+          </li>
+          <script type="text/javascript" src="js/translate.js"></script>
+          <li class="main-menu-thing"><a href="http://www.fju.edu.tw/article.jsp?articleID=13" style="position: relative; margin-top: 20px; right: 95px;width:100px ;text-align:center;font-weight: 900; background-color: transparent;">Contact us</a>
+          </li>
+          <li class="main-menu-thing">
+            <a href="mainEnglish.html" style=" z-index: 2;position: relative; margin-top: 20px; right: 60px ;width:100px ;text-align:center;font-weight: 900;background-color: transparent;">Home</a>
+          </li>
+          <li class="main-menu-thing" style="padding:5px;margin-top:30px;right: 25px ;width:120px ;color:#2B528D;font-size: 18px;text-align:center;font-weight: 900; white-space:nowrap;">views 
+            <script type="text/javascript" language="javascript" src="php/counter.php"></script>
+            <!--counter.php為計數器 每重新整理一次及加一次瀏覽次數-->
+          </li>
+        </ul> 
+          <img src="picture/常見問答首頁符號.gif" style="z-index: 0; width:100px; position:relative; bottom:75%; left:38%;">
+      </nav>
+    </div>
+  </header>
+
+        <!--圖牆-->
+        <div class="wall" >
+            <div class="box" style="background: url('picture/常見問答橫幅-無文字.jpg'); background-size: cover; background-position: 0px -5px;">
+                <p>Question and Answer</p>
+            </div>  
+        </div>
+
+    
+        
+        <!--相關連結(左)-->
+        <div class="left-connect">
+            <ul class="menu">
+                <p>🔗Related link</p>
+                <div style="width:100%; height: 10px; border-bottom:2px #ffffff dashed;"></div>
+                <li><a href="freshmanEnglish.html">
+                  <span>New Student </span>
+                  <span>Registration</span></a></li>
+                 <li><a href="https://whoami.fju.edu.tw/?lang=EN">
+                  <span>LDAP account</span>
+                </a></li>
+                <li><a href="http://www.secretariat.fju.edu.tw/article.jsp?articleID=8">
+                  <span>Calendar</span>
+                </a></li>
+                <li><a href="http://activity.fju.edu.tw/">
+                  <span>Office of Student </span>
+                  <span>Affairs-Division of </span>
+                  <span>Student Activity's website</span>
+                </a></li>
+                <li><a href="http://eao.dsa.fju.edu.tw/">
+                  <span>Career Development </span>
+                  <span>and Placement Office</span></a></li>
+                <li><a href="http://www.dsc.fju.edu.tw/#&panel1-1">
+                  <span>Dormitory </span>
+                  <span>service center</span>
+                </a></li>
+                <li><a href="https://house.nfu.edu.tw/FJU">
+                  <span>Rental information</span>
+                </a></li>
+                <li><a href="https://exam.fju.edu.tw/admission">
+                  <span>Admissions </span>
+                  <span>information platform</span>
+                </a></li>
+                <li><a href="http://www.course.fju.edu.tw/">
+                  <span>Information for </span>
+                  <span>Course Registration</span></a></li>
+                <li><a href="https://elearn2.fju.edu.tw/">
+                  <span>Tronclass system</span>
+                </a></li>
+                <li><a href="https://learningcounseling.fju.edu.tw/Student/Account/Login?ReturnUrl=%2FStudent%2FGuidePage">
+                  <span>Graduation Verification</span>
+                </a></li>
+                <li><a href="https://www.oie.fju.edu.tw/index.jsp#&panel1-1">
+                  <span>Office of </span>
+                  <span>International Education</span>
+                </a></li>
+                <li><a href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp">
+                  <span>Tuition and Fees</span>
+                </a></li>
+                <li><a href="http://life.dsa.fju.edu.tw/scholarship.htm">
+                  <span>Student Subsidy </span>
+                  <span>and Scholarship </span>
+                  <span>Information System</span>
+                </a></li>
+                <li><a href="http://edu.cc.fju.edu.tw/main_control/06/login.php" >
+                  <span>Campus Software </span>
+                    <span>Download</span>
+                </a></li>
+                <li><a href="http://home.lib.fju.edu.tw/TC/node/136">
+                  <span>Library</span>
+                </a></li>
+                <li><a href="https://www.ext.fju.edu.tw/">
+                  <span>Center for </span>
+                  <span>Extension Education</span>
+                </a></li>
+                <li><a href="http://140.136.202.11/">
+                  <span>EngNET</span>
+                </a></li>
+                <li><a href="http://activity.dsa.fju.edu.tw/ActivityList.jsp">
+                  <span>Extracurricular Activity </span>
+                  <span>Management System</span>
+                </a></li>
+                <li><a href="http://www.scc.fju.edu.tw/#&panel1-1">
+                  <span>Student Counseling </span>
+                  <span>Center</span>
+                </a></li>
+                <li><a href="http://smt.dsa.fju.edu.tw/index.jsp#&panel1-1">
+                  <span>Military Education </span>
+                  <span>and Student </span>
+                  <span>Safety Division</span>
+                </a></li>                
+                <li><a href="https://www.fju.edu.tw/aboutFju.jsp?labelID=9">
+                  <span>Traffic Information</span>
+                </a></li>
+                <li><a href="https://www.fju.edu.tw/aboutFju.jsp?labelID=7">
+                  <span>Campus Map</span>
+                </a></li>                 
+            </ul>
+        </div>
+ 
+              
+
+
+        <!--常見問題區塊(右)-->
+        <div class="right-Q" >
+            <input type="search" class="light-table-filter" data-table="order-table" placeholder="Enter keywords:" style="outline:none; margin-bottom: 30px;">
+            <!--<button class="search-btn"></button>-->
+            <table id="table_result"  class="order-table" style="width:100%">
+              <tbody>
+                <!--第1題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans1()" style="font-weight: 600; border-radius:5px;">👉 What is LDAP?<a data-toggle="collapse" data-parent="#accordion" href="#collapse1" style="text-align:right; float:right; text-decoration:none; ">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans1" style="display:none;">  
+                        <button class="answerBtn" id="hideAns1" onclick="hideAns1()" style="display:none">LDAP provides access to all online systems at the University with just a single account number and password.<br><br>
+
+                        1.1 Enabling your LDAP account
+                        Your LDAP account number is the same as your Student ID. Please access your account with the password that 
+                        we send you, and protect your account security by going to <a class="translate" href="http://whoami.fju.edu.tw" style="width:100px ;text-align:center;font-weight: 900;">輔仁大學單一帳號(LDAP)啟動網站</a> to enable your account. Please pay attention to 
+                        announcements and follow the steps to complete the process.
+                        <br><br>
+                        ★ Overseas Chinese students, international students, and students from mainland China cannot enable their account if they have not received a UI Number. However, you can still change your password to protect your account security by going to http://whoami.fju.edu.tw/. Please change your password at the earliest opportunity and then make sure to enable your account when you receive a UI Number.
+                        <br><br>
+                        1.2 Student Information Portal
+                        Current students: This portal combines all of the online systems for students and gives you access to information that you will need over the course of your studies. Please make full use of it.
+                        <br><br>
+                        ★ New students will need to change their password after logging in to the portal for the first time. Please use the password mentioned in (1.1) above to log in and change your password.
+
+                        </button>
+                      </table>
+                    </td>
+                    <script>
+                      function ans1(){
+                        var myTable = document.getElementById( "ans1" ); myTable.style.display = " block " ;
+                        var myButton = document.getElementById( "hideAns1" ); myButton.style.display = " block " ;
+                      };
+                      function hideAns1(){
+                        var myTable = document.getElementById( "ans1" ); myTable.style.display = " none " ;
+                        var myButton = document.getElementById( "hideAns1" ); myButton.style.display = " none " ;
+                      };
+                    </script>
+                </tr>
+                <br>
+                <!--第2題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans2()" style="font-weight: 600; border-radius:5px;">👉 Calendar?<a data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans2" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns2" onclick="hideAns2()" style="display:none">The annual schedule of the first and second semesters can be found in the calendar of the <a class="translate" href="http://www.secretariat.fju.edu.tw/article.jsp?articleID=8" style="width:100px ;text-align:center;font-weight: 900;">Office of Secretariat website</a>.</button>
+                      </table>
+                    </td>
+                    <script>
+                      function ans2(){
+                        var myTable = document.getElementById( "ans2" ); myTable.style.display = " block " ;
+                        var myButton = document.getElementById( "hideAns2" ); myButton.style.display = " block " ;
+                      };
+                      function hideAns2(){
+                        var myTable = document.getElementById( "ans2" ); myTable.style.display = " none " ;
+                        var myButton = document.getElementById( "hideAns2" ); myButton.style.display = " none " ;
+                      };
+                    </script>
+                </tr>
+                <!--第3題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans3()" style="font-weight: 600; border-radius:5px;">👉 How do I obtain club information?<a data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans3" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns3" onclick="hideAns3()" style="display:none">
+                        Visit the <a class="translate" href="http://activity.fju.edu.tw/index.jsp" style="width:100px ;text-align:center;font-weight: 900;">Office of Student Affairs-Division of Student Activity's website</a> to learn more about clubs.</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans3(){
+                      var myTable = document.getElementById( "ans3" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns3" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns3(){
+                      var myTable = document.getElementById( "ans3" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns3" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第4題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans4()" style="font-weight: 600; border-radius:5px;">👉 Where can I  find the opportunities for work, education and internships?<a data-toggle="collapse" data-parent="#accordion" href="#collapse4" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans4" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns4" onclick="hideAns4()" style="display:none">
+                          Visit the <a class="translate" href="http://eao.dsa.fju.edu.tw/Intern_Job_Hunting/intern_job_hunting_internship_job_list/2" style="width:100px ;text-align:center;font-weight: 900;">Career Development and Placement Office website</a> to learn about work-study programs offered by campus departments as well as off-campus internship and employment opportunities.</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans4(){
+                      var myTable = document.getElementById( "ans4" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns4" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns4(){
+                      var myTable = document.getElementById( "ans4" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns4" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第5題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans5()" style="font-weight: 600; border-radius:5px;">👉 Application  for dormitories?<a data-toggle="collapse" data-parent="#accordion" href="#collapse5" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans5" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns5" onclick="hideAns5()" style="display:none">Please print the accommodation application form from the "Student Information Management System" and send it, along with other necessary paperwork, to the dormitory service center before the deadline. Please visit the website of the <a class="translate" href="http://www.dsc.fju.edu.tw/index.jsp#&panel1-1" style="width:100px ;text-align:center;font-weight: 900;">dormitory service center</a> to learn more about the specific application requirements.
+                        Dormitory Service Center Tel: 2905-5269
+                      </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans5(){
+                      var myTable = document.getElementById( "ans5" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns5" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns5(){
+                      var myTable = document.getElementById( "ans5" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns5" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第6題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans6()" style="font-weight: 600; border-radius:5px;">👉 Where may I find rental information?<a data-toggle="collapse" data-parent="#accordion" href="#collapse6" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans6" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns6" onclick="hideAns6()" style="display:none">
+                          Please visit the website of <a class="translate" href="https://www.tmm.org.tw/contents/text?id=12" style="width:100px ;text-align:center;font-weight: 900;">崔媽媽基金會網站</a>(which includes a sample rental housing contract from the Ministry of the Interior and a house inspection checklist from Cui Mama) for rental materials. The following rental information is for reference only and the school accepts no legal liability or warranty.
+                        </br>
+                                    ★ <a class="translate" href="https://house.nfu.edu.tw/FJU" style="width:100px ;text-align:center;font-weight: 900;">輔仁大學校外賃居網</a></br>
+                                    ★ <a class="translate" href="https://www.99star.com.tw/" style="width:100px ;text-align:center;font-weight: 900;">明日之星</a></br>
+                                    ★ <a class="translate" href="https://rent.tmm.org.tw/" style="width:100px ;text-align:center;font-weight: 900;">蟹居網</a></br>
+                        (Refers to <a class="translate" href="http://isc.oie.fju.edu.tw/teachingServices.jsp?labelID=15" style="width:100px ;text-align:center;">http://isc.oie.fju.edu.tw/teachingServices.jsp?labelID=15</a>)</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans6(){
+                      var myTable = document.getElementById( "ans6" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns6" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns6(){
+                      var myTable = document.getElementById( "ans6" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns6" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第7題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans7()" style="font-weight: 600; border-radius:5px;">👉 How can I apply to Fu Jen Catholic University?<a data-toggle="collapse" data-parent="#accordion" href="#collapse7" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans7" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns7" onclick="hideAns7()" style="display:none">
+                          Students can enter Fu Jen Catholic University through transfer examinations, on-the-job training programs, special selection, and other means. Please see the announcement on the <a class="translate" href="https://exam.fju.edu.tw/admission" style="width:100px ;text-align:center;font-weight: 900;">admissions information platform</a> for more information.
+                        </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans7(){
+                      var myTable = document.getElementById( "ans7" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns7" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns7(){
+                      var myTable = document.getElementById( "ans7" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns7" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第8題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans8()" style="font-weight: 600; border-radius:5px;">👉 Where can I find departmental class schedules or other departmental course information?<a data-toggle="collapse" data-parent="#accordion" 
+                    href="#collapse8" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans8" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns8" onclick="hideAns8()" style="display:none">
+                          You can visit each department to check the current semester schedule or go to the <a class="translate" href="http://www.course.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">course registration website</a> to check the courses you want to know according to your department and grade. If you are unsure how to do this, please refer to the instructions on the website.</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans8(){
+                      var myTable = document.getElementById( "ans8" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns8" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns8(){
+                      var myTable = document.getElementById( "ans8" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns8" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第9題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans9()" style="font-weight: 600; border-radius:5px;">👉 Information for course registration  website ?<a data-toggle="collapse" data-parent="#accordion" href="#collapse9" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans9" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns9" onclick="hideAns9()" style="display:none">
+                          Course selection is based on instructions posted on the <a class="translate" href="http://www.course.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">course registration  website</a>.
+                        </br>
+                         ★ <a class="translate" href="http://wishcourse.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">Selecting preferences for Holistic Education courses</a>:<br>
+                         Who:Daytime Division students (including those in 2 year programs) and students at the School of Continuing Education who need to select General Education courses and physical education courses.
+                         <br>
+                          How: Student Access (Information) Portal > School Services > Courses/Learning > Holistic Education Course Selection System
+                          <br>
+
+                         *<a class="translate" href="http://140.136.251.56/gencourselist/">Search General Education Courses Excluded by Individual Departments</a>
+                         <br>
+
+                          ★ <a class="translate" href="http://signcourse.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">Online registration and course distribution for the first and Second Semester</a>:
+                          <br>
+                          Who: All students
+                          </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans9(){
+                      var myTable = document.getElementById( "ans9" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns9" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns9(){
+                      var myTable = document.getElementById( "ans9" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns9" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第10題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans10()" style="font-weight: 600; border-radius:5px;">👉 What is the Tronclass system?<a data-toggle="collapse" data-parent="#accordion" href="#collapse10" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans10" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns10" onclick="hideAns10()" style="display:none">Use LDAP to log in. After entering this system, the first page is "My Homepage", which can help you quickly grasp the latest developments and progress of all courses. For detailed system operation methods, please refer to <a class="translate" href="https://support.tronclass.com/tw/question/login/" style="width:100px ;text-align:center;font-weight: 900;">Help center</a> and <a class="translate" href="https://dba.asia.edu.tw/uploads/asset/data/613071bd905fc3e912000034/tronclass%E5%AD%B8%E7%94%9F%E7%89%88%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%A9%9F.pdf" style="width:100px ;text-align:center;font-weight: 900;">user manual</a>.
+                        </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans10(){
+                      var myTable = document.getElementById( "ans10" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns10" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns10(){
+                      var myTable = document.getElementById( "ans10" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns10" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第11題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans11()" style="font-weight: 600; border-radius:5px;">👉 Credit Calculation?<a data-toggle="collapse" data-parent="#accordion" href="#collapse11" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans11" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns11" onclick="hideAns11()" style="display:none">You can visit the <a class="translate" href="http://www.academic.fju.edu.tw/generalServices.jsp?labelID=37" style="width:100px ;text-align:center;font-weight: 900;">Office of Academic Affairs</a> to learn about graduation requirements and credits. Each department will also develop relevant regulations.
+                        </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans11(){
+                      var myTable = document.getElementById( "ans11" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns11" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns11(){
+                      var myTable = document.getElementById( "ans11" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns11" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第12題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans12()" style="font-weight: 600; border-radius:5px;">👉 International Education?<a data-toggle="collapse" data-parent="#accordion" href="#collapse12" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans12" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns12" onclick="hideAns12()" style="display:none">
+                          The <a class="translate" href="https://www.oie.fju.edu.tw/index.jsp#&panel1-1" style="width:100px ;text-align:center;font-weight: 900;">Office of International Education (OIE)</a> was established in February 2008 as part of FJCU’s mission to be an internationalized comprehensive university. The Office aims to foster relationships with partner institutions, create student exchange programs, host international seminars, promote the exchange of faculty with universities abroad, and collaborate with other schools on research projects. These initiatives aim to stimulate interaction and greater communication with academic organizations around the globe.
+                          <br>
+                          Since its inception, the Office of International Education has set up the Academic Exchange Center, the International Student Center, and the Center of Chinese Language & Culture.
+                          </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans12(){
+                      var myTable = document.getElementById( "ans12" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns12" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns12(){
+                      var myTable = document.getElementById( "ans12" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns12" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第13題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans13()" style="font-weight: 600; border-radius:5px;">👉 Where should I send my tuition and fees?<a data-toggle="collapse" data-parent="#accordion" href="#collapse13" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans13" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns13" onclick="hideAns13()" style="display:none">
+                          1. Enter your User ID (It is the same as your student number.)
+                          <br></br>
+                          2. Enter your password (For R.O.C. citizens, your password is the final six digits of your national ID; for international students, your password is the 
+                          &emsp;final six digits of the UI number on your ARC. If you don’t have either of those pieces of ID, your password is your birthday [YY/MM/DD].)
+                          <br></br>
+                          3. Enter the verification code.
+                          <br></br>
+                          4. Once you’ve logged in, click on Check Payment Details to see what payments and fees are required.
+                          <br></br>
+                          For more information, visit the <a class="translate" href="http://tuition.ga.fju.edu.tw/lnchargeStudent/index.jsp" style="width:100px ;text-align:center;font-weight: 900;">Fu Jen Catholic University Tuition and Fees website</a>.
+                          </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans13(){
+                      var myTable = document.getElementById( "ans13" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns13" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns13(){
+                      var myTable = document.getElementById( "ans13" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns13" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第14題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans14()" style="font-weight: 600; border-radius:5px;">👉 Where can I find information on applying for scholarships?<a data-toggle="collapse" data-parent="#accordion" href="#collapse14" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans14" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns14" onclick="hideAns14()" style="display:none">To learn more about the application both on and off campus, go to the <a class="translate" href="http://life.dsa.fju.edu.tw/scholarship.htm" style="width:100px ;text-align:center;font-weight: 900;">Student Affairs website</a>. Each department will also announce the application methods for scholarships.
+                          <br></br>
+                        </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans14(){
+                      var myTable = document.getElementById( "ans14" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns14" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns14(){
+                      var myTable = document.getElementById( "ans14" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns14" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第15題-->
+                <tr>
+<!--                     <td class="question"><button class="questionBtn1" onclick="ans15()" style="font-weight: 600; border-radius:5px;">👉 What kind of resources does the school have?<a data-toggle="collapse" data-parent="#accordion" href="#collapse15" style="text-align:right; float:right; text-decoration:none;">v</a></button></td> -->
+                    <td class="question"><button class="questionBtn1" onclick="ans15()" style="font-weight: 600; border-radius:5px;">👉 What kind of resources does the school have?<a data-toggle="collapse" data-parent="#accordion" href="#collapse15" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans15" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns15" onclick="hideAns15()" style="display:none">★ <a class="translate" href="http://edu.cc.fju.edu.tw/main_control/06/login.php" style="width:100px ;text-align:center;font-weight: 900;">Software Download</a>(software, online-course etc.)</br>
+                        ★ <a class="translate" href="http://home.lib.fju.edu.tw/TC/node/136" style="width:100px ;text-align:center;font-weight: 900;">Library</a>(Library Classes, Databases, Activities,Exhibitions tec.)</br>
+                        ★ <a class="translate" href="https://www.ext.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">Center for Extension Education</a>(證照專班、學分班、推廣班等)</br>
+                        ★ <a class="translate" href="http://engnet.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">EngNET</a>(self-learning, Extensive Reading, English Pronunciation etc.)</br>
+                        ★ <a class="translate" href="http://activity.dsa.fju.edu.tw/ActivityList.jsp" style="width:100px ;text-align:center;font-weight: 900;">Extracurricular Activity Management System</a>(Research, Career development, Health Care, Service Learning etc.)</br>
+                        ★ <a class="translate" href="http://www.scc.fju.edu.tw/" style="width:100px ;text-align:center;font-weight: 900;">Student Counseling Center</a> (Individual/Group Counseling, Activity etc.)</button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans15(){
+                      var myTable = document.getElementById( "ans15" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns15" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns15(){
+                      var myTable = document.getElementById( "ans15" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns15" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第16題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans16()" style="font-weight: 600; border-radius:5px;">👉 Mandatory military service? <a data-toggle="collapse" data-parent="#accordion" href="#collapse16" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans16" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns16" onclick="hideAns16()" style="display:none">可至輔仁大學<a class="translate" href="http://smt.dsa.fju.edu.tw/index.jsp#&panel1-1" style="width:100px ;text-align:center;font-weight: 900;">軍訓室</a>查詢兵役相關資訊</br>
+                        ★ <a class="translate" href="http://smt.dsa.fju.edu.tw/aboutFju.jsp?labelID=1" style="width:100px ;text-align:center;font-weight: 900;">軍訓課程表</a></br>
+                        ★ <a class="translate" href="http://smt.dsa.fju.edu.tw/aboutFju.jsp?labelID=4" style="width:100px ;text-align:center;font-weight: 900;">申請免修軍訓SOP</a></br>
+                        ★ <a class="translate" href="http://smt.dsa.fju.edu.tw/aboutFju.jsp?labelID=3" style="width:100px ;text-align:center;font-weight: 900;">在校免修軍訓課程申請表</a></br></button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans16(){
+                      var myTable = document.getElementById( "ans16" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns16" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns16(){
+                      var myTable = document.getElementById( "ans16" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns16" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第17題-->
+                <tr>
+                    <td class="question"><button class="questionBtn1" onclick="ans17()" style="font-weight: 600; border-radius:5px;">👉 Traffic Information of Fu Jen ?<a data-toggle="collapse" data-parent="#accordion" href="#collapse17" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans17" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns17" onclick="hideAns17()" style="display:none">
+                         Address: 510 Zhongzhend Rd., Xinzhuang District, New Taipei City
+                        </br>
+                          Buses to Fu Jen:
+                        </br>
+                          &emsp;&emsp;Taipei Main Station</br>
+                          &emsp;&emsp;513、299、615</br>
+                          &emsp;&emsp;National Taiwan University Hospital</br>
+                          &emsp;&emsp;513</br>
+                          &emsp;&emsp;Xi-Men</br>
+                          &emsp;&emsp;235、513、635、637、663、Blue Line 2</br>
+                          &emsp;&emsp;Ming-Chuan West Road</br>
+                          &emsp;&emsp;618、636、638、639、801</br>
+                          &emsp;&emsp;Xin-Pu</br>
+                          &emsp;&emsp;99、802、842、845</br>
+                          &emsp;&emsp;Fu Jen Catholic University</br>
+                          &emsp;&emsp;Blue Line 2、Orange Line 21、Orange Line 22、Orange Line 23、99、111、235、299、513、615、618、635、636、637、638、639、</br>
+                          &emsp;&emsp;663、797、799、801、802、810、842、845、859、880、883、1501、1503、1803、5009、5075、9102、5675</br>
+                          &emsp;&emsp;(For details, please visit: <a class="translate" href="http://www.fju.edu.tw/aboutFju.jsp?labelID=21" style="width:100px ;text-align:center;font-weight: 900;">http://www.fju.edu.tw/aboutFju.jsp?labelID=21)</a>.
+                        </button>
+                      </table>
+                    </td>
+                  <script>
+                    function ans17(){
+                      var myTable = document.getElementById( "ans17" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns17" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns17(){
+                      var myTable = document.getElementById( "ans17" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns17" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+                <!--第18題-->
+                <tr>
+                    <td class="question"><button class="questionBtn2" onclick="ans18()" style="font-weight: 600; border-radius:5px;">👉 Campus Map?<a data-toggle="collapse" data-parent="#accordion" href="#collapse18" style="text-align:right; float:right; text-decoration:none;">v</a></button></td>
+                    <td class="answer" style="padding-bottom:20px;">
+                      <table id="ans18" style="display:none;"> 
+                        <button class="answerBtn" id="hideAns18" onclick="hideAns18()" style="display:none"><img src="picture/校園平面圖.jpg" style="width:70%; height:60%;"></br>
+                        <a class="translate" href="https://www.fju.edu.tw/aboutFju.jsp?labelID=7" style="width:100px ;text-align:center;font-weight: 900;">Campus Map</a></button>                        
+                      </table>
+                    </td>
+                  <script>
+                    function ans18(){
+                      var myTable = document.getElementById( "ans18" ); myTable.style.display = " block " ;
+                      var myButton = document.getElementById( "hideAns18" ); myButton.style.display = " block " ;
+                    };
+                    function hideAns18(){
+                      var myTable = document.getElementById( "ans18" ); myTable.style.display = " none " ;
+                      var myButton = document.getElementById( "hideAns18" ); myButton.style.display = " none " ;
+                    };
+                  </script>
+                </tr>
+              </tbody>
+            </table>
+            <div id="barcon">
+              <script type="text/javascript" src="js/page.js"></script>
+            </div>
+            <img src="picture/小熊/新版吉祥物去背.gif" style="margin-left:30%; margin-top:3%; width:70%; height:70%;">
+        <script type="text/javascript" src="js/question.js"></script>
+    </div>
+
+    <!--底頁-->
+<footer>
+  <div class="container-footer">
+    <div class="item-left" >
+      <ul class="nav">
+        <li>📌 Fu Jen Catholic University</li>
+            <li>510 Zhongzhend Rd. ,Xinzhuang District, New Taipei City</li>
+      </ul>
+    </div>
+
+    <div class="item-center">
+      <ul class="nav">
+        <li>📞(02) 2905 2000</li>
+        <li>✉ pro@mail.fju.edu.tw</li>
+      </ul>
+    </div>
+    
+    <div class="item-right">
+      <ul class="nav">
+        <a href="aboutUs.html"><li>製作: 蔡方寧 吳家欣 何端容 劉芷伃 楊翊婕 陳彥彬 洪于雅 邱琦茵 同學</li>
+        <li>指導: 大數據跨領域微學程召集人 杜逸寧 副教授</li></a>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+  <!-- 回到頂端按鈕 -->
+  <button type="button" id="BackTop" class="toTop-arrow"><p style="position: relative;bottom: -20%; font-weight: 700; color:#ffffff;">TOP</p></button>
+  
+  <!-- 回到頂端按鈕相關js程式碼 -->
+  <script>
+    $(function(){
+      // 當點擊這個按鈕時，自動捲動到網頁最上方，0.333秒完成捲動的動作
+      $('#BackTop').click(function(){ 
+        $('html,body').animate({scrollTop:0}, 333);
+      });
+      // 當瀏覽器的捲軸在移動時
+      $(window).scroll(function() {
+        // 判斷網頁可視範圍的最上方距離網頁頂端是否超過 300 px
+        if ( $(this).scrollTop() > 300 ){
+          // 超過 300 px，以0.222秒的特效顯示按鈕
+          $('#BackTop').fadeIn(222);
+        } else {
+          // 未超過 300 px，先停止正在進行的特效，接著以 0.222 秒的特效隱藏按鈕
+          $('#BackTop').stop().fadeOut(222);
+        }
+      }).scroll();
+    });
+  </script>
+</body>
+</html>
