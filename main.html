@@ -12,6 +12,7 @@
 
     <!-- 回到頂端按鈕相關js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- 輔仁大事記css -->
     <link rel="stylesheet" type="text/css" href="css/timeline-1.css">
@@ -967,11 +968,17 @@
     <div class="swiper mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLtTsVUvyUQleoKfyaXpB8GQuGYhuuoiBk&autoplay=1&mute=1&loop=1" title="YouTube playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
+          
+          <iframe id='videoFrame'  src=url width="100%" height="100%"  title="YouTube playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <!--src="https://www.youtube.com/embed/videoseries?list=PLtTsVUvyUQleoKfyaXpB8GQuGYhuuoiBk&autoplay=1&mute=1&loop=1"-->
 <!--           <video width="100%" height="100%" controls autoplay loop>
             <source src="picture/動態投影牆/輔大招生影片_第三版_20220215.mp4" type="video/mp4">
           </video> -->
+          
+          
+
+
+          
         </div>
 <!--         <div class="swiper-slide" >
           <video width="100%" height="100%" controls autoplay loop muted>
@@ -1396,6 +1403,28 @@
         }
       }).scroll();
     });
+  </script>
+
+
+  <script>
+    function getUrl() {
+
+      $.ajax({
+      type:"POST",
+      url:"php/get_video.php",
+      data:{
+        "urlValue":'',
+      },
+      success:function(data){
+        console.log(data);
+        document.getElementById("videoFrame").src = data;
+      },
+
+      
+    })
+  }
+    // 當頁面載入時，讀取最新的影片網址
+    window.onload = getUrl;
   </script>
 </body>
 </html>

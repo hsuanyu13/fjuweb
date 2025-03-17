@@ -1,9 +1,13 @@
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href="../picture/輔大校徽/0純校徽.gif">
         <title>後臺管理系統 | 主頁影片</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <style type="text/css">
             .up_div h1{  /*最新消息資料管理標題*/
                 align:"left";
@@ -160,21 +164,35 @@
         </div>
         </div>
         
+        <script>
+        function saveUrl() {
+            let urlValue = document.getElementById("urlInput").value;
+            
+            if (urlValue.trim() === "") {
+                alert("請輸入有效的網址");
+                return;
+            }
+
+            $.ajax({
+		    type:"POST",
+		    url:"saveurl.php",
+		    data:{
+			"urlValue":urlValue,
+			
+		    },
+		    success:function(){
+			    alert("修改成功");		
+		    },
+        })
+
+    }
+        </script>
         <div class="line">11</div>
         <div class='input'>
             <input type="text" class="url-input" placeholder="請輸入網址" id='urlInput'>
             <button onclick="saveUrl()">確認</button>
         </div>
 
-        <script>
-        // 定義全域變數
-
-
-        function saveUrl() {
-            // 取得 input 的值並儲存到全域變數
-            // 儲存網址到 localStorage
-            localStorage.setItem("globalUrl", "document.getElementById("urlInput").value;");
-        }
-    </script>
+        
 
     </body>
