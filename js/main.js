@@ -12,9 +12,31 @@ document.getElementById('overlay').addEventListener('click', function() {
   document.getElementById('modal').classList.remove('is-visible');
 });
 
+window.onload=getUrl()
+
 !function(){
   // 載入即執行
+
 }();
+
+
+function getUrl() {
+
+  $.ajax({
+  type:"POST",
+  url:"php/get_video.php",
+  data:{
+    "urlValue":'',
+  },
+  success:function(data){
+    console.log(data);
+    document.getElementById("videoFrame").src = data;
+  },
+
+  
+})
+}
+
 
 function history() {
   $.ajax({

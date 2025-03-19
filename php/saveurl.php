@@ -1,5 +1,5 @@
 <?php  
-    include("managerSQL.php");
+    include("connect.php");
     header("Connect-Type: text/html; charset= utf-8");
     
     $slcdb=mysqli_select_db($db_link,"fjuweb");
