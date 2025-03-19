@@ -165,6 +165,7 @@
         </div>
         
         <script>
+        
         function saveUrl() {
             let urlValue = document.getElementById("urlInput").value;
             
@@ -172,6 +173,23 @@
                 alert("請輸入有效的網址");
                 return;
             }
+
+            if(urlValue.includes('youtu.be/')){
+                urlValue=urlValue.split('?')[0];
+                urlValue=urlValue.replace('youtu.be/','www.youtube.com/embed/')+'?autoplay=1&mute=1&loop=1';
+            }
+            else if(urlValue.includes('watch?v=')){
+                if(urlValue.includes('list')){
+                    a=urlValue.split('watch?v=')[0]+'embed/';
+                    b='videoseries?list='+urlValue.split('list=')[1]+'&autoplay=1&mute=1&loop=1';
+                    urlValue=a+b;
+                }
+                else{
+                    urlValue=urlValue.replace('watch?v=','embed/')+'?autoplay=1&mute=1&loop=1';
+                }
+            }
+
+            document.getElementById('urlInput').value='';
 
             $.ajax({
 		    type:"POST",
@@ -183,9 +201,10 @@
 		    success:function(){
 			    alert("修改成功");		
 		    },
-        })
+            })
 
-    }
+            
+        }
         </script>
         <div class="line">11</div>
         <div class='input'>
