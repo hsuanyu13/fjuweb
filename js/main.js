@@ -12,7 +12,14 @@ document.getElementById('overlay').addEventListener('click', function() {
   document.getElementById('modal').classList.remove('is-visible');
 });
 
-window.onload=getUrl()
+window.onload=function(){
+  getUrl();
+  history();
+  history_english();
+  swiper();
+  morenews();
+  page();
+}
 
 !function(){
   // 載入即執行
