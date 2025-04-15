@@ -21,27 +21,23 @@ window.onload=function(){
   page();
 }
 
-!function(){
-  // 載入即執行
-
-}();
-
 
 function getUrl() {
-
   $.ajax({
-  type:"POST",
-  url:"php/get_video.php",
-  data:{
-    "urlValue":'',
-  },
-  success:function(data){
-    console.log(data);
-    document.getElementById("videoFrame").src = data;
-  },
-
-  
-})
+    type: "POST",
+    url: "php/get_video.php",
+    data: {
+      "urlValue": ''
+    },
+    success: function (data) {
+      let videoFrame = document.getElementById("videoFrame");
+      videoFrame.src = data;
+      videoFrame.style.display = "block"; // 取得影片後才顯示
+    },
+    error: function () {
+      console.error("載入影片失敗");
+    }
+  });
 }
 
 
@@ -50,7 +46,6 @@ function history() {
     url: "./php/history.php",
     dataType: "json",
     success: function(data) {
-      console.log(data);
       var len = data.length;
       for (var i = 1; i < len; i++) {
         var timline_div = document.getElementById("history_timeline");
@@ -63,7 +58,6 @@ function history() {
         li.setAttribute("style", "width: 140px;");
         div.setAttribute("style", "height: 150px;");
         div.appendChild(time);
-        console.log(div);
 
         // 正規表達法，把換行符號取代成</br>
         const event = data[i]["event"].replace(/\n/g, '</br>');
@@ -88,7 +82,6 @@ function history_english() {
     url: "./php/history_english.php",
     dataType: "json",
     success: function(data) {
-      console.log(data);
       var len = data.length;
       for (var i = 1; i < len; i++) {
         var timline_div = document.getElementById("history_timeline");
@@ -101,7 +94,6 @@ function history_english() {
         li.setAttribute("style", "width: 140px;");
         div.setAttribute("style", "height: 150px;");
         div.appendChild(time);
-        console.log(div);
 
         // 正規表達法，把換行符號取代成</br>
         const event = data[i]["event"].replace(/\n/g, '</br>');
@@ -160,14 +152,12 @@ async function morenews() {
   try {
     const response = await fetch('./php/news.php');
     const data = await response.json();
-    console.log(data);
 
     // 找置頂的消息
     let topnews_number = data[3].reduce((arr, item, index) => {
       if (item === "YES") arr.push(index);
       return arr;
     }, []);
-    console.log(topnews_number);
 
     // 置頂的消息
     for (let i = 0; i < topnews_number.length; i++) {

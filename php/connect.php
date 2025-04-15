@@ -13,6 +13,6 @@ if ($mysqli->connect_error) {
 }
 
 $mysqli->set_charset("utf8");
-$db_link = mysqli_connect($db_host,$db_username);
+$db_link = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
 ?>
