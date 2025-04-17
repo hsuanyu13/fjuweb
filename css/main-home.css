@@ -19,12 +19,19 @@ body{
 .right_btn{
  	position: absolute;
     bottom: 15%;
-    right: 15%;
+    right: 16%;
 }
 .left_btn{
  	position: absolute;
     top: 2%;
-    right: 15%;
+    right: 16%;
+}
+.url_btn{
+	position: absolute;
+	top: 2%;
+    right: -3%;
+	width: 18%;
+    
 }
 .account_btn{
 	width: 10%;
@@ -94,13 +101,20 @@ button{
 	/*按鈕*/
 	.right_btn{
 	 	position: absolute;
-	    bottom: 17%;
+	    bottom: 18%;
 	    right: 15%;
 	}
 	.left_btn{
 	 	position: absolute;
 	    top: 17%;
 	    right: 15%;
+	}
+	.url_btn{
+		position: absolute;
+		right: 15%;
+		top: 5%;
+		width: 43%;
+		
 	}
 	.account_btn{
 		width: 10%;
@@ -165,6 +179,8 @@ button{
 	    top: 20%;
 	    right: 15%;
 	}
+	
+
 	.account_btn{
 		width: 15%;
 		height: 10%;
