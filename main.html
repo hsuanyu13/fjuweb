@@ -25,6 +25,30 @@
 
     <!-- 顯示在網頁頁籤的title -->
     <title>招生網 ｜ 輔仁大學</title>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // 從後台 API 獲取系所網址
+        fetch('php/get_dep_urls.php', { 
+          method: 'POST' 
+        })
+          .then(response => response.json())
+          .then(departmentUrls => {
+            // 為所有系所連結添加點擊事件
+            document.querySelectorAll('a[data-department]').forEach(link => {
+              link.addEventListener('click', event => {
+                event.preventDefault();
+                const department = link.getAttribute('data-department');
+                const url = departmentUrls[department];
+                if (url) window.location.href = url;
+                else console.error(`找不到系所 "${department}" 的網址`);
+              });
+            });
+          })
+          .catch(error => console.error('獲取系所網址時出錯:', error));
+      });
+      
+    </script>
   </head>
 
   <!--漢堡選單-->
@@ -102,147 +126,147 @@
         <li class="main-menu-thing">
           <a href="#" style="width:100px ;text-align:center;font-weight: 900;">學院及學系</a>
           <ul class="all">
-            <li class="college"><a href="http://www.la.fju.edu.tw/"><img src="輔大院徽系徽/文學院/文學院.png" style="width: 30px; height:30px;"> 文學院</a>
+            <li class="college"><a href="#" data-department="文學院"><img src="輔大院徽系徽/文學院/文學院.png" style="width: 30px; height:30px;"> 文學院</a>
               <ul class="departments">
-                <li ><a href="http://www.chinese.fju.edu.tw/index.php"><img src="輔大院徽系徽/文學院/中國文學系.png" style="width: 30px; height:30px;"> 中國文學系</a></li>
-                <li><a href="http://www.history.fju.edu.tw/chi/"><img src="輔大院徽系徽/文學院/歷史學系.png" style="width: 30px; height:30px;"> 歷史學系</a></li>
-                <li><a href="https://www.philosophy.fju.edu.tw/"><img src="輔大院徽系徽/文學院/哲學系.png" style="width: 30px; height:30px;"> 哲學系</a></li>
+                <li ><a href="#" data-department="中國文學系"><img src="輔大院徽系徽/文學院/中國文學系.png" style="width: 30px; height:30px;"> 中國文學系</a></li>
+                <li><a href="#" data-department="歷史學系"><img src="輔大院徽系徽/文學院/歷史學系.png" style="width: 30px; height:30px;"> 歷史學系</a></li>
+                <li><a href="#" data-department="哲學系"><img src="輔大院徽系徽/文學院/哲學系.png" style="width: 30px; height:30px;"> 哲學系</a></li>
               </ul>
             </li>
-            <li class="college"><a href="https://www.finearts.fju.edu.tw/zh/index.html"><img src="輔大院徽系徽/藝術學院/藝術學院.png" style="width: 30px; height:30px;"> 藝術學院</a>
+            <li class="college"><a href="#" data-department="藝術學院"><img src="輔大院徽系徽/藝術學院/藝術學院.png" style="width: 30px; height:30px;"> 藝術學院</a>
               <ul class="departments">
-                <li><a href="https://www.music.fju.edu.tw/"><img src="輔大院徽系徽/藝術學院/音樂學系.png" style="width: 30px; height:30px;"> 音樂學系</a></li>
-                <li><a href="https://www.landscape.fju.edu.tw/index.php"><img src="輔大院徽系徽/藝術學院/景觀設計學系.png" style="width: 30px; height:30px;"> 景觀設計學系</a></li>
-                <li><a href="https://www.aart.fju.edu.tw/"><img src="輔大院徽系徽/藝術學院/應用美術學系.png" style="width: 30px; height:30px;"> 應用美術學系</a></li>
-                <li><a href="http://culture.finearts.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/藝術學院/藝術與文化創意學士學位學程.png" style="width: 30px; height:30px;"> 藝術與文化創意學士學位學程</a></li>
+                <li><a href="#" data-department="音樂學系"><img src="輔大院徽系徽/藝術學院/音樂學系.png" style="width: 30px; height:30px;"> 音樂學系</a></li>
+                <li><a href="#" data-department="景觀設計學系"><img src="輔大院徽系徽/藝術學院/景觀設計學系.png" style="width: 30px; height:30px;"> 景觀設計學系</a></li>
+                <li><a href="#" data-department="應用美術學系"><img src="輔大院徽系徽/藝術學院/應用美術學系.png" style="width: 30px; height:30px;"> 應用美術學系</a></li>
+                <li><a href="#" data-department="藝術與文化創意學士學位學程"><img src="輔大院徽系徽/藝術學院/藝術與文化創意學士學位學程.png" style="width: 30px; height:30px;"> 藝術與文化創意學士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.mc.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/醫學院.png" style="width: 30px; height:30px;"> 醫學院</a>
+            <li class="college"><a href="#" data-department="醫學院"><img src="輔大院徽系徽/醫學院/醫學院.png" style="width: 30px; height:30px;"> 醫學院</a>
               <ul class="departments">
-                <li><a href="http://www.med.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/醫學院/醫學系.png" style="width: 30px; height:30px;"> 醫學系</a></li>
-                <li><a href="https://www.nursing.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/護理學系.png" style="width: 30px; height:30px;"> 護理學系</a></li>
-                <li><a href="https://www.medph.fju.edu.tw/"><img src="輔大院徽系徽/醫學院/公共衛生學系.png" style="width: 30px; height:30px;"> 公共衛生學系</a></li>
-                <li><a href="http://www.cpsy.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/醫學院/臨床心理學系.png" style="width: 30px; height:30px;"> 臨床心理學系</a></li>
-                <li><a href="http://www.ot.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 職能治療學系</a>
-                <li><a href="http://www.drt.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/醫學院/呼吸治療學系.png" style="width: 30px; height:30px;"> 呼吸治療學系</a></li>
-                <li><a href="http://www.gibps.fju.edu.tw/index.php"><img src="picture/fju.png" style="width: 30px; height:30px;"> 生物醫學暨藥學研究所</a></li>
-                <li><a href="http://tltc.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 跨專業長期照護碩士學位學程</a></li>
-                <li><a href="http://www.bdb.fju.edu.tw/tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 生物醫學海量資料分析碩士學位學程</a></li>
-                <li><a href="http://www.biopharma.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 生技醫藥博士學位學程</a></li>
+                <li><a href="#" data-department="醫學系"><img src="輔大院徽系徽/醫學院/醫學系.png" style="width: 30px; height:30px;"> 醫學系</a></li>
+                <li><a href="#" data-department="護理學系"><img src="輔大院徽系徽/醫學院/護理學系.png" style="width: 30px; height:30px;"> 護理學系</a></li>
+                <li><a href="#" data-department="公共衛生學系"><img src="輔大院徽系徽/醫學院/公共衛生學系.png" style="width: 30px; height:30px;"> 公共衛生學系</a></li>
+                <li><a href="#" data-department="臨床心理學系"><img src="輔大院徽系徽/醫學院/臨床心理學系.png" style="width: 30px; height:30px;"> 臨床心理學系</a></li>
+                <li><a href="#" data-department="職能治療學系"><img src="picture/fju.png" style="width: 30px; height:30px;"> 職能治療學系</a>
+                <li><a href="#" data-department="呼吸治療學系"><img src="輔大院徽系徽/醫學院/呼吸治療學系.png" style="width: 30px; height:30px;"> 呼吸治療學系</a></li>
+                <li><a href="#" data-department="生物醫學暨藥學研究所"><img src="picture/fju.png" style="width: 30px; height:30px;"> 生物醫學暨藥學研究所</a></li>
+                <li><a href="#" data-department="跨專業長期照護碩士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 跨專業長期照護碩士學位學程</a></li>
+                <li><a href="#" data-department="生物醫學海量資料分析碩士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 生物醫學海量資料分析碩士學位學程</a></li>
+                <li><a href="#" data-department="生技醫藥博士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 生技醫藥博士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.comm.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/傳播學院.png" style="width: 30px; height:30px;"> 傳播學院</a>
+            <li class="college"><a href="#" data-department="傳播學院"><img src="輔大院徽系徽/傳播學院/傳播學院.png" style="width: 30px; height:30px;"> 傳播學院</a>
               <ul class="departments">
-                <li><a href="http://www.commarts.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/影像傳播學系.jpg" style="width: 30px; height:30px;"> 影像傳播學系</a></li>
-                <li><a href="http://jcs.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/新聞傳播學系.png" style="width: 30px; height:30px;"> 新聞傳播學系</a></li>
-                <li><a href="http://www.adpr.fju.edu.tw/"><img src="輔大院徽系徽/傳播學院/廣告傳播學系.png" style="width: 30px; height:30px;"> 廣告傳播學系</a></li>
-                <li><a href="http://www.gsmc.url.tw/?lang=TW"><img src="輔大院徽系徽/傳播學院/大眾傳播學研究所.png" style="width: 30px; height:30px;"> 大眾傳播學研究所</a></li>
-                <li><a href="http://www.fjumedia.com/c0g/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 大眾傳播學士學位學程</a></li>
+                <li><a href="#" data-department="影像傳播學系"><img src="輔大院徽系徽/傳播學院/影像傳播學系.jpg" style="width: 30px; height:30px;"> 影像傳播學系</a></li>
+                <li><a href="#" data-department="新聞傳播學系"><img src="輔大院徽系徽/傳播學院/新聞傳播學系.png" style="width: 30px; height:30px;"> 新聞傳播學系</a></li>
+                <li><a href="#" data-department="廣告傳播學系"><img src="輔大院徽系徽/傳播學院/廣告傳播學系.png" style="width: 30px; height:30px;"> 廣告傳播學系</a></li>
+                <li><a href="#" data-department="大眾傳播學研究所"><img src="輔大院徽系徽/傳播學院/大眾傳播學研究所.png" style="width: 30px; height:30px;"> 大眾傳播學研究所</a></li>
+                <li><a href="#" data-department="大眾傳播學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 大眾傳播學士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.educ.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/教育學院.jpg" style="width: 30px; height:30px;"> 教育學院</a>
+            <li class="college"><a href="#" data-department="教育學院"><img src="輔大院徽系徽/教育學院/教育學院.jpg" style="width: 30px; height:30px;"> 教育學院</a>
               <ul class="departments">
-                <li><a href="http://www.lins.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/圖書資訊學系.png" style="width: 30px; height:30px;"> 圖書資訊學系</a></li>
-                <li><a href="https://www.phed.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/體育學系.png" style="width: 30px; height:30px;"> 體育學系</a></li>
-                <li><a href="http://www.cte.fju.edu.tw/"><img src="輔大院徽系徽/教育學院/師資培育中心.jpg" style="width: 30px; height:30px;"> 師資培育中心</a></li>
-                <li><a href="http://www.lead.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 教育領導與發展研究所</a></li>
-                <li><a href="http://www.eltd.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 教育領導與科技發展學士學位學程</a></li>
-                <li><a href="http://www.psrm.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 運動休閒管理學士學位學程</a></li>
+                <li><a href="#" data-department="圖書資訊學系"><img src="輔大院徽系徽/教育學院/圖書資訊學系.png" style="width: 30px; height:30px;"> 圖書資訊學系</a></li>
+                <li><a href="#" data-department="體育學系"><img src="輔大院徽系徽/教育學院/體育學系.png" style="width: 30px; height:30px;"> 體育學系</a></li>
+                <li><a href="#" data-department="師資培育中心"><img src="輔大院徽系徽/教育學院/師資培育中心.jpg" style="width: 30px; height:30px;"> 師資培育中心</a></li>
+                <li><a href="#" data-department="教育領導與發展研究所"><img src="picture/fju.png" style="width: 30px; height:30px;"> 教育領導與發展研究所</a></li>
+                <li><a href="#" data-department="教育領導與科技發展學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 教育領導與科技發展學士學位學程</a></li>
+                <li><a href="#" data-department="運動休閒管理學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 運動休閒管理學士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.se.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/理工學院.jpg" style="width: 30px; height:30px;"> 理工學院</a>
+            <li class="college"><a href="#" data-department="理工學院"><img src="輔大院徽系徽/理工學院/理工學院.jpg" style="width: 30px; height:30px;"> 理工學院</a>
               <ul class="departments">
-                <li><a href="http://www.math.fju.edu.tw/zh-hant/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 數學系</a></li>
-                <li><a href="http://www.phy.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 物理學系</a></li>
-                <li><a href="http://www.ch.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/理工學院/化學系.png" style="width: 30px; height:30px;"> 化學系</a></li>
-                <li><a href="http://www.bio.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/生命科學系.png" style="width: 30px; height:30px;"> 生命科學系</a></li>
-                <li><a href="http://www3.csie.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/資訊工程學系.png" style="width: 30px; height:30px;"> 資訊工程學系</a></li>
-                <li><a href="http://www.ee.fju.edu.tw/"><img src="輔大院徽系徽/理工學院/電機工程學系.jpg" style="width: 30px; height:30px;"> 電機工程學系</a></li>
-                <li><a href="http://www.miia.fju.edu.tw/layout/oneorange/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 醫學資訊與創新應用學士學位學程</a></li>
-                <li><a href="http://www.ase.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 應用科學與工程研究所</a></li>
-                <li><a href="http://www.sedia.fju.edu.tw/wordpress/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 軟體工程與數位創意學士學位學程</a></li>
+                <li><a href="#" data-department="數學系"><img src="picture/fju.png" style="width: 30px; height:30px;"> 數學系</a></li>
+                <li><a href="#" data-department="物理學系"><img src="picture/fju.png" style="width: 30px; height:30px;"> 物理學系</a></li>
+                <li><a href="#" data-department="化學系"><img src="輔大院徽系徽/理工學院/化學系.png" style="width: 30px; height:30px;"> 化學系</a></li>
+                <li><a href="#" data-department="生命科學系"><img src="輔大院徽系徽/理工學院/生命科學系.png" style="width: 30px; height:30px;"> 生命科學系</a></li>
+                <li><a href="#" data-department="資訊工程學系"><img src="輔大院徽系徽/理工學院/資訊工程學系.png" style="width: 30px; height:30px;"> 資訊工程學系</a></li>
+                <li><a href="#" data-department="電機工程學系"><img src="輔大院徽系徽/理工學院/電機工程學系.jpg" style="width: 30px; height:30px;"> 電機工程學系</a></li>
+                <li><a href="#" data-department="醫學資訊與創新應用學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 醫學資訊與創新應用學士學位學程</a></li>
+                <li><a href="#" data-department="應用科學與工程研究所"><img src="picture/fju.png" style="width: 30px; height:30px;"> 應用科學與工程研究所</a></li>
+                <li><a href="#" data-department="軟體工程與數位創意學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 軟體工程與數位創意學士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.cfl.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/外國語文學院.jpg" style="width: 30px; height:30px;"> 外語學院</a>
+            <li class="college"><a href="#" data-department="外國語文學院">><img src="輔大院徽系徽/外國語文學院/外國語文學院.jpg" style="width: 30px; height:30px;"> 外語學院</a>
               <ul class="departments">
-                <li><a href="http://english.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/英國語文學系.png" style="width: 30px; height:30px;"> 英國語文學系</a></li>
-                <li><a href="http://www.de.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/德語語文學系.png" style="width: 30px; height:30px;"> 德語語文學系</a></li>
-                <li><a href="http://www.fren.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 法國語文學系</a></li>
-                <li><a href="http://www.span.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/西班牙語文學系.png" style="width: 30px; height:30px;"> 西班牙語文學系</a></li>
-                <li><a href="http://www.jp.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="輔大院徽系徽/外國語文學院/日本語文學系.jpg" style="width: 30px; height:30px;"> 日本語文學系</a></li>
-                <li><a href="http://www.italy.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 義大利語文學系</a></li>
-                <li><a href="https://giccs.fju.edu.tw/"><img src="輔大院徽系徽/外國語文學院/跨文化研究所.jpg" style="width: 30px; height:30px;"> 跨文化研究所</a></li>
+                <li><a href="#" data-department="英國語文學系">><img src="輔大院徽系徽/外國語文學院/英國語文學系.png" style="width: 30px; height:30px;"> 英國語文學系</a></li>
+                <li><a href="#" data-department="德語語文學系">><img src="輔大院徽系徽/外國語文學院/德語語文學系.png" style="width: 30px; height:30px;"> 德語語文學系</a></li>
+                <li><a href="#" data-department="法國語文學系">><img src="picture/fju.png" style="width: 30px; height:30px;"> 法國語文學系</a></li>
+                <li><a href="#" data-department="西班牙語文學系">><img src="輔大院徽系徽/外國語文學院/西班牙語文學系.png" style="width: 30px; height:30px;"> 西班牙語文學系</a></li>
+                <li><a href="#" data-department="日本語文學系">><img src="輔大院徽系徽/外國語文學院/日本語文學系.jpg" style="width: 30px; height:30px;"> 日本語文學系</a></li>
+                <li><a href="#" data-department="義大利語文學系">><img src="picture/fju.png" style="width: 30px; height:30px;"> 義大利語文學系</a></li>
+                <li><a href="#" data-department="跨文化研究所">><img src="輔大院徽系徽/外國語文學院/跨文化研究所.jpg" style="width: 30px; height:30px;"> 跨文化研究所</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.he.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/民生學院.png" style="width: 30px; height:30px;"> 民生學院</a>
+            <li class="college"><a href="#" data-department="民生學院"><img src="輔大院徽系徽/民生學院/民生學院.png" style="width: 30px; height:30px;"> 民生學院</a>
               <ul class="departments">
-                <li><a href="http://www.fs.fju.edu.tw/content/index.php"><img src="輔大院徽系徽/民生學院/食品科學系.png" style="width: 30px; height:30px;"> 食品科學系</a></li>
-                <li><a href="http://www.ns.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 營養科學系</a></li>
-                <li><a href="http://www.cfs.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/兒童與家庭學系.png" style="width: 30px; height:30px;"> 兒童與家庭學系</a></li>
-                <li><a href="http://www.rhim.fju.edu.tw/"><img src="輔大院徽系徽/民生學院/餐旅管理學系.png" style="width: 30px; height:30px;"> 餐旅管理學系</a></li>
-                <li><a href="https://fjunfsdoctor.tw.he.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 食品營養博士學位學程</a></li>
+                <li><a href="#" data-department="食品科學系"><img src="輔大院徽系徽/民生學院/食品科學系.png" style="width: 30px; height:30px;"> 食品科學系</a></li>
+                <li><a href="#" data-department="營養科學系"><img src="picture/fju.png" style="width: 30px; height:30px;"> 營養科學系</a></li>
+                <li><a href="#" data-department="兒童與家庭學系"><img src="輔大院徽系徽/民生學院/兒童與家庭學系.png" style="width: 30px; height:30px;"> 兒童與家庭學系</a></li>
+                <li><a href="#" data-department="餐旅管理學系"><img src="輔大院徽系徽/民生學院/餐旅管理學系.png" style="width: 30px; height:30px;"> 餐旅管理學系</a></li>
+                <li><a href="#" data-department="食品營養博士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 食品營養博士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.ls.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學院.png" style="width: 30px; height:30px;"> 法律學院</a>
+            <li class="college"><a href="#" data-department="法律學院"><img src="輔大院徽系徽/法律學院/法律學院.png" style="width: 30px; height:30px;"> 法律學院</a>
               <ul class="departments">
-                <li><a href="http://www.laws.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/法律學系.png" style="width: 30px; height:30px;"> 法律學系</a></li>
-                <li><a href="http://www.financelaw.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/財經法律學系.png" style="width: 30px; height:30px;"> 財經法律學系</a></li>
-                <li><a href="http://gd.laws.fju.edu.tw/"><img src="輔大院徽系徽/法律學院/學士後法律學系.png" style="width: 30px; height:30px;"> 學士後法律學系</a></li>
+                <li><a href="#" data-department="法律學系"><img src="輔大院徽系徽/法律學院/法律學系.png" style="width: 30px; height:30px;"> 法律學系</a></li>
+                <li><a href="#" data-department="財經法律學系"><img src="輔大院徽系徽/法律學院/財經法律學系.png" style="width: 30px; height:30px;"> 財經法律學系</a></li>
+                <li><a href="#" data-department="學士後法律學系"><img src="輔大院徽系徽/法律學院/學士後法律學系.png" style="width: 30px; height:30px;"> 學士後法律學系</a></li>
               </ul>
             </li>
-            <li class="college"><a href="https://www.social.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會科學院.png" style="width: 30px; height:30px;"> 社會科學院</a>
+            <li class="college"><a href="#" data-department="社會科學院"><img src="輔大院徽系徽/社會科學院/社會科學院.png" style="width: 30px; height:30px;"> 社會科學院</a>
               <ul class="departments">
-                <li><a href="https://www.economics.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/經濟學系.png" style="width: 30px; height:30px;"> 經濟學系</a></li>
-                <li><a href="https://www.soci.fju.edu.tw/"><img src="輔大院徽系徽/社會科學院/社會學系.png" style="width: 30px; height:30px;"> 社會學系</a></li>
-                <li><a href="http://fjusw.tw/Web/"><img src="輔大院徽系徽/社會科學院/社會工作學系.jpg" style="width: 30px; height:30px;"> 社會工作學系</a></li>
-                <li><a href="http://www.rsd.fju.edu.tw/index.php/zh/"><img src="輔大院徽系徽/社會科學院/宗教學系.png" style="width: 30px; height:30px;"> 宗教學系</a></li>
-                <li><a href="http://www.psy.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/社會科學院/心理學系.png" style="width: 30px; height:30px;"> 心理學系</a></li>
-                <li><a href="http://bpcs.fju.edu.tw/layout/oneblue/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 天主教研修學士學位學程</a></li>
-                <li><a href="http://npo.social.fju.edu.tw/web/index/index.jsp?lang=tw"><img src="輔大院徽系徽/社會科學院/非營利組織管理碩士學位學程.png" style="width: 30px; height:30px;"> 非營利組織管理碩士學位學程</a></li>
+                <li><a href="#" data-department="經濟學系"><img src="輔大院徽系徽/社會科學院/經濟學系.png" style="width: 30px; height:30px;"> 經濟學系</a></li>
+                <li><a href="#" data-department="社會學系"><img src="輔大院徽系徽/社會科學院/社會學系.png" style="width: 30px; height:30px;"> 社會學系</a></li>
+                <li><a href="#" data-department="社會工作學系"><img src="輔大院徽系徽/社會科學院/社會工作學系.jpg" style="width: 30px; height:30px;"> 社會工作學系</a></li>
+                <li><a href="#" data-department="宗教學系"><img src="輔大院徽系徽/社會科學院/宗教學系.png" style="width: 30px; height:30px;"> 宗教學系</a></li>
+                <li><a href="#" data-department="心理學系"><img src="輔大院徽系徽/社會科學院/心理學系.png" style="width: 30px; height:30px;"> 心理學系</a></li>
+                <li><a href="#" data-department="天主教研修學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 天主教研修學士學位學程</a></li>
+                <li><a href="#" data-department="非營利組織管理碩士學位學程"><img src="輔大院徽系徽/社會科學院/非營利組織管理碩士學位學程.png" style="width: 30px; height:30px;"> 非營利組織管理碩士學位學程</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.management.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/管理學院.png" style="width: 30px; height:30px;"> 管理學院</a>
+            <li class="college"><a href="#" data-department="管理學院"><img src="輔大院徽系徽/管理學院/管理學院.png" style="width: 30px; height:30px;"> 管理學院</a>
               <ul class="departments">
-                <li><a href="http://www.im.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/資訊管理學系.jpg" style="width: 30px; height:30px;"> 資訊管理學系</a></li>
-                <li><a href="http://www.fib.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/金融與國際企業學系.png" style="width: 30px; height:30px;"> 金融與國際企業學系</a></li>
-                <li><a href="http://www.management.fju.edu.tw/subweb/acct/subindex.php"><img src="輔大院徽系徽/管理學院/會計學系.png" style="width: 30px; height:30px;"> 會計學系</a></li>
-                <li><a href="http://www.management.fju.edu.tw/subweb/mba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 企業管理學系</a></li>
-                <li><a href="http://www.stat.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/統計資訊學系.png" style="width: 30px; height:30px;"> 統計資訊學系</a></li>
-                <li><a href="http://www.management.fju.edu.tw/subweb/gemba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 國際創業與經營管理學程碩士學位學程</a></li>
-                <li><a href="http://www.bbm.fju.edu.tw/"><img src="輔大院徽系徽/管理學院/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> 商業管理學士學位學程</a></li>
-                <li><a href="http://see.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 社會企業碩士在職學位學程</a></li>
-                <li><a href="http://www.management.fju.edu.tw/subweb/technology/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 科技管理學程碩士在職學位學程</a></li>
-                <li><a href="http://www.management.fju.edu.tw/subweb/phdba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 商學研究所</a></li>
-                <li><a href="http://www.management.fju.edu.tw/subweb/immba/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 國際經營管理碩士班</a></li>
+                <li><a href="#" data-department="資訊管理學系"><img src="輔大院徽系徽/管理學院/資訊管理學系.jpg" style="width: 30px; height:30px;"> 資訊管理學系</a></li>
+                <li><a href="#" data-department="金融與國際企業學系"><img src="輔大院徽系徽/管理學院/金融與國際企業學系.png" style="width: 30px; height:30px;"> 金融與國際企業學系</a></li>
+                <li><a href="#" data-department="會計學系"><img src="輔大院徽系徽/管理學院/會計學系.png" style="width: 30px; height:30px;"> 會計學系</a></li>
+                <li><a href="#" data-department="企業管理學系"><img src="picture/fju.png" style="width: 30px; height:30px;"> 企業管理學系</a></li>
+                <li><a href="#" data-department="統計資訊學系"><img src="輔大院徽系徽/管理學院/統計資訊學系.png" style="width: 30px; height:30px;"> 統計資訊學系</a></li>
+                <li><a href="#" data-department="國際創業與經營管理學程碩士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 國際創業與經營管理學程碩士學位學程</a></li>
+                <li><a href="#" data-department="商業管理學士學位學程"><img src="輔大院徽系徽/管理學院/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> 商業管理學士學位學程</a></li>
+                <li><a href="#" data-department="社會企業碩士在職學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 社會企業碩士在職學位學程</a></li>
+                <li><a href="#" data-department="科技管理學程碩士在職學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 科技管理學程碩士在職學位學程</a></li>
+                <li><a href="#" data-department="商學研究所"><img src="picture/fju.png" style="width: 30px; height:30px;"> 商學研究所</a></li>
+                <li><a href="#" data-department="國際經營管理碩士班"><img src="picture/fju.png" style="width: 30px; height:30px;"> 國際經營管理碩士班</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.ft.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品學院.png" style="width: 30px; height:30px;"> 織品學院</a>
+            <li class="college"><a href="#" data-department="織品學院"><img src="輔大院徽系徽/織品學院/織品學院.png" style="width: 30px; height:30px;"> 織品學院</a>
               <ul class="departments">
-                <li><a href="https://www.tc.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/織品服裝學系.png" style="width: 30px; height:30px;"> 織品服裝學系</a></li>
-                <li><a href="https://www.bfm.fju.edu.tw/web/"><img src="輔大院徽系徽/織品學院/品牌與時尚經營管理碩士學位學程.png" style="width: 30px; height:30px;"> 品牌與時尚經營管理碩士學位學程</a></li>
-                <li><a href="http://www.museumstudies.fju.edu.tw/"><img src="輔大院徽系徽/織品學院/博物館學研究所.png" style="width: 30px; height:30px;"> 博物館學研究所</a></li>
+                <li><a href="#" data-department="織品服裝學系"><img src="輔大院徽系徽/織品學院/織品服裝學系.png" style="width: 30px; height:30px;"> 織品服裝學系</a></li>
+                <li><a href="#" data-department="品牌與時尚經營管理碩士學位學程"><img src="輔大院徽系徽/織品學院/品牌與時尚經營管理碩士學位學程.png" style="width: 30px; height:30px;"> 品牌與時尚經營管理碩士學位學程</a></li>
+                <li><a href="#" data-department="博物館學研究所"><img src="輔大院徽系徽/織品學院/博物館學研究所.png" style="width: 30px; height:30px;"> 博物館學研究所</a></li>
               </ul>
             </li>
-            <li class="college"><a href="http://www.soce.fju.edu.tw/wordpress/"><img src="輔大院徽系徽/進修部/進修部.png" style="width: 30px; height:30px;"> 進修部</a>
+            <li class="college"><a href="#" data-department="進修部"><img src="輔大院徽系徽/進修部/進修部.png" style="width: 30px; height:30px;"> 進修部</a>
               <ul class="departments">
-                <li><a href="http://www.chinese.fju.edu.tw/admission.php"><img src="輔大院徽系徽/進修部/中國文學系.png" style="width: 30px; height:30px;"> 中國文學系</a></li>
-                <li><a href="http://www.fjuhistory.tw/"><img src="輔大院徽系徽/進修部/歷史學系.png" style="width: 30px; height:30px;"> 歷史學系</a></li>
-                <li><a href="https://www.aart.fju.edu.tw/"><img src="輔大院徽系徽/進修部/應用美術學系.png" style="width: 30px; height:30px;"> 應用美術學系</a></li>
-                <li><a href="http://soce.eng.fju.edu.tw/"><img src="輔大院徽系徽/進修部/英國語文學系.png" style="width: 30px; height:30px;"> 英國語文學系</a></li>
-                <li><a href="http://soce.jp.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/進修部/日本語文學系.jpg" style="width: 30px; height:30px;"> 日本語文學系</a></li>
-                <li><a href="http://www.rhim.fju.edu.tw/"><img src="輔大院徽系徽/進修部/餐旅管理學系.png" style="width: 30px; height:30px;"> 餐旅管理學系</a></li>
-                <li><a href="http://www.lex.fju.edu.tw/"><img src="輔大院徽系徽/進修部/法律學系.png" style="width: 30px; height:30px;"> 法律學系</a></li>
-                <li><a href="http://soce.eco.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="輔大院徽系徽/進修部/經濟學系.png" style="width: 30px; height:30px;"> 經濟學系</a></li>
-                <li><a href="http://culture.finearts.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 藝術與文化創意學士學位學程</a></li>
-                <li><a href="http://www.fjumedia.com/c0g/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 大眾傳播學士學位學程</a></li>
-                <li><a href="http://www.psrm.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 運動休閒管理學士學位學程</a></li>
-                <li><a href="http://www.sedia.fju.edu.tw/wordpress/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 軟體工程與數位創意學士學位學程</a></li>
-                <li><a href="http://www.bbm.fju.edu.tw/"><img src="輔大院徽系徽/進修部/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> 商業管理學士學位學程</a></li>
-                <li><a href="http://hss.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 人文社會服務進修學士學位學程</a></li>
-                <li><a href="http://www.mih.fju.edu.tw/"><img src="picture/fju.png" style="width: 30px; height:30px;"> 醫學資訊與健康科技進修學士學位學程</a></li>
-                <li><a href="http://ltchm.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 長期照護與健康管理進修學士學位學程</a></li>
-                <li><a href="http://iidl.fju.edu.tw/"><img src="輔大院徽系徽/進修部/資訊創新與數位生活進修學士學位學程.png" style="width: 30px; height:30px;"> 資訊創新與數位生活進修學士學位學程</a></li>
-                <li><a href="http://www.id.fju.edu.tw/layout/onebrown/vvindex.jsp"><img src="picture/fju.png" style="width: 30px; height:30px;"> 室內設計進修學士學位學程</a></li>
+                <li><a href="#" data-department="中國文學系"><img src="輔大院徽系徽/進修部/中國文學系.png" style="width: 30px; height:30px;"> 中國文學系</a></li>
+                <li><a href="#" data-department="歷史學系"><img src="輔大院徽系徽/進修部/歷史學系.png" style="width: 30px; height:30px;"> 歷史學系</a></li>
+                <li><a href="#" data-department="應用美術學系"><img src="輔大院徽系徽/進修部/應用美術學系.png" style="width: 30px; height:30px;"> 應用美術學系</a></li>
+                <li><a href="#" data-department="英國語文學系"><img src="輔大院徽系徽/進修部/英國語文學系.png" style="width: 30px; height:30px;"> 英國語文學系</a></li>
+                <li><a href="#" data-department="日本語文學系"><img src="輔大院徽系徽/進修部/日本語文學系.jpg" style="width: 30px; height:30px;"> 日本語文學系</a></li>
+                <li><a href="#" data-department="餐旅管理學系"><img src="輔大院徽系徽/進修部/餐旅管理學系.png" style="width: 30px; height:30px;"> 餐旅管理學系</a></li>
+                <li><a href="#" data-department="法律學系"><img src="輔大院徽系徽/進修部/法律學系.png" style="width: 30px; height:30px;"> 法律學系</a></li>
+                <li><a href="#" data-department="經濟學系"><img src="輔大院徽系徽/進修部/經濟學系.png" style="width: 30px; height:30px;"> 經濟學系</a></li>
+                <li><a href="#" data-department="藝術與文化創意學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 藝術與文化創意學士學位學程</a></li>
+                <li><a href="#" data-department="大眾傳播學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 大眾傳播學士學位學程</a></li>
+                <li><a href="#" data-department="運動休閒管理學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 運動休閒管理學士學位學程</a></li>
+                <li><a href="#" data-department="軟體工程與數位創意學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 軟體工程與數位創意學士學位學程</a></li>
+                <li><a href="#" data-department="商業管理學士學位學程"><img src="輔大院徽系徽/進修部/商業管理學士學位學程.jpg" style="width: 30px; height:30px;"> 商業管理學士學位學程</a></li>
+                <li><a href="#" data-department="人文社會服務進修學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 人文社會服務進修學士學位學程</a></li>
+                <li><a href="#" data-department="醫學資訊與健康科技進修學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 醫學資訊與健康科技進修學士學位學程</a></li>
+                <li><a href="#" data-department="長期照護與健康管理進修學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 長期照護與健康管理進修學士學位學程</a></li>
+                <li><a href="#" data-department="資訊創新與數位生活進修學士學位學程"><img src="輔大院徽系徽/進修部/資訊創新與數位生活進修學士學位學程.png" style="width: 30px; height:30px;"> 資訊創新與數位生活進修學士學位學程</a></li>
+                <li><a href="#" data-department="室內設計進修學士學位學程"><img src="picture/fju.png" style="width: 30px; height:30px;"> 室內設計進修學士學位學程</a></li>
               </ul>
             </li>
           </ul>
