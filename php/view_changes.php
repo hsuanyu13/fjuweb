@@ -146,7 +146,7 @@ if ($result && $result->num_rows > 0) {
             <thead>
                 <tr>
                     <th>編號</th>
-                    <th>帳號</th>
+                    <th>姓名</th>
                     <th>原網址</th>
                     <th>新網址</th>
                     <th>修改時間</th>
@@ -192,5 +192,32 @@ if ($result && $result->num_rows > 0) {
             }
         });
     </script>
+    <?php
+// 處理 AJAX POST 請求並儲存 URL
+if (isset($_POST['urlValue'])) {
+    include("managerSQL.php");
+
+    // 從 POST 請求獲取 URL
+    $urlValue = $_POST['urlValue'];
+
+    // 更新資料庫中的影片網址
+    $sql = "UPDATE video_url SET url = ?, modify_time = NOW(), modifier_id = ? WHERE id = ?";
+
+    $stmt = $mysqli->prepare($sql);
+    $modifier_id = $_SESSION['member_id'];  // 使用 session 中的 member_id
+    $video_id = 1;  
+
+    $stmt->bind_param("sii", $urlValue, $modifier_id, $video_id);
+
+    if ($stmt->execute()) {
+        echo "成功";
+    } else {
+        echo "更新失敗：" . $stmt->error;
+    }
+
+    $stmt->close();
+}
+?>
+
 </body>
 </html>

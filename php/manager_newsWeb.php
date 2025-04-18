@@ -1,10 +1,12 @@
 <?php
-    
+    session_start();
     include("managerSQL.php");
 
-    $sql_query = "SELECT * FROM news ORDER BY id ASC";
+    $sql_query = "SELECT n.*, m.user AS modifier_name 
+              FROM news n
+              LEFT JOIN member_table m ON n.modifier_id = m.id 
+              ORDER BY n.id ASC";
     $result = $mysqli->query($sql_query);
-
     if (!$result) {
         die("查詢失敗：" . $mysqli->error);
     }
@@ -29,7 +31,7 @@
                 /*邊框合併*/
                 border-collapse:collapse;
                 border:1.5px solid  #C7CDCD;
-                width:85.5%;
+                width:95%;
             }
             table tr{
                 font-size: 12px;
@@ -53,9 +55,9 @@
             }
             .line{
                 background-color:#9DC3E7; 
-                width:85.5%; 
+                width:95%; 
                 height:10%; 
-                margin-left:7.3%; 
+                margin-left:2.5%; 
                 margin-top:-1%; 
                 color:#9DC3E7;
             }
@@ -162,9 +164,11 @@
         <table border="1" align = "center" class="table" cellpadding="5">
             <tr>
                 <th>ID</th>
+                <th>姓名</th>
                 <th>標題</th>
                 <th>連結</th>
                 <th>日期</th>
+                <th>修改時間</th>
                 <th>置頂</th>
             </tr>
             <!-- 找不到問題
@@ -192,15 +196,27 @@
             while($row_result = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['id']."</td>";
+                // 只在有修改時間時顯示修改者，否則顯示 "-"
+                if (!empty($row_result['modify_time'])) {
+                    echo "<td style='text-align: center; vertical-align:middle;'>" . 
+                        (empty($row_result['modifier_name']) ? "-" : $row_result['modifier_name']) . "</td>";
+                } else {
+                    echo "<td style='text-align: center; vertical-align:middle;'>-</td>";
+                }
                 echo "<td>".$row_result['title']."</td>";
                 echo "<td style='word-break: break-all;'>".$row_result['link']."</td>";
                 echo "<td>".$row_result['date']."</td>";
+                // 顯示修改時間，如果沒有則顯示 "-"
+                echo "<td style='text-align: center; vertical-align:middle;'>" . 
+                    (empty($row_result['modify_time']) ? "-" : $row_result['modify_time']) . "</td>";
+                
                 if ($row_result['topnews'] == "YES"){
                     echo '<td><input type="checkbox" checked onchange="updateCheckboxValue(this, '.$row_result['id'].')"></td>';
                 }
                 else{
                     echo '<td><input type="checkbox" onchange="updateCheckboxValue(this, '.$row_result['id'].')"></td>';
                 }
+                
                 echo "<td><a href='manager_news_update.php?id=".$row_result['id']."'>修改 </a>";
                 echo "<a href='manager_news_delete.php?id=".$row_result['id']."'>刪除</a></td>";
                 echo "</tr>";
