@@ -38,23 +38,23 @@ if(isset($_POST['update'])) {
         $stmt = $mysqli->prepare("UPDATE dep_url SET url = ? WHERE id = ?");
         $stmt->bind_param("si", $new_url, $id);
         if($stmt->execute()) {
-            // 獲取當前登入的會員username
-            $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
-            // 如果沒有 username 但有 member_id，嘗試查詢 username
-            if (!$username && isset($_SESSION['member_id'])) {
+            // 獲取當前登入的會員user
+            $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+            
+            if (!$user && isset($_SESSION['member_id'])) {
                 $member_id = $_SESSION['member_id'];
-                $user_stmt = $mysqli->prepare("SELECT username FROM member_table WHERE id = ?");
+                $user_stmt = $mysqli->prepare("SELECT user FROM member_table WHERE id = ?");
                 $user_stmt->bind_param("i", $member_id);
                 $user_stmt->execute();
                 $user_result = $user_stmt->get_result();
                 if ($user_result->num_rows > 0) {
-                    $username = $user_result->fetch_assoc()['username'];
+                    $user = $user_result->fetch_assoc()['user'];
                 }
                 $user_stmt->close();
             }
-            // 記錄修改（使用 username 作為 user_id）
+            // 記錄修改（使用 user 作為 user_id）
             $stmt = $mysqli->prepare("INSERT INTO url_changes (user_id, dep_id, old_url, new_url, change_time) VALUES (?, ?, ?, ?, NOW())");
-            $stmt->bind_param("siss", $username, $id, $old_url, $new_url);
+            $stmt->bind_param("siss", $user, $id, $old_url, $new_url);
             $stmt->execute();
             $stmt->close();
             echo "<script>alert('修改成功！');</script>";

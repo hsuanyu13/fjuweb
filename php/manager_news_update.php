@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	include "managerSQL.php";
 
     $ID = $_GET['id'];
@@ -217,7 +218,7 @@
     $newDate = $_POST['fjuDate'];
     $newTopNews = isset($_POST['fjuTopNews']) ? 'YES' : 'NO';
 
-    $sql_query = "UPDATE news SET title = ?, link = ?, date = ?, topnews = ? WHERE id = ?";
+    $sql_query = "UPDATE news SET title = ?, link = ?, date = ?, topnews = ? ,modifier_id = ?, modify_time = NOW() WHERE id = ?";
     
     $stmt = $mysqli->prepare($sql_query);
 
@@ -226,7 +227,8 @@
     }
 
     // 綁定參數
-    $stmt->bind_param("sssss", $newTitle, $newLink, $newDate, $newTopNews, $ID);
+    $modifier_id = isset($_SESSION['member_id']) ? $_SESSION['member_id'] : NULL;
+    $stmt->bind_param("sssssi", $newTitle, $newLink, $newDate, $newTopNews, $modifier_id, $ID);
 
     // 執行查詢
     if ($stmt->execute()) {

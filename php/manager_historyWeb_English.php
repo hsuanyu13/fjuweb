@@ -1,10 +1,14 @@
 <?php
     
+    session_start();
     include("managerSQL.php");
 
-    $sql_query = "SELECT * FROM history_english ORDER BY id ASC";
+    // 修改 SQL 查詢來正確關聯修改者的資訊
+    $sql_query = "SELECT h.*, m.user AS modifier_name 
+              FROM history_english h 
+              LEFT JOIN member_table m ON h.modifier_id = m.id 
+              ORDER BY h.id ASC";
     $result = $mysqli->query($sql_query);
-
     if (!$result) {
         die("查詢失敗：" . $mysqli->error);
     }
@@ -29,7 +33,7 @@
                 /*邊框合併*/
                 border-collapse:collapse;
                 border:1.5px solid  #C7CDCD;
-                width: 77.7%;
+                width: 85%;
             }
             .table a{ /*修改 刪除*/
                 text-decoration:none;
@@ -50,9 +54,9 @@
             }
             .line{ /*長條*/
                 background-color:#B3C5ED; 
-                width:77.7%; 
+                width:85%; 
                 height:10%; 
-                margin-left:11.2%; 
+                margin-left:7.5%; 
                 margin-top:-1%; 
                 color:#B3C5ED;
             }
@@ -155,16 +159,28 @@
         <table border="1" align = "center" class="table" cellpadding="5">
             <tr>
                 <th>ID</th>
+                <th>NAME</th>
                 <th>Year</th>
                 <th>Event</th>
+                <th>EDIT TIME</th>
                 <th>編輯</th>
             </tr>
         <?php
             while($row_result = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['id']."</td>";
+                // 只在有修改時間時顯示修改者，否則顯示 "-"
+                if (!empty($row_result['modify_time'])) {
+                    echo "<td style='text-align: center; vertical-align:middle;'>" . 
+                        (empty($row_result['modifier_name']) ? "-" : $row_result['modifier_name']) . "</td>";
+                } else {
+                    echo "<td style='text-align: center; vertical-align:middle;'>-</td>";
+                }
                 echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['year']."</td>";
                 echo "<td>".$row_result['event']."</td>";
+                echo "<td style='text-align: center; vertical-align:middle;'>" . 
+                    (empty($row_result['modify_time']) ? "-" : $row_result['modify_time']) . "</td>";
+                
                 echo "<td><a href='manager_history_update_English.php?id=".$row_result['id']."'>修改 </a>";
                 echo "<a href='manager_history_delete_English.php?id=".$row_result['id']."'>刪除</a></td>";
                 echo "</tr>";

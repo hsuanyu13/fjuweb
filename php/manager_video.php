@@ -1,6 +1,35 @@
+<?php
+    session_start();
+    include("connect.php");
+    header("Content-type: text/html; charset=utf-8");
 
+    $slcdb = mysqli_select_db($db_link, "fjuweb");
+    $message = "";
 
+    // 處理 AJAX 請求
+    if(isset($_POST['urlValue'])) {
+        $url = $_POST['urlValue'];
+        $userId = isset($_SESSION['member_id']) ? $_SESSION['member_id'] : 0;
 
+        // 記錄詳細的用戶信息
+        error_log("Saving URL: $url by user ID: $userId at " . date('Y-m-d H:i:s'));
+
+        $sql = "INSERT INTO video_url (url, modifier_id, modify_time) 
+                VALUES (?, ?, NOW())";
+        
+        $stmt = mysqli_prepare($db_link, $sql);
+        mysqli_stmt_bind_param($stmt, "si", $url, $userId);
+        $result = mysqli_stmt_execute($stmt);
+
+        if ($result) {
+            echo "修改成功";
+        } else {
+            echo "錯誤: " . mysqli_error($db_link);
+        }
+        mysqli_stmt_close($stmt);
+        exit(); // AJAX 請求不需要繼續輸出 HTML
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -162,10 +191,8 @@
         <div class="up_div">
             <h1 style="display: inline-block;">主頁影片管理</h1>
         </div>
-        </div>
         
         <script>
-        
         function saveUrl() {
             let urlValue = document.getElementById("urlInput").value;
             
@@ -174,44 +201,91 @@
                 return;
             }
 
+            // URL 轉換邏輯
             if(urlValue.includes('youtu.be/')){
-                urlValue=urlValue.split('?')[0];
-                urlValue=urlValue.replace('youtu.be/','www.youtube.com/embed/')+'?autoplay=1&mute=1&loop=1';
+                urlValue = urlValue.split('?')[0];
+                urlValue = urlValue.replace('youtu.be/', 'www.youtube.com/embed/') + '?autoplay=1&mute=1&loop=1';
             }
             else if(urlValue.includes('watch?v=')){
                 if(urlValue.includes('list')){
-                    a=urlValue.split('watch?v=')[0]+'embed/';
-                    b='videoseries?list='+urlValue.split('list=')[1]+'&autoplay=1&mute=1&loop=1';
-                    urlValue=a+b;
+                    let a = urlValue.split('watch?v=')[0] + 'embed/';
+                    let b = 'videoseries?list=' + urlValue.split('list=')[1] + '&autoplay=1&mute=1&loop=1';
+                    urlValue = a + b;
                 }
                 else{
-                    urlValue=urlValue.replace('watch?v=','embed/')+'?autoplay=1&mute=1&loop=1';
+                    urlValue = urlValue.replace('watch?v=', 'embed/') + '?autoplay=1&mute=1&loop=1';
                 }
             }
 
-            document.getElementById('urlInput').value='';
+            document.getElementById('urlInput').value = '';
 
             $.ajax({
-		    type:"POST",
-		    url:"saveurl.php",
-		    data:{
-			"urlValue":urlValue,
-			
-		    },
-		    success:function(){
-			    alert("修改成功");		
-		    },
+                type: "POST",
+                url: window.location.href, // 改為當前頁面 URL
+                data: { "urlValue": urlValue },
+                success: function() {
+                    alert("修改成功");
+                    location.reload(); 
+                }
             })
-
-            
         }
         </script>
+        
         <div class="line">11</div>
         <div class='input'>
             <input type="text" class="url-input" placeholder="請輸入網址" id='urlInput'>
             <button onclick="saveUrl()">確認</button>
         </div>
 
+        <div class="up_div">
+            <h1 style="display: inline-block;">修改紀錄</h1>
+        </div>
+        <div class="line">11</div>
+        <div class="view">
+        <table border="1" align = "center" class="table" cellpadding="5">
+            <tr>
+                <th>編號</th>
+                <th>姓名</th>
+                <th>網址</th>
+                <th>修改時間</th>
+            </tr>
+            <?php
+            session_start();
+            include("connect.php");
+            header("Content-type: text/html; charset=utf-8");
+
+            $slcdb = mysqli_select_db($db_link, "fjuweb");
+
+            $sql_query = "SELECT v.*, m.user AS modifier_name 
+                        FROM video_url v
+                        LEFT JOIN member_table m ON v.modifier_id = m.id 
+                        ORDER BY v.id ASC";
+                        
+            $result = mysqli_query($db_link, $sql_query);
+
+            if ($result) {
+                
+                if (mysqli_num_rows($result) > 0) {
+                    
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<td>" . $row["id"] . "</td>";
+                        echo "<td>" . ($row["modifier_name"] ? $row["modifier_name"] : "-") . "</td>";
+                        echo "<td>" . $row["url"] . "</td>";
+                        echo "<td>" . $row["modify_time"] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='4'>無記錄</td></tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>查詢錯誤: " . mysqli_error($db_link) . "</td></tr>";
+            }
+            mysqli_close($db_link);
+            ?>
+        </table>
+        </div>
         
 
     </body>
+</html>

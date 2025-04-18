@@ -55,8 +55,9 @@
                         //密碼正確
                         else{
                                 // echo "<script>alert('管理者登入成功!')</script>";  
-                                $_SESSION['username'] = $row['username'];
                                 $_SESSION['member_id'] = $row['id'];
+                                $_SESSION['user'] = $row['user'];
+                                $_SESSION['user_id'] = $row['user_id'];
                                 echo '<meta http-equiv=REFRESH CONTENT=0;url=../homepage_manager.html>';
                         }                                               
                 }

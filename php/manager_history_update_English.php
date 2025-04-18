@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	include "managerSQL.php";
 
     $ID = $_GET['id'];
@@ -215,7 +216,8 @@
     $newEvent = $_POST['fjuEvent'];
 
     // 新增資料到資料庫表格
-    $sql_query = "UPDATE history_english SET year = ?, event = ? WHERE id = ?";
+    $sql_query = "UPDATE history_english SET year = ?, event = ?, modifier_id = ?, modify_time = NOW() WHERE id = ?";
+
     $stmt = $mysqli->prepare($sql_query);
 
     if ($stmt === false) {
@@ -223,7 +225,11 @@
     }
 
     // 綁定參數
-    $stmt->bind_param("sss", $newYear, $newEvent, $ID);
+    $modifier_id = isset($_SESSION['member_id']) ? $_SESSION['member_id'] : NULL;
+    $stmt->bind_param("sssi", $newYear, $newEvent, $modifier_id, $ID);
+ 
+    // 顯示表連接的具體SQL和結果
+    echo "<pre>SQL: $sql_query</pre>";
 
     // 執行查詢
     if ($stmt->execute()) {
