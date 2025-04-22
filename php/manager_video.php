@@ -250,9 +250,7 @@
                 <th>修改時間</th>
             </tr>
             <?php
-            session_start();
             include("connect.php");
-            header("Content-type: text/html; charset=utf-8");
 
             $slcdb = mysqli_select_db($db_link, "fjuweb");
 
