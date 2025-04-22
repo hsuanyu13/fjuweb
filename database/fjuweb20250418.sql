@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： localhost
--- 產生時間： 2025 年 04 月 18 日 07:38
+-- 產生時間： 2025 年 04 月 18 日 10:58
 -- 伺服器版本： 10.4.28-MariaDB
 -- PHP 版本： 8.0.28
 
@@ -149,7 +149,7 @@ CREATE TABLE `history` (
 --
 
 INSERT INTO `history` (`id`, `year`, `event`, `modifier_id`, `modify_time`) VALUES
-(1, 1925, '由美國本篤會於北京創辦，初期設大學預科名為「北京公教大學附屬輔仁社」', 1, '2025-04-18 00:58:13'),
+(1, 1925, '由美國本篤會於北京創辦，初期設大學預科名為「北京公教大學附屬輔仁社」', 1, '2025-04-18 16:57:46'),
 (2, 1927, '北洋政府准予試辦，並正式將校名改為「輔仁大學」，取《論語》:「以文會友，以友輔仁」之意', NULL, NULL),
 (3, 1929, '國民政府統一全國後，董事會改組呈請教育部正式立案', NULL, NULL),
 (4, 1933, '改由聖言會接辦', NULL, NULL),
@@ -167,7 +167,9 @@ INSERT INTO `history` (`id`, `year`, `event`, `modifier_id`, `modify_time`) VALU
 (16, 2003, '成立法律學院', NULL, NULL),
 (17, 2010, '成立傳播學院\n成立教育學院', NULL, NULL),
 (18, 2012, '捷運輔大站通車', NULL, NULL),
-(19, 2017, '成立織品服裝學院\n附設醫院開幕', NULL, NULL);
+(19, 2017, '成立織品服裝學院\n附設醫院開幕', NULL, NULL),
+(28, 2023, '輔大醫院晉升區域醫院', NULL, NULL),
+(31, 2024, '教育學院更名為教育與運動健康學院', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -188,7 +190,7 @@ CREATE TABLE `history_english` (
 --
 
 INSERT INTO `history_english` (`id`, `year`, `event`, `modifier_id`, `modify_time`) VALUES
-(1, 1925, 'Founded in Beijing by the Benedictines of the United States, the university preparatory course was initially named ', 1, '2025-04-18 00:39:51'),
+(1, 1925, 'Founded in Beijing by the Benedictines of the United States, the university preparatory course was initially named \"Furen Club Affiliated to Beijing Catholic University\".', NULL, NULL),
 (2, 1927, 'The Beiyang government approved the trial operation, and officially changed the name of the school to \"Fu Jen Catholic University\", taking the meaning from \"The Analects of Confucius\": \"Make friends with literature, and help people with friends\".', NULL, NULL),
 (3, 1929, 'After the national government unified the country, the board of directors reorganized and petitioned the Ministry of Education for formal filing.', NULL, NULL),
 (4, 1933, 'The SVD Mission would take over.', NULL, NULL),
@@ -206,7 +208,7 @@ INSERT INTO `history_english` (`id`, `year`, `event`, `modifier_id`, `modify_tim
 (16, 2010, 'College of Communication was established.\r\nCollege of Education was established.', NULL, NULL),
 (17, 2012, 'Fu Jen University Station MRT opened to traffic.', NULL, NULL),
 (18, 2017, 'College of Fashion & Textiles was established.\r\nOpening of Fu Jen Catholic University Hospital.', NULL, NULL),
-(24, 2023, '2023 Fu Jen Catholic University Hospital promoted to Regional Hospital', NULL, NULL);
+(24, 2023, 'Fu Jen Catholic University Hospital promoted to Regional Hospital', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -253,18 +255,14 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `title`, `link`, `date`, `topnews`, `modifier_id`, `modify_time`) VALUES
-(1, '   輔大築夢資訊網-輔大專屬高中生落點分析預測系統', '   http://140.136.129.84/fjudreamnetwork/head.php', '2023-02-27', 'YES', 1, '2025-04-18 01:23:20'),
+(1, '  輔大築夢資訊網-輔大專屬高中生落點分析預測系統', ' http://140.136.202.95/fjudreamnetwork/head.php', '2024-02-27', 'YES', NULL, NULL),
 (2, '輔仁大學112學年度申請入學備審資料準備指引', 'https://exam.fju.edu.tw/admission/86', '2023-02-24', 'NO', NULL, NULL),
 (3, '112學年度運動成績優良學生單獨招生術科測驗細則', 'https://exam.fju.edu.tw/admission/101', '2023-02-15', 'NO', NULL, NULL),
 (4, '「國際創業與經營管理碩士在職專班」112學年度線上招生說明會歡迎報名參加', 'https://exam.fju.edu.tw/admission/99', '2023-02-03', 'NO', NULL, NULL),
 (5, '輔仁大學111學年度(日間部)寒假轉學生1階段第1梯次遞補名單', 'https://exam.fju.edu.tw/admission/89/announcement', '2023-01-17', 'NO', NULL, NULL),
 (6, '輔仁大學112學年度進修學士班申請入學招生簡章', 'https://exam.fju.edu.tw/admission/103', '2023-01-12', 'NO', NULL, NULL),
 (7, '輔仁大學112學年度運動成績優良學生單獨招生簡章', 'https://exam.fju.edu.tw/admission/101', '2023-01-12', 'NO', NULL, NULL),
-(8, '輔仁大學111學年度進修學士班寒假轉學生招生錄取名單', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/9b1c8334-4239-4dab-9e9a-f1a198510d16.pdf ', '2023-01-09', 'NO', NULL, NULL),
-(9, '輔仁大學111學年度(日間部)寒假轉學生招生錄取名單', 'https://exam.fju.edu.tw/admission/89/announcement', '2023-01-09', 'NO', NULL, NULL),
-(10, '112學年度輔仁大學博士班暨碩士班甄試招生錄取名單', 'https://exam.fju.edu.tw/admission/84/announcement', '2022-12-07', 'NO', NULL, NULL),
 (11, '112學年度「輔仁大學鼓勵學士班成績優異學生就讀碩士班獎學金」獲獎名單', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/f28f8c40-1682-485f-a3b3-0ad9cd857c01.pdf', '2022-12-07', 'NO', NULL, NULL),
-(12, '輔仁大學112學年度學士班特殊選才招生錄取名單', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/51a20500-d367-4317-90f3-237ab7601d09.pdf ', '2022-12-06', 'NO', NULL, NULL),
 (13, '輔仁大學112學年度碩士班招生簡章', 'https://exam.fju.edu.tw/admission/95', '2022-11-29', 'NO', NULL, NULL),
 (14, '輔仁大學 112 學年度碩士在職專班招生簡章', 'https://exam.fju.edu.tw/admission/93', '2022-10-28', 'NO', NULL, NULL),
 (15, '輔仁大學111學年度進修學士班寒假轉學生招生簡章', 'https://exam.fju.edu.tw/admission/90', '2022-10-27', 'NO', NULL, NULL),
@@ -281,11 +279,70 @@ INSERT INTO `news` (`id`, `title`, `link`, `date`, `topnews`, `modifier_id`, `mo
 (27, '112學年度輔仁大學織品系碩士在職專班招生說明會，開始報名!', '查無相關公告', '2022-10-28', 'NO', NULL, NULL),
 (28, '歡迎蒞臨「輔大金融碩士在職專班」-112學年度招生說明會', 'http://ems.fib.fju.edu.tw/index.php?action=ix-detail&id=116', '2022-10-26', 'NO', NULL, NULL),
 (29, '輔大資管系碩士在職專班112學年度線上招生說明會', 'http://www.im.fju.edu.tw/site/?p=6736', '2022-10-26', 'NO', NULL, NULL),
-(38, '輔仁大學112學年度碩士班招生甲類系所錄取名單', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/50997ca3-28a2-46ba-9ca3-6aad12f233fb.pdf', '2023-03-21', 'NO', NULL, NULL),
-(39, '輔仁大學112學年度碩士在職專班招生錄取名單', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/a83c39bf-7795-43a8-b845-727b143b6bf5.pdf', '2023-03-21', 'YES', NULL, NULL),
-(40, '輔仁大學112學年度護理學系二年制在職專班招生錄取名單', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/484ac6e3-9d0f-456f-beb0-0f82d569ef27.pdf', '2023-03-21', 'NO', NULL, NULL),
 (41, '輔仁大學112學年度博士班招生簡章', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/6588a889-e970-41dc-b626-50071173fed1.pdf', '2023-03-10', 'NO', NULL, NULL),
-(42, '輔仁大學112學年度申請入學第二階段甄試經濟不利學生入學考試補助申請', 'https://exam.fju.edu.tw/admission/86/announcement/50', '2023-03-09', 'NO', NULL, NULL);
+(42, '輔仁大學112學年度申請入學第二階段甄試經濟不利學生入學考試補助申請', 'https://exam.fju.edu.tw/admission/86/announcement/50', '2023-03-09', 'NO', NULL, NULL),
+(45, ' 輔仁大學112學年度申請入學及繁星醫學第二階段指定項目甄試考生須知', ' https://api-gateway.fju.edu.tw/Admission/data/Bulletins/619ccc26-09fb-4f5f-b15c-b148f68aecda.pdf', '2023-04-12', 'NO', NULL, NULL),
+(48, ' 大學申請入學錄取本校正/備取生向甄選委員會登記就讀志願序', ' https://exam.fju.edu.tw/admission/86', '2023-06-08', 'NO', NULL, NULL),
+(51, ' 天主教輔仁大學 112 學年度 天主教研修學士學位學程招生', ' https://exam.fju.edu.tw/admission/105', '2023-06-01', 'NO', NULL, NULL),
+(55, ' 輔仁大學2023僑生及港澳生研究所(第二階段)單獨招生', ' https://exam.fju.edu.tw/admission/107', '2023-05-02', 'NO', NULL, NULL),
+(56, ' 輔仁大學112學年度進修學士班考試入學招生', ' https://exam.fju.edu.tw/admission/111', '2023-06-12', 'NO', NULL, NULL),
+(59, '  112 學年度大學分發入學招生', ' https://api-gateway.fju.edu.tw/Admission/data/Bulletins/50d65340-1303-47b6-aad8-98bfee205f5d.pdf', '2023-07-12', 'NO', NULL, NULL),
+(65, '   輔仁大學113學年度學士班特殊選才招生簡章', '  https://exam.fju.edu.tw/admission/120/announcement', '2023-09-22', 'NO', NULL, NULL),
+(66, '    天主教輔仁大學2024年僑生及港澳生單獨招生專區', '   https://exam.fju.edu.tw/admission/121/announcement', '2023-09-25', 'NO', NULL, NULL),
+(67, '   輔仁大學113學年度博士班暨碩士班甄試招生簡章', '   https://exam.fju.edu.tw/admission/124/announcement', '2023-09-26', 'NO', NULL, NULL),
+(68, ' 泰晤士高等教育特刊公布2024年度世界大學排名輔仁大學排名優於眾多國立大學', ' https://www.fju.edu.tw/focusDetail.jsp?focusID=2193&focusClassID=3', '2023-09-28', 'NO', NULL, NULL),
+(69, ' 輔仁大學NPO管理×社會企業碩士在職專班聯合招生說明會', ' https://exam.fju.edu.tw/admission/125/announcement', '2023-10-20', 'NO', NULL, NULL),
+(70, ' 輔仁大學113學年度「會計學系碩士在職專班」招生說明會', ' https://exam.fju.edu.tw/admission/125/announcement', '2023-10-20', 'NO', NULL, NULL),
+(71, '  輔仁大學112學年度(日間部)寒假轉學生招生簡章', 'https://exam.fju.edu.tw/admission/129t', '2023-10-24', 'NO', NULL, NULL),
+(72, ' 天主教輔仁大學 113學年度碩士在職專班招生簡章', ' https://exam.fju.edu.tw/admission/125/announcement', '2023-10-24', 'NO', NULL, NULL),
+(73, ' 輔仁大學113學年度「科技管理碩士在職專班」招生說明會', ' https://exam.fju.edu.tw/admission/125/announcement', '2023-10-24', 'NO', NULL, NULL),
+(74, '  113學年度輔仁大學織品服裝學系碩士在職專班招生說明會開跑囉', 'https://exam.fju.edu.tw/admission/125/announcement', '2023-10-24', 'NO', NULL, NULL),
+(75, ' 輔仁大學113學年度統計資訊學系應用統計研究所碩士在職專班招生說明會', 'https://exam.fju.edu.tw/admission/125/announcement', '2023-10-27', 'NO', NULL, NULL),
+(76, ' 輔仁大學113學年度「企業管理學系管理學碩士在職專班」招生說明會', 'https://exam.fju.edu.tw/admission/125/announcement', '2023-10-27', 'NO', NULL, NULL),
+(77, '輔仁大學112學年度進修學士班寒假轉學生招生簡章', 'https://exam.fju.edu.tw/admission/128', '2023-10-26', 'NO', NULL, NULL),
+(78, ' 113學年度輔仁大學哲學系碩士在職專班招生說明會，歡迎報名參加', ' https://exam.fju.edu.tw/admission/125/announcement', '2023-10-27', 'NO', NULL, NULL),
+(79, '【輔大大傳所碩專班 招生講座 】 成為跨領域人才 大傳所碩專班正適合你', 'https://exam.fju.edu.tw/admission/125/announcement', '2023-10-27', 'NO', NULL, NULL),
+(80, ' 專業X品質X人脈 三大保證【輔仁大學管理學院碩士在職班】招生說明會', ' https://exam.fju.edu.tw/admission/125/announcement', '2023-10-31', 'NO', NULL, NULL),
+(81, '2024/1/20國際創業與經營管理碩士在職專班招生說明會歡迎報名參加', 'https://exam.fju.edu.tw/admission/125/announcement', '2023-11-24', 'NO', NULL, NULL),
+(82, '輔仁大學 113學年度碩士班招生簡章', 'https://exam.fju.edu.tw/admission/131/announcement', '2023-11-28', 'NO', NULL, NULL),
+(83, '輔仁大學113學年度學士班特殊選才招生錄取名單', 'https://exam.fju.edu.tw/admission/120/announcement', '2023-12-05', 'NO', NULL, NULL),
+(84, '輔仁大學113學年度博士班暨碩士班甄試招生錄取名單', 'https://exam.fju.edu.tw/admission/124/announcement', '2023-12-06', 'NO', NULL, NULL),
+(85, '輔仁大學113學年度運動成績優良學生單獨招生簡章', 'https://exam.fju.edu.tw/admission/132/announcement', '2024-01-12', 'NO', NULL, NULL),
+(86, '輔仁大學 113 學年度國際創業與經營管理碩士學位學程在職專班招生簡章', 'https://exam.fju.edu.tw/admission/126/announcement', '2024-01-12', 'NO', NULL, NULL),
+(87, '輔仁大學112學年度大學繁星推薦入學招生 - 各學群校系錄取標準一覽表', 'https://exam.fju.edu.tw/admission/118/announcement', '2024-02-27', 'NO', NULL, NULL),
+(88, '輔仁大學112學年度大學申請入學招生各校系篩選標準及分發標準一覽表', 'https://exam.fju.edu.tw/admission/117/announcement', '2024-02-27', 'NO', NULL, NULL),
+(89, '2024 輔仁跨域遊樂趣．探索無限∞-open day活動', 'https://exam.fju.edu.tw/newslist/page/535', '2024-02-27', 'NO', NULL, NULL),
+(90, '《大學品牌力》十指標評比百校！成大居首，前十名輔大唯一私校', 'https://blog.104.com.tw/104data-university-brand/', '2024-02-29', 'NO', NULL, NULL),
+(91, '輔仁大學113學年度申請入學備審資料準備指引', ' https://exam.fju.edu.tw/guide?admissionCategoryBaseSn=117', '2024-03-01', 'NO', NULL, NULL),
+(92, '輔仁大學113學年度進修學士班申請入學招生簡章', 'https://exam.fju.edu.tw/admission/144/announcement', '2024-03-08', 'NO', NULL, NULL),
+(93, '天主教輔仁大學113 學年度學士後護理學系招生簡章', 'https://exam.fju.edu.tw/admission/143/announcement', '2024-03-11', 'NO', NULL, NULL),
+(94, '輔仁大學113學年度學系申請入學備審資料準備指引暨注意事項', ' https://exam.fju.edu.tw/guide?admissionCategoryBaseSn=117', '2024-03-28', 'NO', NULL, NULL),
+(95, '輔仁大學113學年度(日間部)轉學生招生簡章', 'https://exam.fju.edu.tw/admission/147/announcement', '2024-04-23', 'NO', NULL, NULL),
+(96, '輔仁大學113學年度進修學士班轉學生招生簡章', 'https://exam.fju.edu.tw/admission/141/announcement', '2024-04-23', 'NO', NULL, NULL),
+(97, '天主教輔仁大學113學年度學士後法律學系招生錄取名單', 'https://exam.fju.edu.tw/admission/140/announcement', '2024-05-28', 'NO', NULL, NULL),
+(98, '天主教輔仁大學113學年度國際創業與經營管理碩士學位學程在職專班招生錄取名單', 'https://exam.fju.edu.tw/admission/126/announcement', '2024-05-28', 'NO', NULL, NULL),
+(99, '天主教輔仁大學113學年度博士班招生錄取名單', 'https://exam.fju.edu.tw/admission/139/announcement', '2024-05-29', 'NO', NULL, NULL),
+(100, '天主教輔仁大學113學年度學士後護理學系招生錄取名單', 'https://exam.fju.edu.tw/admission/143/announcement', '2024-06-04', 'NO', NULL, NULL),
+(101, '天主教輔仁大學113學年度學士後多元專長培力課程招生簡章', 'https://api-gateway.fju.edu.tw/Admission/data/Bulletins/528e8532-9143-4e53-a7b0-e4ad0330a4ca.pdf', '2024-05-28', 'NO', NULL, NULL),
+(102, '天主教輔仁大學113學年度進修學士班甄審登記入學招生簡章', 'https://exam.fju.edu.tw/admission/145', '2024-04-29', 'NO', NULL, NULL),
+(103, '天主教輔仁大學113學年度大學申請入學招生統一分發結果', 'https://www.cac.edu.tw/CacLink/apply113/113appLy_F3gh9Yd_EntraNce_D95pE3ta/html_entrance_77Gf9Kw2/result_html/result_apply/web/020.htm', '2024-06-13', 'NO', NULL, NULL),
+(104, '天主教輔仁大學 113學年度進修學士班申請入學招生錄取名單', 'https://exam.fju.edu.tw/admission/144/announcement', '2024-06-18', 'NO', NULL, NULL),
+(106, '輔仁大學114學年度學士班特殊選才招生簡章', 'https://exam.fju.edu.tw/admission/161/announcement', '2024-09-12', 'NO', NULL, NULL),
+(107, '輔仁大學114學年度博士班暨碩士班甄試招生簡章', '   https://exam.fju.edu.tw/admission/162/announcement', '2024-09-18', 'NO', NULL, NULL),
+(108, '天主教輔仁大學113學年度(日間部)寒假轉學生招生簡章', 'https://exam.fju.edu.tw/admission/169/announcement', '2024-10-24', 'NO', NULL, NULL),
+(109, '【大傳所碩專班招生講座】｜ 說明會+ 講座課程', 'https://exam.fju.edu.tw/admission/168/announcement', '2024-10-23', 'NO', NULL, NULL),
+(110, '【宗教學系碩士在職專班招生說明會】', 'https://exam.fju.edu.tw/admission/168/announcement', '2024-10-24', 'NO', NULL, NULL),
+(111, ' 114學年度輔仁大學哲學系碩士在職專班招生說明會，歡迎報名參加!', ' https://exam.fju.edu.tw/admission/168/announcement', '2024-10-24', 'NO', NULL, NULL),
+(112, ' ColleGo!大學選才與高中育才輔助系統', ' https://collego.edu.tw/Highschool/School?school=020', '2024-11-08', 'NO', NULL, NULL),
+(113, '輔仁大學114學年度學士班特殊選才招生錄取名單', 'https://exam.fju.edu.tw/admission/161/announcement', '2024-11-25', 'NO', NULL, NULL),
+(114, '輔仁大學114學年度博士班暨碩士班甄試招生錄取名單', 'https://exam.fju.edu.tw/admission/162/announcement', '2024-11-25', 'NO', NULL, NULL),
+(115, '2025/01/11「國際創業與經營管理碩士在職專班」114學年度招生說明會及創新創業專題演講', 'https://exam.fju.edu.tw/admission/168/announcement', '2024-11-25', 'NO', NULL, NULL),
+(116, ' 輔大連兩年獲104《最佳大學品牌力》 全國十強 ​ 私校第一', ' https://travellerlink.fju.edu.tw/Admission/data/Bulletins/6e7d8c55-12d1-4c9a-bc68-35e5a9e335ab.mp4', '2025-02-27', 'YES', NULL, NULL),
+(117, ' 2025/3/8  輔大開箱日-學系薈萃．百年風華', ' http://140.136.202.95/fjuweb/open.html', '2025-02-27', 'NO', NULL, NULL),
+(118, '輔仁大學114學年度申請入學備審資料準備指引', 'https://exam.fju.edu.tw/guide?admissionCategoryBaseSn=174', '2025-03-03', 'NO', NULL, NULL),
+(119, '輔仁大學114學年度碩士班招生甲類系所錄取名單', 'https://exam.fju.edu.tw/admission/172/announcement', '2025-03-11', 'NO', NULL, NULL),
+(120, '輔仁大學114學年度碩士班招生乙類系所初試合格名單', 'https://exam.fju.edu.tw/admission/172/announcement', '2025-03-11', 'NO', NULL, NULL),
+(121, '輔仁大學114學年度碩士在職專班招生錄取名單', 'https://exam.fju.edu.tw/admission/168/announcement', '2025-03-12', 'NO', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -307,14 +364,8 @@ CREATE TABLE `url_changes` (
 --
 
 INSERT INTO `url_changes` (`id`, `user_id`, `dep_id`, `old_url`, `new_url`, `change_time`) VALUES
-(1, 'manager1', 1, 'http://www.la.fju.edu.tw/', 'http://www.la.fju.edu.tw', '2025-04-17 18:01:13'),
-(2, 'manager1', 1, 'http://www.la.fju.edu.tw', 'http://www.la.fju.edu.tw/', '2025-04-17 18:01:33'),
-(3, 'manager1', 3, 'http://www.history.fju.edu.tw/chi/', 'http://www.history.fju.edu.tw/chi', '2025-04-17 22:27:43'),
-(4, NULL, 3, 'http://www.history.fju.edu.tw/chi', 'http://www.history.fju.edu.tw/chi/', '2025-04-17 22:31:39'),
-(5, '鄭亘妤', 1, 'http://www.la.fju.edu.tw/', 'http://www.la.fju.edu.tw/.', '2025-04-17 22:32:46'),
-(6, '鄭亘妤', 1, 'http://www.la.fju.edu.tw/.', 'http://www.la.fju.edu.tw/', '2025-04-17 22:33:04'),
-(7, '鄭亘妤', 1, 'http://www.la.fju.edu.tw/', 'http://www.la.fju.edu.tw//', '2025-04-17 22:33:38'),
-(8, '鄭亘妤', 1, 'http://www.la.fju.edu.tw//', 'http://www.la.fju.edu.tw/', '2025-04-17 22:33:44');
+(1, '鄭亘妤', 1, 'http://www.la.fju.edu.tw/', 'http://www.la.fju.edu.tw//', '2025-04-18 16:57:57'),
+(2, '鄭亘妤', 1, 'http://www.la.fju.edu.tw//', 'http://www.la.fju.edu.tw/', '2025-04-18 16:58:06');
 
 -- --------------------------------------------------------
 
@@ -335,7 +386,7 @@ CREATE TABLE `video_url` (
 
 INSERT INTO `video_url` (`id`, `url`, `modifier_id`, `modify_time`) VALUES
 (1, 'https://www.youtube.com/embed/videoseries?list=PLtTsVUvyUQleoKfyaXpB8GQuGYhuuoiBk&autoplay=1&mute=1&loop=1', NULL, NULL),
-(2, 'https://www.youtube.com/embed/videoseries?list=PLtTsVUvyUQleoKfyaXpB8GQuGYhuuoiBk&autoplay=1&mute=1&loop=1', 1, '2025-04-18 13:02:50');
+(2, 'https://www.youtube.com/embed/videoseries?list=PLtTsVUvyUQleoKfyaXpB8GQuGYhuuoiBk&autoplay=1&mute=1&loop=1', 1, '2025-04-18 16:57:39');
 
 --
 -- 已傾印資料表的索引
@@ -397,13 +448,13 @@ ALTER TABLE `dep_url`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `history`
 --
 ALTER TABLE `history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `history_english`
 --
 ALTER TABLE `history_english`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member_table`
@@ -415,13 +466,13 @@ ALTER TABLE `member_table`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `url_changes`
 --
 ALTER TABLE `url_changes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `video_url`
