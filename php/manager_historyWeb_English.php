@@ -159,9 +159,9 @@
         <table border="1" align = "center" class="table" cellpadding="5">
             <tr>
                 <th>ID</th>
-                <th>NAME</th>
                 <th>Year</th>
                 <th>Event</th>
+                <th>EDITOR</th>
                 <th>EDIT TIME</th>
                 <th>編輯</th>
             </tr>
@@ -169,6 +169,9 @@
             while($row_result = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['id']."</td>";
+                
+                echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['year']."</td>";
+                echo "<td>".$row_result['event']."</td>";
                 // 只在有修改時間時顯示修改者，否則顯示 "-"
                 if (!empty($row_result['modify_time'])) {
                     echo "<td style='text-align: center; vertical-align:middle;'>" . 
@@ -176,8 +179,6 @@
                 } else {
                     echo "<td style='text-align: center; vertical-align:middle;'>-</td>";
                 }
-                echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['year']."</td>";
-                echo "<td>".$row_result['event']."</td>";
                 echo "<td style='text-align: center; vertical-align:middle;'>" . 
                     (empty($row_result['modify_time']) ? "-" : $row_result['modify_time']) . "</td>";
                 
