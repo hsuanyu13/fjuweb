@@ -146,9 +146,9 @@ if ($result && $result->num_rows > 0) {
             <thead>
                 <tr>
                     <th>編號</th>
-                    <th>姓名</th>
                     <th>原網址</th>
                     <th>新網址</th>
+                    <th>修改者</th>
                     <th>修改時間</th>
                     <th>系所名稱</th>
                 </tr>
@@ -157,7 +157,6 @@ if ($result && $result->num_rows > 0) {
                 <?php foreach ($records as $index => $record): ?>
                     <tr>
                         <td><?= $index + 1 ?></td>
-                        <td><?= htmlspecialchars($record['user_id'] ?? '系統') ?></td>
                         <td class="url-cell" title="<?= htmlspecialchars($record['old_url']) ?>">
                             <a href="<?= htmlspecialchars($record['old_url']) ?>" target="_blank">
                                 <?= htmlspecialchars($record['old_url']) ?>
@@ -168,6 +167,7 @@ if ($result && $result->num_rows > 0) {
                                 <?= htmlspecialchars($record['new_url']) ?>
                             </a>
                         </td>
+                        <td><?= htmlspecialchars($record['user_id'] ?? '系統') ?></td>
                         <td><?= htmlspecialchars($record['change_time']) ?></td>
                         <td><?= htmlspecialchars($record['dep']) ?></td>
                     </tr>

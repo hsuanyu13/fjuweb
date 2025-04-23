@@ -33,6 +33,13 @@ body{
 	width: 18%;
     
 }
+.video_btn{
+	position: absolute;
+    bottom: 15%;
+	right: -3%;
+	width: 18%;
+    
+}
 .account_btn{
 	width: 10%;
 	height: 10%;
@@ -112,8 +119,15 @@ button{
 	.url_btn{
 		position: absolute;
 		right: 15%;
-		top: 7% !important;
+		top: 9% !important;
 		width: 48%;
+		
+	}
+	.video_btn{
+		position: absolute;
+		bottom: 1.5%;
+		right: 15%;
+		width: 43%;
 		
 	}
 	.account_btn{
@@ -180,11 +194,18 @@ button{
 	    right: 15%;
 	}
 	.url_btn{
-		position: absolute;
-	   top: 5% !important;
+	   position: absolute;
+	   top: 10% !important;
 	   right: 15%;
 	   width: 43%;
    }
+   .video_btn{
+	position: absolute;
+	bottom: 1.5%;
+	right: 15%;
+	width: 43%;
+	
+	}
 	
 
 	.account_btn{

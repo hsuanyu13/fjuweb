@@ -245,8 +245,8 @@
         <table border="1" align = "center" class="table" cellpadding="5">
             <tr>
                 <th>編號</th>
-                <th>姓名</th>
                 <th>網址</th>
+                <th>修改者</th>
                 <th>修改時間</th>
             </tr>
             <?php
@@ -268,8 +268,8 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
                         echo "<td>" . $row["id"] . "</td>";
-                        echo "<td>" . ($row["modifier_name"] ? $row["modifier_name"] : "-") . "</td>";
                         echo "<td>" . $row["url"] . "</td>";
+                        echo "<td>" . ($row["modifier_name"] ? $row["modifier_name"] : "-") . "</td>";
                         echo "<td>" . $row["modify_time"] . "</td>";
                         echo "</tr>";
                     }

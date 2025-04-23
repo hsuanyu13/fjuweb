@@ -158,9 +158,9 @@
         <table border="1" align = "center" class="table" cellpadding="5">
             <tr>
                 <th>ID</th>
-                <th>修改者</th>
                 <th>年份</th>
                 <th>事件</th>
+                <th>修改者</th>
                 <th>修改時間</th>
                 <th>編輯</th>
             </tr>
@@ -169,6 +169,8 @@
                 echo "<tr>";
                 echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['id']."</td>";
                 
+                echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['year']."</td>";
+                echo "<td>".$row_result['event']."</td>";
                 // 只在有修改時間時顯示修改者，否則顯示 "-"
                 if (!empty($row_result['modify_time'])) {
                     echo "<td style='text-align: center; vertical-align:middle;'>" . 
@@ -176,10 +178,6 @@
                 } else {
                     echo "<td style='text-align: center; vertical-align:middle;'>-</td>";
                 }
-                
-                echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['year']."</td>";
-                echo "<td>".$row_result['event']."</td>";
-                
                 // 顯示修改時間，如果沒有則顯示 "-"
                 echo "<td style='text-align: center; vertical-align:middle;'>" . 
                     (empty($row_result['modify_time']) ? "-" : $row_result['modify_time']) . "</td>";
