@@ -164,10 +164,11 @@
         <table border="1" align = "center" class="table" cellpadding="5">
             <tr>
                 <th>ID</th>
-                <th>姓名</th>
+                
                 <th>標題</th>
                 <th>連結</th>
                 <th>日期</th>
+                <th>修改者</th>
                 <th>修改時間</th>
                 <th>置頂</th>
             </tr>
@@ -196,6 +197,10 @@
             while($row_result = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td style='text-align: center; vertical-align:middle;'>".$row_result['id']."</td>";
+                
+                echo "<td>".$row_result['title']."</td>";
+                echo "<td style='word-break: break-all;'>".$row_result['link']."</td>";
+                echo "<td>".$row_result['date']."</td>";
                 // 只在有修改時間時顯示修改者，否則顯示 "-"
                 if (!empty($row_result['modify_time'])) {
                     echo "<td style='text-align: center; vertical-align:middle;'>" . 
@@ -203,9 +208,6 @@
                 } else {
                     echo "<td style='text-align: center; vertical-align:middle;'>-</td>";
                 }
-                echo "<td>".$row_result['title']."</td>";
-                echo "<td style='word-break: break-all;'>".$row_result['link']."</td>";
-                echo "<td>".$row_result['date']."</td>";
                 // 顯示修改時間，如果沒有則顯示 "-"
                 echo "<td style='text-align: center; vertical-align:middle;'>" . 
                     (empty($row_result['modify_time']) ? "-" : $row_result['modify_time']) . "</td>";
